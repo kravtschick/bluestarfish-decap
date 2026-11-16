@@ -14,7 +14,7 @@ contactButtonWidget: false
 
 ## Kto jest administratorem danych
 
-Công ty TNHH Blue Starfish Travel Boutique, 94 Xuân Thủy, Phường Thảo Điền, Thành phố Thủ Đức, Thành phố Hồ Chí Minh, Wietnam (mã số thuế 0318118010). Kontakt w sprawach danych: booking@bluestarfish.travel.
+Công ty TNHH Blue Starfish Travel Boutique, 94 Xuân Thủy, Phường Thảo Điền, Thành phố Thủ Đức, Thành phố Hồ Chí Minh, Wietnam (mã số thuế 0318118010). Kontakt w sprawach danych: contact@bluestarfishtravel.com.
 
 ## Jakie dane zbieramy i po co
 
@@ -34,7 +34,7 @@ Zapytania, z których nie powstał wyjazd, usuwamy po 12 miesiącach. Dane klien
 
 ## Twoje prawa
 
-Możesz poprosić o dostęp do swoich danych, ich poprawienie lub usunięcie, pisząc na booking@bluestarfish.travel. Masz też prawo wnieść skargę do organu nadzorczego, w Polsce do Prezesa Urzędu Ochrony Danych Osobowych.
+Możesz poprosić o dostęp do swoich danych, ich poprawienie lub usunięcie, pisząc na contact@bluestarfishtravel.com. Masz też prawo wnieść skargę do organu nadzorczego, w Polsce do Prezesa Urzędu Ochrony Danych Osobowych.
 
 ## Pliki cookie
 
