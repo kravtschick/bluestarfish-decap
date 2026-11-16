@@ -1,10 +1,10 @@
 ---
 seo:
   seoTitle: "Contact: plan your trip to Southeast Asia"
-  seoDesc: "Answer a few questions and get a first trip proposal for Vietnam, Cambodia or Laos within 24 hours. No commitment. WhatsApp, email, phone."
+  seoDesc: "Message us on WhatsApp or email. Within 24 hours you get a first route for Vietnam, Cambodia or Laos. No commitment."
 hero:
   title: Contact
-  subtitle: A few questions, five minutes. A first route within 24 hours.
+  subtitle: One sentence on WhatsApp or email is enough. Your first route arrives within 24 hours.
   image: ../../../assets/images/contact-hero.jpg
 countriesWidget: false
 skillsWidget: false

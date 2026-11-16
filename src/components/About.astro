@@ -25,7 +25,7 @@ const quotes = reviewsData.reviews
 const reviewsPath = pagePath(lang, "reviews");
 
 const icons: Record<string, string> = {"pencil": "M16.86 3.49a2.1 2.1 0 0 1 2.97 2.97L8.5 17.79 4 19l1.21-4.5L16.86 3.49Z M14.5 5.85l2.97 2.97", "check": "M20 7 9.5 17.5 4 12 M12 3a9 9 0 1 0 9 9", "people": "M16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z M2 20a6 6 0 0 1 12 0 M12 20a6 6 0 0 1 10 0", "phone": "M8 3h8a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z M11 18h2", "compass": "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z M15.5 8.5 14 14l-5.5 1.5L10 10l5.5-1.5Z", "tag": "M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9-9-9Z M7.5 7.5h.01"};
-const values = ["pencil","check","people","phone","compass","tag"].map((icon, i) => ({
+const values = ["phone","pencil","check","people","compass","tag"].map((icon, i) => ({
   icon: icons[icon],
   title: t(`about.values.${i + 1}.title`),
   text: t(`about.values.${i + 1}.text`),

@@ -2,77 +2,52 @@
 title: Trips
 en:
   - title: Trips with friends
-    text: Enjoy hassle-free travel with friends, tailored to suit every preference
-      and budget. We handle the details, so you can focus on fun and relaxation.
+    text: Different dates, tastes and budgets in one group. We collect what
+      everyone wants, build one route around it and take on all the
+      logistics, so your time together stays free.
     image: ../../assets/images/group.jpg
-    date: 2023-12-03T08:51:23.988Z
-  - title: Family trips
-    text: Create lifelong memories on family holidays crafted to engage every age.
-      Our personal experiences ensure your trip is filled with joy, not
-      challenges.
+  - title: Vietnam family tours
+    text: Vietnam with children, from toddlers to teenagers. Shorter transfers,
+      family-friendly hotels we know, restaurants where the kids will find
+      something familiar, and days that work for every age.
     image: ../../assets/images/family.jpg
-    date: 2023-12-03T08:51:24.036Z
   - title: Solo travel
-    text: Embark on a solo journey at your pace, filled with authentic encounters
-      and hidden gems across Vietnam, Cambodia, and Laos.
+    text: Your pace, with someone to call. We plan a route for one, add local
+      guides where they make a difference, and stay in touch on WhatsApp the
+      whole way.
     image: ../../assets/images/solo.jpg
-    date: 2023-12-03T08:51:24.070Z
-  - title: Honeymoon trips
-    text: Begin your shared journey amidst Southeast Asia's enchanting landscapes.
-      Our honeymoons blend romance with adventure for an unforgettable start
-      together.
+  - title: Vietnam honeymoon
+    text: Hotels with a view, private dinners, a night on Ha Long Bay or
+      beaches in the south. We handle every booking and every detail of the
+      trip.
     image: ../../assets/images/honeymoon.jpg
-    date: 2023-12-03T08:51:24.108Z
   - title: Incentive trips
-    text: Reward your team with a trip that mixes business with pleasure. Strengthen
-      bonds and ignite inspiration against the backdrop of Southeast Asia's
-      marvels.
+    text: A reward trip for your team, with the programme, transport and
+      bookings for the whole group and one contact person on our side.
     image: ../../assets/images/incentive.jpg
-    date: 2023-12-03T08:51:24.146Z
 pl:
   - title: Wycieczki z przyjaciółmi
-    text: Wakacje z przyjaciółmi to gwarancja doskonałej zabawy. Niekiedy problemem
-      może być pogodzenie terminów, różnych preferencji i budżetów
-      poszczególnych uczestników. Planowanie takiej wycieczki ze znajomymi może
-      się zamienić w kolejny projekt do realizacji, a przecież nie o to chodzi w
-      wypoczynku. Z chęcią przejmiemy wszystkie żmudne etapy planowania i
-      realizacji wycieczki tak aby Ty i Twoi przyjaciele skupili się tylko na
-      relaksie.
+    text: Różne terminy, gusta i budżety w jednej grupie. Zbieramy oczekiwania
+      wszystkich, układamy jedną trasę i bierzemy na siebie całą logistykę,
+      a Wy macie czas dla siebie.
     image: ../../assets/images/group.jpg
-    date: 2023-12-03T08:51:24.184Z
-  - title: Wycieczki rodzinne
-    text: Spędzanie wczasów z najbliższymi to jest doskonała okoliczność na
-      pogłebienie więzi rodzinnych, wyrwanie się od rutyny i stworzenie
-      wspomnień na resztę życia. Dostosowanie programu wycieczki do wszystkich
-      uczestników, może stanowić jednak wyzwanie. Doskonale rozumiemy te
-      wyzwania, bo sami mieszkamy i podróżujemy z naszymi rodzinami po regionie.
-      Korzystając z naszych doświadczeń będziecie pewni że Wasza wycieczka
-      będzie pełna tylko przyjemnych niespodzianek.
+  - title: Wycieczki rodzinne do Wietnamu
+    text: Wietnam z dziećmi, od malucha po nastolatki. Krótsze przejazdy,
+      sprawdzone rodzinne hotele, restauracje, w których dzieci zjedzą coś
+      znajomego, i dni ułożone tak, żeby każdy coś z nich miał.
     image: ../../assets/images/family.jpg
-    date: 2023-12-03T08:51:24.232Z
   - title: Podróże solo
-    text: Chcesz zagłębić się w nieodkryte zakątki Wietnamu, Kambodży czy Laosu we
-      własnym rytmie? Nasze wycieczki dla podróżujących solo skupiają się na
-      dostarczaniu autentycznych doświadczeń. Przygotowaliśmy dla Ciebie trasy,
-      które pozwolą Ci nie tylko odkryć piękno regionu, ale także spotkać
-      inspirujących ludzi i nawiązać z nimi trwałe więzi podczas Twojego
-      wyjazdu.
+    text: Własne tempo i ktoś pod telefonem. Układamy trasę dla jednej osoby,
+      dodajemy lokalnych przewodników tam, gdzie to ma sens, i jesteśmy w
+      kontakcie na WhatsAppie przez cały wyjazd.
     image: ../../assets/images/solo.jpg
-    date: 2023-12-03T08:51:24.285Z
-  - title: Podróże poślubne
-    text: Rozpocznijcie wspólną przygodę życia w egzotycznych krajobrazach Azji
-      Południowo-Wschodniej. Nasze propozycje podróży poślubnych składają się z
-      intymnych momentów, oszałamiających widoków oraz szczególnych doświadczeń.
-      Odkrywając razem te unikalne miejsca, wzbogacicie Waszą więź i zbierzecie
-      bezcenne wspomnienia na dalsze lata.
+  - title: Podróż poślubna do Wietnamu
+    text: Hotele z widokiem, prywatne kolacje, noc na Zatoce Ha Long albo plaże
+      na południu. Wszystkie rezerwacje i szczegóły bierzemy na siebie.
     image: ../../assets/images/honeymoon.jpg
-    date: 2023-12-03T08:51:24.326Z
   - title: Wyjazdy firmowe
-    text: Chcesz podziękować swojemu zespołowi w wyjątkowy sposób lub szukasz
-      inspiracji do kolejnych wyzwań? Oferujemy wyjazdy firmowe, które łączą w
-      sobie profesjonalne podejście z niezapomnianymi chwilami. Dzięki nam Twoja
-      ekipa będzie miała okazję do zacieśnienia więzi, wymiany doświadczeń i
-      zaczerpnięcia świeżej energii w niesamowitych miejscach.
+    text: Wyjazd motywacyjny dla zespołu z programem, transportem i
+      rezerwacjami dla całej grupy oraz jedną osobą kontaktową po naszej
+      stronie.
     image: ../../assets/images/incentive.jpg
-    date: 2023-12-03T08:51:24.357Z
 ---

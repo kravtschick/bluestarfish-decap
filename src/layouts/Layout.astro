@@ -71,6 +71,12 @@ const organization = {
     addressLocality: "Ho Chi Minh City",
     addressCountry: "VN",
   },
+  description:
+    lang === "pl"
+      ? "Butikowe biuro podróży z Ho Chi Minh. Wycieczki do Wietnamu, Kambodży i Laosu układane od zera, z opieką na WhatsAppie przez cały wyjazd."
+      : "A boutique travel agency in Ho Chi Minh City. Tailor-made Vietnam, Cambodia and Laos tours designed from scratch, with WhatsApp support for the whole trip.",
+  slogan: lang === "pl" ? "Podróże zaprojektowane od zera" : "Tours designed from scratch",
+  knowsAbout: ["Vietnam", "Cambodia", "Laos", "Tailor-made travel", "Private tours"],
   areaServed: ["VN", "KH", "LA"],
   availableLanguage: ["en", "pl"],
   ...(settings.info.google_business ? { hasMap: settings.info.google_business } : {}),

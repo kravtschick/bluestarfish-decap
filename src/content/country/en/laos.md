@@ -1,14 +1,26 @@
 ---
 seo:
-  seoTitle: "Laos Private Tours & Tailor-Made Trips"
-  seoDesc: "Laos, in the heart of Southeast Asia, is a country of temples, mountains and quiet towns on the Mekong. Plan a tailor-made trip."
+  seoTitle: Laos Tours, Private and Tailor-Made
+  seoDesc: Laos tours as a standalone trip or part of a Vietnam and Cambodia route. Luang Prabang and the Mekong in a private itinerary designed from scratch.
 title: Laos
 sortOrder: 3
 cover: ../../../assets/images/laos-hero.jpg
 image: ../../../assets/images/dest-laos.jpg
-intro: Laos, located in an exposed area in the heart of Southeast Asia, is a
-  country that delights with its extraordinary charm and spirit.
+intro: Luang Prabang, the Mekong and mountain villages, as a trip of its own or part of a longer route.
+h1: Laos tours, private and tailor-made
+updated: 2026-11-16
 ---
+
+## Laos on its own or as part of a longer route
+
+We add Laos to a Vietnam or Cambodia route, or plan it as a separate, slower trip. Luang Prabang, the Mekong and mountain villages go into a programme set to your pace.
+
+- A day-by-day route with flights and transfers between countries
+- Hotels and transport chosen to fit your pace
+- WhatsApp contact with us for the whole trip
+
+&nbsp;
+
 Laos remains one of the region's best-kept secrets, offering a tapestry of undiscovered treasures that truly embody the spirit of Southeast Asia. From temples nestled in mountains and forests to serene towns along the Mekong River, Laos's authentic culture offers an escape into a world less touched by modern haste.
 
 &nbsp;

@@ -1,10 +1,10 @@
 ---
 seo:
   seoTitle: "Kontakt: zaplanuj wyjazd do Azji"
-  seoDesc: "Odpowiedz na kilka pytań, a w ciągu 24 godzin dostaniesz pierwszą propozycję wyjazdu do Wietnamu, Kambodży lub Laosu. Bez zobowiązań. WhatsApp, e-mail, telefon."
+  seoDesc: "Napiszcie do nas na WhatsAppie lub mailem. W ciągu 24 godzin dostaniecie pierwszą propozycję wyjazdu do Wietnamu, Kambodży lub Laosu. Bez zobowiązań."
 hero:
   title: Kontakt
-  subtitle: Kilka pytań, pięć minut. Pierwsza propozycja trasy w ciągu 24 godzin.
+  subtitle: Napiszcie jedno zdanie na WhatsAppie albo mailem. Pierwszą propozycję trasy dostaniecie w ciągu 24 godzin.
   image: ../../../assets/images/contact-hero.jpg
 countriesWidget: false
 skillsWidget: false

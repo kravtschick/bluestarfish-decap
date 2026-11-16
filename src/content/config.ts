@@ -53,6 +53,10 @@ const countryCollection = defineCollection({
         message: "Cover image must be at least 500 pixels wide!",
       }),
       intro: z.string(),
+      // Keyword-led page heading; falls back to title.
+      h1: z.string().optional(),
+      // Last editorial review, shown in the byline under the content.
+      updated: z.date().optional(),
     }),
 });
 

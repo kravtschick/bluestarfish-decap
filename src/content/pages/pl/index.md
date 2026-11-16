@@ -1,45 +1,21 @@
 ---
-skills:
-  - title: Wycieczki dopasowane do potrzeb
-    text:
-      Nasza butikowa firma stawia na indywidualne podejście. Wysłuchamy Twoich
-      marzeń i potrzeb, proponując wycieczkę idealnie dostosowaną do Ciebie.
-      Jesteśmy otwarci na sugestie i gotowi dostosować się tak, aby spełnić
-      Twoje oczekiwania.
-  - title: Wyjątkowe przeżycia
-    text: Nie ograniczamy się do standardów. Dążymy do tego, aby każda z naszych
-      wycieczek była unikalna, a Twoje doświadczenia autentyczne i
-      niezapomniane. Poznawaj lokalne społeczności, odkrywaj mniej znane zakątki
-      i przeżywaj chwile, które wyróżniają się na tle innych ofert rynkowych.
-  - title: Przystępna cena
-    text:
-      Jako butikowa agencja nie mamy wysokich kosztów stałych, dlatego możemy
-      dostosować się do Twojego budżetu, oferując najlepszą jakość w atrakcyjnej
-      cenie. Zapytaj nas o propozycję - to nic nie kosztuje!
-  - title: Zrównoważona turystyka
-    text:
-      Dbamy o odpowiedzialny turystykę. Współpracując z lokalnymi dostawcami i
-      społecznościami, promujemy rozwój regionu, nie wspierając przy tym
-      wielkich korporacji turystycznych. Wybierając nas, inwestujesz w
-      autentyczne doświadczenia i pomagasz lokalnym społecznościom prosperować.
 seo:
-  seoTitle: "Wietnam, Kambodża, Laos: wycieczki na miarę"
-  seoDesc: Zorganizujemy dla Ciebie wakacje w Wietnamie, Kambodży i Laosie. Tak
-    jak lubisz. Na Twoich warunkach.
+  seoTitle: "Podróże na miarę: Wietnam, Kambodża i Laos"
+  seoDesc: "Butikowe biuro podróży z Ho Chi Minh. Wycieczki do Wietnamu, Kambodży i Laosu układane od zera i prowadzone na WhatsAppie do powrotu. 5,0 w Google."
 hero:
-  title: Tworzymy Twoje Niezapomniane Podróże
-  subtitle: Zorganizujemy dla Ciebie wakacje w Wietnamie, Kambodży i Laosie. Tak
-    jak lubisz. Na Twoich warunkach.
+  title: "Wietnam, Kambodża i Laos. Podróże zaprojektowane od zera."
+  subtitle: "Butikowe biuro podróży z Ho Chi Minh. Układamy trasę pod Was, dopinamy każdy szczegół i jesteśmy z Wami na WhatsAppie aż do powrotu."
   image: ../../../assets/images/home-hero.jpg
 intro: >
-  Jesteśmy pasjonatami podróży i pragniemy podzielić się z Tobą naszą miłością
-  do Wietnamu, Kambodży i Laosu.
+  Blue Starfish Travel Boutique to butikowe biuro podróży z siedzibą w Ho Chi
+  Minh. Mieszkamy w Wietnamie i od 2023 roku działamy tu jako licencjonowany
+  organizator turystyki przyjazdowej.
 
 
-  Nasza butikowa agencja podróży oferuje wycieczki, które są w pełni dostosowane do Twoich potrzeb, przekraczając standardy tego co jest dostępne w masowych biurach podróży.
+  Każdą wycieczkę do Wietnamu, Kambodży i Laosu układamy od zera, bez gotowych pakietów: pod Wasze tempo, zainteresowania i budżet.
 
 
-  Razem z nami wkroczysz w świat fascynujących zakątków Azji Południowo-Wschodniej, gdzie doświadczysz prawdziwej, lokalnej kultury i przeżyjesz niezapomniane przygody.
+  Hotele, restauracje i przewodników, których polecamy, znamy osobiście. W czasie wyjazdu jesteśmy na WhatsAppie i załatwiamy sprawy na bieżąco.
 countriesWidget: true
 skillsWidget: true
 tripsWidget: false
@@ -48,8 +24,8 @@ contactButtonWidget: true
 reviewsWidget: true
 ---
 
-## Dlaczego my?
+## Dlaczego butikowo?
 
-Nie oferujemy szablonowych podróży. Tworzymy wycieczki skrojone dokładnie pod Ciebie, dostosowane do Twoich zainteresowań i preferencji. U nas zyskasz pełną elastyczność - podróżujesz w swoim tempie, a my dopasowujemy program do Twoich potrzeb, a nie odwrotnie.
+Prowadzimy mniej wyjazdów niż duże biura i każdy znamy od pierwszej wiadomości do powrotu. Od 2023 roku przygotowaliśmy podróże dla ponad 30 grup, a wszystkie 32 opinie w Google mają pięć gwiazdek.
 
-Co więcej, gwarantujemy atrakcyjne ceny. Jako butikowa agencja nie obciążamy się zbędnymi kosztami, co przekłada się na konkurencyjne oferty dla Ciebie. Sprawdź nas! Zapytanie nic Cię nie kosztuje.
+Klienci najczęściej piszą o trzech rzeczach: dopracowanych szczegółach, trasie ułożonej dokładnie pod nich i stałym kontakcie w trakcie podróży.

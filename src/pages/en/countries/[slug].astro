@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
 import Hero from "../../../components/Hero.astro";
 import Wrapper from "../../../components/Wrapper.astro";
+import { useTranslations } from "../../../i18n/utils";
+import { pagePath } from "../../../i18n/routes";
 import TripPlannerForm from "../../../components/TripPlannerForm.astro";
 
 export async function getStaticPaths() {
@@ -22,6 +24,10 @@ export async function getStaticPaths() {
 }
 const country = Astro.props;
 const { Content } = await country.render();
+const t = useTranslations("en") as (k: string) => string;
+const updated = country.data.updated
+  ? country.data.updated.toLocaleDateString("en-GB", { year: "numeric", month: "long" })
+  : null;
 ---
 
 <Layout
@@ -35,7 +41,7 @@ const { Content } = await country.render();
       image={country.data.cover}
       height="h-[300px] md:h-[550px]"
       bottom="bottom-1/2 translate-y-1/2"
-      title={country.data.title}
+      title={country.data.h1 ?? country.data.title}
       chat={false}
     />
     <Wrapper>
@@ -43,6 +49,11 @@ const { Content } = await country.render();
         country.body && (
           <div class="mt-24 lg:mt-32 prose-lg prose-headings:font-semibold mx-auto w-full md:max-w-2xl lg:max-w-3xl xl:max-w-5xl">
             <Content />
+            <p class="not-prose mt-12 pt-6 border-t border-gray-200 text-sm text-gray-600">
+              {t("country.byline")}
+              {updated && <> {t("country.updated").replace("{date}", updated)}</>}{" "}
+              <a href={pagePath("en", "about")} class="underline">{t("country.bylineLink")}</a>
+            </p>
           </div>
         )
       }

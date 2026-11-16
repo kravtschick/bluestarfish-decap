@@ -1,45 +1,97 @@
 ---
-import { getEntry } from "astro:content";
+// Home page proof block: three real Google reviews picked to back the
+// USPs (tailor-made and boutique, always reachable, no worry), shown in
+// the reviewer's own language where possible, plus links to all reviews.
 import { Image } from "astro:assets";
-import { getLangFromUrl } from "../i18n/utils";
-const lang = getLangFromUrl(Astro.url);
-const allReviews: any = await getEntry("widgets", "reviews");
+import data from "../data/reviews.json";
+import settings from "../data/settings.json";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { pagePath } from "../i18n/routes";
+
+type Lang = "pl" | "en";
+const lang = getLangFromUrl(Astro.url) as Lang;
+const t = useTranslations(lang) as (k: string) => string;
+
+// Picked by date, reviewer and original language; ids in the export are not unique.
+const picks: Record<Lang, [string, string][]> = {
+  pl: [["2026-05-19", "Marta"], ["2025-07-21", "Michal"], ["2025-06-05", "Maciej"]],
+  en: [["2025-09-06", ""], ["2026-03-27", ""], ["2025-04-23", "Daniel"]],
+};
+const MAX_WORDS = 70;
+
+const photoModules = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/images/reviews/*.jpg",
+  { eager: true }
+);
+const photoByPath = (p: string) => photoModules[p.replace("../../assets", "../assets")]?.default;
+
+const reviews = picks[lang]
+  .map(([date, who]) =>
+    data.reviews.find(
+      (r: any) => r.date === date && r.lang === lang && String(r.name.pl).startsWith(who)
+    )
+  )
+  .filter(Boolean)
+  .map((r: any) => {
+    const words = String(r.text[lang]).replace(/\s+/g, " ").trim().split(" ");
+    const cut = words.length > MAX_WORDS;
+    return {
+      name: r.name[lang] ?? r.name.pl,
+      trip: r.trip[lang],
+      date: new Date(r.date).toLocaleDateString(lang === "pl" ? "pl-PL" : "en-GB", {
+        year: "numeric",
+        month: "long",
+      }),
+      text: cut ? words.slice(0, MAX_WORDS).join(" ").replace(/[,;:.]?$/, "") + "…" : words.join(" "),
+      cut,
+      url: r.reviewUrl,
+      photo: r.photos.length ? photoByPath(r.photos[0]) : undefined,
+    };
+  });
 ---
 
-<div class="mt-24 lg:mt-32 flex flex-col gap-8">
-  <h2 class="text-3xl font-semibold text-center">
-    {lang === "en" ? "What do our customers say?" : "Co mówią nasi klienci?"}
-  </h2>
-  {
-    allReviews.data[lang as keyof typeof allReviews].map(
-      (review: any, index: number) => (
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-16 items-center bg-gray-200 p-8 lg:p-12 shadow-lg rounded-xl">
-          <div
-            class={`md:col-span-1 ${
-              (index === 1 && "md:order-2") || (index === 3 && "md:order-2")
-            }`}
-          >
-            <Image
-              src={review.image}
-              alt={review.author ?? ""}
-              class="rounded-full aspect-square object-cover"
-              width={250}
-            />
+<section class="mt-24 lg:mt-32" aria-labelledby="home-reviews">
+  <div class="text-center">
+    <p class="text-rose-600 text-2xl tracking-widest" aria-hidden="true">★★★★★</p>
+    <h2 id="home-reviews" class="mt-2 text-3xl font-semibold">{t("home.reviews.heading")}</h2>
+    <p class="mt-3 text-base text-gray-700">
+      {t("reviews.summary").replace("{n}", String(data.reviewCount))}
+    </p>
+  </div>
+  <ul class="mt-10 grid gap-6 lg:grid-cols-3">
+    {
+      reviews.map((r) => (
+        <li class="flex flex-col bg-gray-100 rounded-xl p-6">
+          <p class="text-rose-600 tracking-widest" aria-label={t("home.reviews.stars")}>★★★★★</p>
+          <blockquote class="mt-3 grow">
+            <p class="text-base leading-relaxed">„{r.text}"</p>
+          </blockquote>
+          <div class="mt-5 flex items-center gap-3">
+            {r.photo ? (
+              <Image src={r.photo} alt="" width={96} height={96} class="w-12 h-12 rounded-full object-cover" />
+            ) : (
+              <span class="w-12 h-12 rounded-full bg-rose-600/10 text-rose-600 font-semibold inline-flex items-center justify-center" aria-hidden="true">
+                {r.name.charAt(0)}
+              </span>
+            )}
+            <div class="text-sm">
+              <p class="font-semibold">{r.name}</p>
+              <p class="text-gray-600">{r.trip}, {r.date}</p>
+            </div>
           </div>
-          <div
-            class={`col-span-2 sm:col-span-3 md:col-span-3 lg:col-span-4 ${
-              (index === 1 && "md:order-1") || (index === 3 && "md:order-1")
-            }`}
-          >
-            <blockquote>
-              <p class="italic">"{review.text}"</p>
-              {review.author && (
-                <div class="text-base mt-4">{review.author}</div>
-              )}
-            </blockquote>
-          </div>
-        </div>
-      )
-    )
-  }
-</div>
+          <a href={r.url} target="_blank" rel="noopener" class="mt-4 text-sm underline">
+            {r.cut ? t("home.reviews.readFull") : t("reviews.onGoogle")}
+            <span class="sr-only"> {t("footer.newTab")}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <div class="mt-8 text-center">
+    <a
+      href={pagePath(lang, "reviews")}
+      class="inline-block border border-gray-950 px-5 py-2.5 rounded-lg hover:bg-gray-100"
+      >{t("home.reviews.all").replace("{n}", String(data.reviewCount))}</a
+    >
+  </div>
+</section>

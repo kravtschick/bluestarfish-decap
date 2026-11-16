@@ -1,55 +1,35 @@
 ---
 title: Skills
 en:
-  - title: Trips tailored to your needs
-    text: Our boutique travel agency excels in creating itineraries that reflect
-      your individual style and preferences. From the moment you reach out, we
-      listen carefully to craft a journey that aligns perfectly with what you
-      want from your travels – whether that's adventure, relaxation, culture, or
-      all of the above.
-    date: 2023-12-03T08:48:44.382Z
-  - title: Unique experiences
-    text: Dive into the heart of Southeast Asia with experiences that are as
-      authentic as they are memorable. We take you beyond the tourist trails to
-      connect with the local culture, meet the people, savor the cuisine, and
-      uncover the hidden gems that make Vietnam, Cambodia, and Laos truly
-      special.
-    date: 2023-12-03T08:48:44.448Z
-  - title: Competitive Pricing
-    text: Enjoy exceptional journeys without an exorbitant price tag. Our lean and
-      focused approach means you benefit from a boutique experience at a price
-      that makes sense. We're committed to providing outstanding value and
-      transparent pricing, with no hidden costs.
-    date: 2023-12-03T08:48:44.493Z
-  - title: Sustainable tourism
-    text: Travel with us and support sustainable tourism. We believe in giving back
-      to the places we visit, which is why we partner with local communities and
-      businesses. This not only enriches your travel experience but also helps
-      to sustain and develop these communities in a responsible and eco-friendly
-      way.
-    date: 2023-12-03T08:48:44.540Z
+  - title: Designed from scratch
+    text: We start with a conversation about how much time you have, who is
+      travelling and what you enjoy. Then we build the route day by day and
+      book every transfer, ticket and table.
+  - title: With you on WhatsApp the whole trip
+    text: One contact from your first message to your flight home. A change of
+      plan, an extra booking or something urgent gets a fast reply and is
+      sorted out on the ground.
+  - title: Places checked in person
+    text: We live in Vietnam. We know the hotels, restaurants and guides we
+      recommend from our own visits, and many of them are hard to find on
+      your own.
+  - title: You just show up
+    text: The driver is waiting, the room is ready, the table is booked. That
+      goes for family trips too, from toddlers to teenagers.
 pl:
-  - title: Wycieczki dopasowane do potrzeb
-    text: Nasza butikowa firma stawia na indywidualne podejście. Wysłuchamy Twoich
-      marzeń i potrzeb, proponując wycieczkę idealnie dostosowaną do Ciebie.
-      Jesteśmy otwarci na sugestie i gotowi dostosować się tak, aby spełnić
-      Twoje oczekiwania.
-    date: 2023-12-03T08:48:44.577Z
-  - title: Wyjątkowe przeżycia
-    text: Nie ograniczamy się do standardów. Dążymy do tego, aby każda z naszych
-      wycieczek była unikalna, a Twoje doświadczenia autentyczne i
-      niezapomniane. Poznawaj lokalne społeczności, odkrywaj mniej znane zakątki
-      i przeżywaj chwile, które wyróżniają się na tle innych ofert rynkowych.
-    date: 2023-12-03T08:48:44.609Z
-  - title: Przystępna cena
-    text: Jako butikowa agencja nie mamy wysokich kosztów stałych, dlatego możemy
-      dostosować się do Twojego budżetu, oferując najlepszą jakość w atrakcyjnej
-      cenie. Zapytaj nas o propozycję - to nic nie kosztuje!
-    date: 2023-12-03T08:48:44.642Z
-  - title: Zrównoważona turystyka
-    text: Dbamy o odpowiedzialny turystykę. Współpracując z lokalnymi dostawcami i
-      społecznościami, promujemy rozwój regionu, nie wspierając przy tym
-      wielkich korporacji turystycznych. Wybierając nas, inwestujesz w
-      autentyczne doświadczenia i pomagasz lokalnym społecznościom prosperować.
-    date: 2023-12-03T08:48:44.674Z
+  - title: Zaprojektowane od zera
+    text: Zaczynamy od rozmowy o tym, ile macie czasu, kto jedzie i co lubicie.
+      Potem układamy trasę dzień po dniu i rezerwujemy każdy transfer, bilet
+      i stolik.
+  - title: Z Wami na WhatsAppie przez cały wyjazd
+    text: Jeden kontakt od pierwszej wiadomości do lotu powrotnego. Zmiana
+      planu, dodatkowa rezerwacja czy nagła sprawa dostaje szybką odpowiedź
+      i jest załatwiana na miejscu.
+  - title: Miejsca sprawdzone osobiście
+    text: Mieszkamy w Wietnamie. Hotele, restauracje i przewodników, których
+      polecamy, znamy z własnych wizyt, a wiele z tych miejsc trudno znaleźć
+      samemu.
+  - title: Wy tylko jesteście
+    text: Kierowca czeka, pokój jest gotowy, stolik zarezerwowany. Także przy
+      wyjazdach rodzinnych, z dziećmi od malucha po nastolatki.
 ---

@@ -1,7 +1,7 @@
 ---
 seo:
-  seoTitle: "Rodzaje wycieczek: rodzinne, poślubne, solo"
-  seoDesc: "Wyjazdy z przyjaciółmi, rodzinne, solo, podróże poślubne i incentive w Wietnamie, Kambodży i Laosie. Program dopasujemy do Ciebie."
+  seoTitle: "Wycieczki rodzinne, poślubne i grupowe"
+  seoDesc: "Wycieczki rodzinne do Wietnamu, podróże poślubne, solo, z przyjaciółmi i firmowe. Każdą trasę układamy od zera, z naszą opieką na WhatsAppie."
 hero:
   title: Rodzaje wycieczek
   image: ../../../assets/images/trips-hero.jpg
