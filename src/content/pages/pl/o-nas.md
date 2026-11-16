@@ -3,7 +3,7 @@ seo:
   seoTitle: "O nas: butikowe biuro podróży z Ho Chi Minh"
   seoDesc: "Butikowe biuro podróży z Ho Chi Minh, działające w Wietnamie od 2023 roku. Układamy wycieczki po Wietnamie, Kambodży i Laosie. Kim jesteśmy i jak pracujemy."
 hero:
-  title: Azja, jaką znają tylko ci, którzy tu mieszkają
+  title: Azja Południowo-Wschodnia od środka
   subtitle: Prywatne podróże po Wietnamie, Kambodży i Laosie, tworzone w Ho Chi Minh.
   image: ../../../assets/images/about-team-hero.jpg
   focus: 50% 45%

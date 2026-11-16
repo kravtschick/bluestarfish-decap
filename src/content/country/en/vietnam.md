@@ -6,14 +6,14 @@ title: Vietnam
 sortOrder: 1
 cover: ../../../assets/images/vietnam-hero.jpg
 image: ../../../assets/images/dest-vietnam.jpg
-intro: Private Vietnam tours from the north to the Mekong Delta, designed from scratch by people who live here.
+intro: Private Vietnam tours from the north to the Mekong Delta, designed from scratch by an agency based in Ho Chi Minh City.
 h1: Private, tailor-made Vietnam tours
 updated: 2026-11-16
 ---
 
 ## How we plan your Vietnam tour
 
-We design every Vietnam tour from scratch: a private route from north to south, or a shorter trip focused on one region. We live in Ho Chi Minh City, so we know the hotels, restaurants and guides on your route personally.
+We design every Vietnam tour from scratch: a private route from north to south, or a shorter trip focused on one region. We are based in Ho Chi Minh City, so we know the hotels, restaurants and guides on your route personally and sort things out on the spot during your trip.
 
 - A day-by-day route with transfers, tickets and bookings
 - A private driver and local English-speaking guides

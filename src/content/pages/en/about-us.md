@@ -3,7 +3,7 @@ seo:
   seoTitle: "About Us: Boutique Travel Agency in Vietnam"
   seoDesc: "A boutique travel agency in Ho Chi Minh City, operating in Vietnam since 2023 and designing trips across Vietnam, Cambodia and Laos. Who we are and how we work."
 hero:
-  title: Southeast Asia, as only residents know it
+  title: Southeast Asia, from the inside
   subtitle: Private journeys through Vietnam, Cambodia and Laos, created in Ho Chi Minh City.
   image: ../../../assets/images/about-team-hero.jpg
   focus: 50% 45%

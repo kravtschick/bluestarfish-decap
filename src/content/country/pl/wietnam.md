@@ -6,14 +6,14 @@ sortOrder: 1
 title: Wietnam
 cover: ../../../assets/images/vietnam-hero.jpg
 image: ../../../assets/images/dest-vietnam.jpg
-intro: Prywatne wycieczki objazdowe po Wietnamie, od północy po Deltę Mekongu, układane od zera przez ludzi, którzy tu mieszkają.
+intro: Prywatne wycieczki objazdowe po Wietnamie, od północy po Deltę Mekongu, układane od zera przez biuro z siedzibą w Ho Chi Minh.
 h1: Wycieczki do Wietnamu na miarę
 updated: 2026-11-16
 ---
 
 ## Jak układamy wycieczkę do Wietnamu
 
-Każdą wycieczkę do Wietnamu projektujemy od zera: prywatną trasę objazdową z północy na południe albo krótszy wyjazd do jednego regionu. Mieszkamy w Ho Chi Minh, więc hotele, restauracje i przewodników na trasie znamy osobiście.
+Każdą wycieczkę do Wietnamu projektujemy od zera: prywatną trasę objazdową z północy na południe albo krótszy wyjazd do jednego regionu. Nasza siedziba jest w Ho Chi Minh, więc hotele, restauracje i przewodników na trasie znamy osobiście, a sprawy w trakcie podróży załatwiamy na miejscu.
 
 - Trasa dzień po dniu, z transferami, biletami i rezerwacjami
 - Prywatny kierowca i lokalni przewodnicy mówiący po angielsku
