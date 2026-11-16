@@ -46,7 +46,7 @@ const { Content } = await country.render();
           </div>
         )
       }
-      <TripPlannerForm destination={country.slug.split("/").pop() === "wietnam" ? "vietnam" : country.slug.split("/").pop() === "kambodza" ? "cambodia" : country.slug.split("/").pop()} />
+      <TripPlannerForm destination={country.data.title} />
     </Wrapper>
   </main>
 </Layout>

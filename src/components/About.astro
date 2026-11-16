@@ -13,7 +13,7 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import { pagePath } from "../i18n/routes";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = useTranslations(lang) as (k: string) => string;
 
 const team = (await getCollection("team")).sort(
   (a, b) => a.data.sortOrder - b.data.sortOrder
@@ -24,12 +24,61 @@ const quotes = reviewsData.reviews
   .map((r) => ({ text: (r.text as Record<string, string>)[lang], author: (r.name as Record<string, string>)[lang] }));
 const reviewsPath = pagePath(lang, "reviews");
 
+const icons: Record<string, string> = {"pencil": "M16.86 3.49a2.1 2.1 0 0 1 2.97 2.97L8.5 17.79 4 19l1.21-4.5L16.86 3.49Z M14.5 5.85l2.97 2.97", "check": "M20 7 9.5 17.5 4 12 M12 3a9 9 0 1 0 9 9", "people": "M16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z M2 20a6 6 0 0 1 12 0 M12 20a6 6 0 0 1 10 0", "phone": "M8 3h8a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z M11 18h2", "compass": "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z M15.5 8.5 14 14l-5.5 1.5L10 10l5.5-1.5Z", "tag": "M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9-9-9Z M7.5 7.5h.01"};
+const values = ["pencil","check","people","phone","compass","tag"].map((icon, i) => ({
+  icon: icons[icon],
+  title: t(`about.values.${i + 1}.title`),
+  text: t(`about.values.${i + 1}.text`),
+}));
+
 const gallery = [
   { src: teamBoth, alt: { pl: "Andrzej i Adam na łodzi w Delcie Mekongu", en: "Andrzej and Adam on a boat in the Mekong Delta" } },
   { src: teamBike, alt: { pl: "Andrzej i Adam na rowerach przy ruinach kościoła", en: "Andrzej and Adam cycling past church ruins" } },
   { src: teamDinner, alt: { pl: "Kolacja z lokalnymi gospodarzami", en: "Dinner with local hosts" } },
 ];
 ---
+
+
+<section class="mt-16 lg:mt-24" aria-label="Facts">
+  <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+    <li class="bg-gray-100 rounded-xl p-5">
+      <p class="text-3xl font-semibold text-rose-600">{lang === "pl" ? "5,0" : "5.0"}</p>
+      <p class="text-sm text-gray-700 mt-1">{t("about.facts.rating").replace("{n}", String(reviewsData.reviewCount))}</p>
+    </li>
+    <li class="bg-gray-100 rounded-xl p-5">
+      <p class="text-3xl font-semibold text-rose-600">{settings.info.founded}</p>
+      <p class="text-sm text-gray-700 mt-1">{t("about.facts.since")}</p>
+    </li>
+    <li class="bg-gray-100 rounded-xl p-5">
+      <p class="text-3xl font-semibold text-rose-600">3</p>
+      <p class="text-sm text-gray-700 mt-1">{lang === "pl" ? "kraje: Wietnam, Kambodża, Laos" : "countries: Vietnam, Cambodia, Laos"}</p>
+    </li>
+    <li class="bg-gray-100 rounded-xl p-5">
+      <p class="text-3xl font-semibold text-rose-600">HCMC</p>
+      <p class="text-sm text-gray-700 mt-1">{t("about.facts.based")}</p>
+    </li>
+  </ul>
+</section>
+
+<section class="mt-24 lg:mt-32" aria-labelledby="values-heading">
+  <h2 id="values-heading" class="text-3xl font-semibold text-center">{t("about.values")}</h2>
+  <p class="mt-3 text-center text-base text-gray-700 max-w-2xl mx-auto">{t("about.values.lead")}</p>
+  <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      values.map((v) => (
+        <li class="flex gap-4 bg-white border border-gray-200 rounded-xl p-6">
+          <span class="shrink-0 w-11 h-11 rounded-full bg-rose-600/10 text-rose-600 inline-flex items-center justify-center" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-6 h-6 fill-none stroke-current stroke-[1.75]" stroke-linecap="round" stroke-linejoin="round"><path d={v.icon} /></svg>
+          </span>
+          <div>
+            <h3 class="font-semibold text-lg leading-snug">{v.title}</h3>
+            <p class="mt-1.5 text-base text-gray-700 leading-relaxed">{v.text}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</section>
 
 <section class="mt-24 lg:mt-32" aria-labelledby="team-heading">
   <h2 id="team-heading" class="text-3xl font-semibold text-center">

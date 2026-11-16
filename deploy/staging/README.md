@@ -54,8 +54,18 @@ text per language, photos, reviewUrl), copy new guest photos to
 ## Enquiry form (EmailJS template)
 
 `TripPlannerForm.astro` posts these variables to the EmailJS template
-`template_8sqboo9` on service `service_j0gcq1f`: `destinations` (repeated),
-`month`, `duration`, `party`, `budget`, `notes`, `name`, `email`, `phone`,
-`lang`, `source_page`. Update the template to show them and set Reply-To
-to `{{email}}`. The honeypot field is `contact_number`; add it to the
-template's block list in the EmailJS dashboard if spam appears.
+`template_8sqboo9` on service `service_j0gcq1f`: `email`, `message`, `name`
+(may be empty), `lang`, `source_page`. Set the template's Reply-To to
+`{{email}}`. The honeypot field is `contact_number`.
+
+## Analytics
+
+Production loads Google Tag Manager container `GTM-5NMNPS27` from `src/layouts/Layout.astro`. The container is injected after the first scroll, tap or key press, or 3.5 s after load, so it does not slow the first paint. Staging builds (`PUBLIC_SITE_ENV=staging`) ship no tag at all.
+
+Events pushed to `dataLayer` by the site:
+
+- `page_view` with `page_path` and `page_title` on every navigation (the site uses view transitions, so GTM's built-in page view fires only on the first load). In GTM create a Custom Event trigger for `page_view` and send it to GA4 as a page_view, and disable the GA4 configuration tag's automatic page view to avoid double counting on the first load.
+- `generate_lead` via `gtag("event", ...)` with `method` = `whatsapp`, `email`, `phone` or `form`.
+- `form_start` when a visitor focuses the first enquiry field.
+
+Inside GTM add the GA4 configuration tag with your Measurement ID, then a GA4 Event tag per custom event above (triggers: Custom Event `generate_lead`, `form_start`). Mark `generate_lead` as a key event in GA4.
