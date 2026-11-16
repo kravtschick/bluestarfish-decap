@@ -10,7 +10,8 @@
     "short_name": "Blue Starfish Travel Boutique",
     "tax_id": "0318118010",
     "founded": "2023",
-    "map_embed": "https://www.google.com/maps?q=place_id:ChIJ09nz8nQndTERNv4sipekvpA&output=embed"
+    "map_embed": "https://www.google.com/maps?q=place_id:ChIJ09nz8nQndTERNv4sipekvpA&output=embed",
+    "google_review_write": "https://search.google.com/local/writereview?placeid=ChIJ09nz8nQndTERNv4sipekvpA"
   },
   "en": {
     "form.reply": "Thank you for contacting us! We will respond to your message soon.",
@@ -43,7 +44,24 @@
     "about.rating": "rating on Google",
     "about.openMap": "Open in Google Maps",
     "about.taxId": "Tax ID",
-    "about.founded": "Founded"
+    "about.founded": "Founded",
+    "slug.reviews": "reviews",
+    "nav.reviews": "Reviews",
+    "reviews.title": "Guest reviews",
+    "reviews.subtitle": "Every review below comes from our Google Business Profile. We show them all, unedited.",
+    "reviews.summary": "5.0 out of 5 from {n} Google reviews",
+    "reviews.all": "All",
+    "reviews.polish": "In Polish",
+    "reviews.english": "In English",
+    "reviews.withPhotos": "With photos",
+    "reviews.translated": "Translated from Polish",
+    "reviews.original": "Show original",
+    "reviews.photosBy": "Photos by",
+    "reviews.gallery": "Photos from our guests",
+    "reviews.onGoogle": "Read on Google",
+    "reviews.write": "Travelled with us? Write a review",
+    "reviews.ownerReply": "Reply from Blue Starfish",
+    "reviews.count": "{n} reviews"
   },
   "pl": {
     "form.reply": "Dziękujemy za kontakt! Wkrótce odpowiemy na Twoją wiadomość.",
@@ -76,7 +94,24 @@
     "about.rating": "ocena w Google",
     "about.openMap": "Otwórz w Mapach Google",
     "about.taxId": "NIP (mã số thuế)",
-    "about.founded": "Rok założenia"
+    "about.founded": "Rok założenia",
+    "slug.reviews": "opinie",
+    "nav.reviews": "Opinie",
+    "reviews.title": "Opinie gości",
+    "reviews.subtitle": "Wszystkie opinie poniżej pochodzą z naszego profilu w Google. Pokazujemy je w całości, bez skrótów.",
+    "reviews.summary": "5,0 na 5 na podstawie {n} opinii w Google",
+    "reviews.all": "Wszystkie",
+    "reviews.polish": "Po polsku",
+    "reviews.english": "Po angielsku",
+    "reviews.withPhotos": "Ze zdjęciami",
+    "reviews.translated": "Przetłumaczone z angielskiego",
+    "reviews.original": "Pokaż oryginał",
+    "reviews.photosBy": "Zdjęcia",
+    "reviews.gallery": "Zdjęcia naszych gości",
+    "reviews.onGoogle": "Zobacz w Google",
+    "reviews.write": "Byliście z nami? Napiszcie opinię",
+    "reviews.ownerReply": "Odpowiedź Blue Starfish",
+    "reviews.count": "{n} opinii"
   },
   "social": {
     "facebook": "https://www.facebook.com/bluestarfishtb.en",

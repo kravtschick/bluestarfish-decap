@@ -13,7 +13,7 @@ const pathname = Astro.url.pathname;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 // The blog has no pages yet. Add "blog" back here once it does.
-const items: PageKey[] = ["about", "countries", "trips", "contact"];
+const items: PageKey[] = ["about", "countries", "trips", "reviews", "contact"];
 ---
 
 <ul class="xl:flex items-center gap-8 hidden">

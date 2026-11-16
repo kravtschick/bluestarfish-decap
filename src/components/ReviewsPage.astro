@@ -1,0 +1,192 @@
+---
+// Guest reviews imported from Google (src/data/reviews.json): summary,
+// filters, one card per review with the guest's photos, a photo wall and
+// links back to Google. Works without JavaScript; the filters enhance it.
+import { Image, getImage } from "astro:assets";
+import data from "../data/reviews.json";
+import settings from "../data/settings.json";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+type Lang = "pl" | "en";
+const lang = getLangFromUrl(Astro.url) as Lang;
+const t = useTranslations(lang);
+const other: Lang = lang === "pl" ? "en" : "pl";
+
+// Photos are imported from the assets folder so Astro resizes them.
+const photoModules = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/images/reviews/*.jpg",
+  { eager: true }
+);
+const photoByPath = (p: string) => photoModules[p.replace("../../assets", "../assets")]?.default;
+
+// Full-size versions the thumbnails link to.
+const fullSrc = new Map<ImageMetadata, string>();
+for (const m of Object.values(photoModules)) {
+  const full = await getImage({ src: m.default, width: 1600, format: "webp", quality: 75 });
+  fullSrc.set(m.default, full.src);
+}
+
+const reviews = data.reviews.map((r) => {
+  const text = (r.text as Record<string, string>)[lang] ?? Object.values(r.text)[0];
+  const original = (r.text as Record<string, string>)[r.lang];
+  return {
+    ...r,
+    text,
+    original: r.lang !== lang && original !== text ? original : null,
+    photos: r.photos.map(photoByPath).filter(Boolean) as ImageMetadata[],
+    tripLabel: (r.trip as Record<string, string>)[lang],
+  };
+});
+const withPhotos = reviews.filter((r) => r.photos.length).length;
+const counts = { all: reviews.length, pl: reviews.filter((r) => r.lang === "pl").length, en: reviews.filter((r) => r.lang === "en").length, photos: withPhotos };
+const gallery = reviews.flatMap((r) => r.photos.map((p) => ({ photo: p, name: r.name })));
+
+const fmtDate = (iso: string) =>
+  new Date(iso).toLocaleDateString(lang === "pl" ? "pl-PL" : "en-GB", { year: "numeric", month: "long" });
+const summary = t("reviews.summary").replace("{n}", String(data.reviewCount));
+const stars = "★★★★★";
+---
+
+<section class="mt-16 lg:mt-24 text-center" aria-labelledby="reviews-summary">
+  <p class="text-rose-600 text-3xl tracking-widest" aria-hidden="true">{stars}</p>
+  <h2 id="reviews-summary" class="mt-2 text-2xl md:text-3xl font-semibold">{summary}</h2>
+  <p class="mt-3 text-base text-gray-700 max-w-2xl mx-auto">{t("reviews.subtitle")}</p>
+  <div class="mt-6 flex flex-wrap justify-center gap-3">
+    <a
+      href={settings.info.google_business}
+      target="_blank"
+      rel="noopener"
+      class="inline-block border border-gray-950 px-4 py-2 rounded-lg hover:bg-gray-100"
+      >{t("reviews.onGoogle")}<span class="sr-only"> {t("footer.newTab")}</span></a
+    >
+    <a
+      href={settings.info.google_review_write}
+      target="_blank"
+      rel="noopener"
+      class="inline-block bg-rose-600 hover:bg-emerald-700 transition-colors px-4 py-2 rounded-lg text-white"
+      >{t("reviews.write")}<span class="sr-only"> {t("footer.newTab")}</span></a
+    >
+  </div>
+</section>
+
+<div class="mt-12 flex flex-wrap justify-center gap-2" role="group" aria-label="Filter" data-review-filters>
+  {
+    [
+      ["all", t("reviews.all"), counts.all],
+      ["pl", t("reviews.polish"), counts.pl],
+      ["en", t("reviews.english"), counts.en],
+      ["photos", t("reviews.withPhotos"), counts.photos],
+    ].map(([key, label, n], i) => (
+      <button
+        type="button"
+        data-filter={key}
+        aria-pressed={i === 0 ? "true" : "false"}
+        class="rounded-full border px-4 py-1.5 text-sm font-medium transition-colors aria-pressed:bg-gray-950 aria-pressed:text-white aria-pressed:border-gray-950 border-gray-300 hover:border-gray-950"
+      >
+        {label} <span class="opacity-60">{n}</span>
+      </button>
+    ))
+  }
+</div>
+
+<ul class="mt-10 grid gap-6 md:grid-cols-2" data-review-list>
+  {
+    reviews.map((r) => (
+      <li
+        class="flex flex-col gap-4 bg-gray-100 rounded-xl p-6 md:p-8"
+        data-lang={r.lang}
+        data-has-photos={r.photos.length ? "true" : "false"}
+      >
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <p class="font-semibold text-lg">{r.name}</p>
+            <p class="text-sm text-gray-700">
+              <time datetime={r.date}>{fmtDate(r.date)}</time> · {r.tripLabel}
+            </p>
+          </div>
+          <p class="text-rose-600 tracking-widest shrink-0" aria-label={`${r.stars}/5`}>{stars}</p>
+        </div>
+        <blockquote class="text-base leading-relaxed whitespace-pre-line">{r.text}</blockquote>
+        {r.original && (
+          <details class="text-sm text-gray-700">
+            <summary class="cursor-pointer">{t("reviews.translated")}. {t("reviews.original")}</summary>
+            <p class="mt-2 whitespace-pre-line">{r.original}</p>
+          </details>
+        )}
+        {r.photos.length > 0 && (
+          <ul class="grid grid-cols-3 gap-2">
+            {r.photos.slice(0, 6).map((p, i) => (
+              <li>
+                <a href={fullSrc.get(p)} target="_blank" rel="noopener" class="block aspect-square overflow-hidden rounded-lg">
+                  <Image
+                    src={p}
+                    alt={`${t("reviews.photosBy")} ${r.name}, ${i + 1}`}
+                    width={400}
+                    height={400}
+                    widths={[200, 400]}
+                    sizes="(min-width: 768px) 200px, 33vw"
+                    quality={70}
+                    class="w-full h-full object-cover hover:scale-105 transition-transform"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+        {r.reviewUrl && (
+          <a href={r.reviewUrl} target="_blank" rel="noopener" class="text-sm underline underline-offset-4 self-start hover:text-rose-600">
+            {t("reviews.onGoogle")}<span class="sr-only"> {t("footer.newTab")}</span>
+          </a>
+        )}
+      </li>
+    ))
+  }
+</ul>
+
+<section class="mt-24 lg:mt-32" aria-labelledby="gallery-heading">
+  <h2 id="gallery-heading" class="text-3xl font-semibold text-center">{t("reviews.gallery")}</h2>
+  <ul class="mt-10 columns-2 sm:columns-3 lg:columns-4 gap-3 [&>li]:mb-3 [&>li]:break-inside-avoid">
+    {
+      gallery.map(({ photo, name }, i) => (
+        <li>
+          <a href={fullSrc.get(photo)} target="_blank" rel="noopener" class="block overflow-hidden rounded-lg">
+            <Image
+              src={photo}
+              alt={`${t("reviews.photosBy")} ${name}, ${i + 1}`}
+              width={600}
+              widths={[300, 600]}
+              sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+              quality={70}
+              class="w-full h-auto hover:scale-105 transition-transform"
+            />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<script>
+  function init() {
+    const group = document.querySelector<HTMLElement>("[data-review-filters]");
+    const list = document.querySelector<HTMLElement>("[data-review-list]");
+    if (!group || !list || group.dataset.bound) return;
+    group.dataset.bound = "true";
+    const buttons = [...group.querySelectorAll<HTMLButtonElement>("button[data-filter]")];
+    group.addEventListener("click", (event) => {
+      const button = (event.target as HTMLElement).closest<HTMLButtonElement>("button[data-filter]");
+      if (!button) return;
+      const key = button.dataset.filter;
+      buttons.forEach((b) => b.setAttribute("aria-pressed", String(b === button)));
+      list.querySelectorAll<HTMLElement>("li[data-lang]").forEach((item) => {
+        const show =
+          key === "all" ||
+          (key === "photos" && item.dataset.hasPhotos === "true") ||
+          item.dataset.lang === key;
+        item.hidden = !show;
+      });
+    });
+  }
+  init();
+  document.addEventListener("astro:page-load", init);
+</script>

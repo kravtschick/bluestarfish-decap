@@ -5,6 +5,7 @@ import { getImage } from "astro:assets";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import settings from "../data/settings.json";
+import reviewsData from "../data/reviews.json";
 import defaultShareImage from "../assets/images/home-hero.jpg";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/500.css";
@@ -86,6 +87,7 @@ const organization = {
 };
 
 const isHome = segmentsOf(pathname).length === 1;
+const isReviews = pageKeyOf(pathname) === "reviews";
 const pageKey = pageKeyOf(pathname);
 const isCountry = pageKey === "countries" && segmentsOf(pathname).length === 3;
 
@@ -100,6 +102,26 @@ if (!isHome && !noindex && pageKey) {
 
 const graph: Record<string, unknown>[] = [];
 if (isHome) graph.push(organization);
+if (isReviews) {
+  // Review markup only on the page that shows the reviews themselves.
+  graph.push({
+    ...organization,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: reviewsData.ratingValue,
+      reviewCount: reviewsData.reviewCount,
+      bestRating: 5,
+    },
+    review: reviewsData.reviews.slice(0, 10).map((r) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: r.name },
+      datePublished: r.date,
+      reviewRating: { "@type": "Rating", ratingValue: r.stars, bestRating: 5 },
+      reviewBody: (r.text as Record<string, string>)[r.lang],
+      inLanguage: r.lang,
+    })),
+  });
+}
 if (crumbs.length) {
   graph.push({
     "@type": "BreadcrumbList",

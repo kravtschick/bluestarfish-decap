@@ -1,7 +1,8 @@
 ---
 // Sections of the About page below the hero and intro: story and values
 // (from the page body), founders, Google reviews, map and social links.
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import reviewsData from "../data/reviews.json";
 import { Image } from "astro:assets";
 import settings from "../data/settings.json";
 import SocialLinks from "./SocialLinks.astro";
@@ -14,8 +15,11 @@ const t = useTranslations(lang);
 const team = (await getCollection("team")).sort(
   (a, b) => a.data.sortOrder - b.data.sortOrder
 );
-const reviews: any = await getEntry("widgets", "reviews");
-const quotes: { text: string; author?: string }[] = reviews.data[lang].slice(0, 2);
+const quotes = reviewsData.reviews
+  .filter((r) => r.lang === lang && (r.text as Record<string, string>)[lang]?.length > 150)
+  .slice(0, 2)
+  .map((r) => ({ text: (r.text as Record<string, string>)[lang], author: r.name }));
+const reviewsPath = pagePath(lang, "reviews");
 
 const info = settings.info;
 const mapLink = info.google_business;
@@ -96,21 +100,14 @@ const phoneHref = `tel:${info.phone.replace(/\s+/g, "")}`;
       ))
     }
   </div>
-  {
-    mapLink && (
-      <p class="mt-8 text-center">
-        <a
-          href={mapLink}
-          target="_blank"
-          rel="noopener"
-          class="inline-flex items-center gap-2 font-medium underline underline-offset-4 decoration-2 hover:text-rose-600"
-        >
-          {t("about.readMore")}
-          <span class="sr-only"> {t("footer.newTab")}</span>
-        </a>
-      </p>
-    )
-  }
+  <p class="mt-8 text-center">
+    <a
+      href={reviewsPath}
+      class="inline-block bg-rose-600 hover:bg-emerald-700 transition-colors px-4 py-2 rounded-lg text-white"
+    >
+      {t("reviews.count").replace("{n}", String(reviewsData.reviewCount))}: {t("nav.reviews").toLowerCase()}
+    </a>
+  </p>
 </section>
 
 <section class="mt-24 lg:mt-32" aria-labelledby="visit-heading">

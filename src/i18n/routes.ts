@@ -1,10 +1,10 @@
 import { ui } from "./ui";
 
 export type Lang = keyof typeof ui;
-export type PageKey = "about" | "countries" | "trips" | "contact";
+export type PageKey = "about" | "countries" | "trips" | "contact" | "reviews";
 
 export const langs = Object.keys(ui) as Lang[];
-export const pageKeys: PageKey[] = ["about", "countries", "trips", "contact"];
+export const pageKeys: PageKey[] = ["about", "countries", "trips", "contact", "reviews"];
 
 const slugOf = (lang: Lang, key: PageKey) =>
   (ui[lang] as Record<string, string>)[`slug.${key}`];

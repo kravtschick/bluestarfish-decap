@@ -468,6 +468,8 @@ collections:
                 }
               - { label: "Slug Trips", name: slug.trips, widget: string }
               - { label: "Slug Contact", name: slug.contact, widget: string }
+              - { label: "Slug Reviews", name: slug.reviews, widget: string }
+              - { label: "Navigation Reviews", name: nav.reviews, widget: string }
               - { label: "Footer Google link", name: footer.google, widget: string, required: false }
               - { label: "Footer new tab note", name: footer.newTab, widget: string, required: false }
               - { label: "Contact Form Name", name: form.name, widget: string }
@@ -525,6 +527,8 @@ collections:
                 }
               - { label: "Slug Trips", name: slug.trips, widget: string }
               - { label: "Slug Contact", name: slug.contact, widget: string }
+              - { label: "Slug Reviews", name: slug.reviews, widget: string }
+              - { label: "Navigation Reviews", name: nav.reviews, widget: string }
               - { label: "Footer Google link", name: footer.google, widget: string, required: false }
               - { label: "Footer new tab note", name: footer.newTab, widget: string, required: false }
               - { label: "Contact Form Name", name: form.name, widget: string }

@@ -13,7 +13,7 @@ import { isActive, pagePath, type PageKey } from "../i18n/routes";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 // The blog has no pages yet. Add "blog" back here once it does.
-const items: PageKey[] = ["about", "countries", "trips", "contact"];
+const items: PageKey[] = ["about", "countries", "trips", "reviews", "contact"];
 const phoneHref = `tel:${settings.info.phone.replace(/\s+/g, "")}`;
 ---
 

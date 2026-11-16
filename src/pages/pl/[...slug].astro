@@ -13,6 +13,7 @@ import Trips from "../../components/Trips.astro";
 import Reviews from "../../components/Reviews.astro";
 import ContactUsAbout from "../../components/ContactUsAbout.astro";
 import About from "../../components/About.astro";
+import ReviewsPage from "../../components/ReviewsPage.astro";
 
 export async function getStaticPaths() {
   const allPages = await getCollection("pages", ({ id }) => {
@@ -93,6 +94,7 @@ const textPl =
         )
       }
       {page.id === "pl/o-nas.md" && <About />}
+      {page.id === "pl/opinie.md" && <ReviewsPage />}
       {page.data.skillsWidget && <Skills />}
       {
         page.data.tripsWidget && (

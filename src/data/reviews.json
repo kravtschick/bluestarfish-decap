@@ -1,0 +1,635 @@
+{
+  "source": "Google Maps",
+  "placeId": "ChIJ09nz8nQndTERNv4sipekvpA",
+  "fetched": "2026-11-16",
+  "ratingValue": 5.0,
+  "reviewCount": 32,
+  "reviews": [
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Tomasz W.",
+      "date": "2026-08-13",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "pl": "Powiem,  że tak extra przygotowanej wyprawy jeszcze nie mialem.  Zadbali i wszelkie szczegóły.  Zdecydowanie POLECAM!!!",
+        "en": "I have to say, I've never had such a well-prepared trip. They took care of every detail. I definitely recommend it!"
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25CbVlUZFlORVpYTFhwbGRFeEtVVTAzZWtOb1NVRRAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOnBmYTdYNEZXLXpldExKUU03ekNoSUE%7C%7C?hl=en-US",
+      "ownerReply": "Thank you!!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Ada M.",
+      "date": "2026-07-12",
+      "stars": 5,
+      "lang": "en",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "en": "Thank you so much to Andrew for organizing our trip to Vietnam! The whole experience was unforgettable, tailored to our preferences, and I truly fell in love with the country 🩵 I will definitely be coming back again to explore Vietnam more in depth, and I am 100% sure that Andrew will once again surpass our every expectation when planning that next adventure!"
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT205Sk0wMXhRMmxLVlhOU2IwdGhXVEE0ZUhwcFNVRRAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOm9JM01xQ2lKVXNSb0thWTA4eHppSUE%7C%7C?hl=en-US",
+      "ownerReply": "Thank you and see you again!!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Robert W.",
+      "date": "2026-06-04",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "pl": "Wszystko zorganizowane na tip-top, dzięki czemu ten wyjazd do Wietnamu trafił do kategorii \"niezapomnianych\". Polecam bez wahania!",
+        "en": "Everything was organized to perfection, making this trip to Vietnam truly unforgettable. I recommend it without hesitation!"
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25NM2IyRldjREJqZDA1a01FSXdlbXM1Y0dSa05tYxAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOnM3b2FWcDBjd05kMEIwems5cGRkNmc%7C%7C?hl=en-US",
+      "ownerReply": "Thank you very much!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Agnieszka M.",
+      "date": "2026-05-22",
+      "stars": 5,
+      "lang": "en",
+      "trip": {
+        "pl": "Wietnam i Kambodża",
+        "en": "Vietnam and Cambodia"
+      },
+      "text": {
+        "en": "Unforgettable adventure in Vietnam thanks to Andrew and his team. The logistics and itinerary were perfectly planned despite the challenge of our family different flight arrangements and individual preferences. We are really grateful for all the memories we cherish so we have already asked Blue Starfish to tailor the next trip for us to explore more of Vietnam and also Cambodia this time."
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xKMFZITXROelpHZW5FMldWbHljVzAyWWpJM1RuYxAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOlJ0VHMtNzZGenE2WVlycW02YjI3Tnc%7C%7C?hl=en-US",
+      "ownerReply": "Thank you so much and see you soon!!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Marta G.",
+      "date": "2026-05-19",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "pl": "Miałem świetne doświadczenie z tym biurem podczas organizacji wyjazdu do Wietnamu. To małe, kameralne biuro, ale właśnie dzięki temu czuć ogromne zaangażowanie i indywidualne podejście do klienta. Program został przygotowany dokładnie pod nasze potrzeby — bez gotowych schematów, wszystko szyte na miarę.\n\nBardzo doceniam też świetne rekomendacje hoteli i restauracji. Miejsca były naprawdę dobrze dobrane — klimatyczne, sprawdzone i często takie, do których samemu trudno byłoby trafić. Dużym plusem była również obecność lokalnych pilotów w większych miastach, którzy pomagali lepiej poznać kulturę i odnaleźć się na miejscu.\n\nPrzez cały wyjazd mieliśmy stały kontakt i opiekę organizatora, co dawało poczucie bezpieczeństwa i komfortu. Widać, że to biuro robi podróże z pasją, a nie masowo. Zdecydowanie polecam osobom, które szukają dobrze zorganizowanej, ale jednocześnie bardzo osobistej i autentycznej podróży do Wietnamu.",
+        "en": "I had a great experience with this agency when organizing a trip to Vietnam. It's a small, intimate office, but that's precisely why you feel the incredible commitment and personalized approach to each client. The program was tailored precisely to our needs—no pre-packaged plans, everything was tailor-made.\n\nI also greatly appreciated the excellent hotel and restaurant recommendations. The locations were truly well-chosen—atmospheric, proven, and often difficult to find on your own. Another major plus was the presence of local guides in larger cities, who helped us better understand the culture and navigate the local area.\n\nThroughout the trip, we had constant contact and support from the organizer, which gave us a sense of security and comfort. It's clear that this agency is passionate about travel, not mass-produced. I highly recommend them to anyone looking for a well-organized, yet very personal and authentic trip to Vietnam."
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21VNVpYUXhaR3hNZGtvemNFRnpURlZrWDFnMVdIYxAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOmU5ZXQxZGxMdkozcEFzTFVkX1g1WHc%7C%7C?hl=en-US",
+      "ownerReply": "Thank you very much!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Zbigniew L.",
+      "date": "2026-05-09",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam, 2 do 3 tygodni",
+        "en": "Vietnam, 2 to 3 weeks"
+      },
+      "text": {
+        "pl": "Wszystko zaplanowane pod trudnego klienta -perfekcyjnie, zorganizowane nienagannie, (kierowcy, przewodnicy punktualni i kompetentni), wszystkie rekomendacje kulinarne - genialne, czulismy się przez cały czas 15 dniowego pobytu w Wietnamie jak V.I.P. , Adam i Andrzej byli do dyspozycji cały czas, lecz nie nagabywali, pobyt skończyliśmy dwoma spotkaniami, podczas których dużo się dowiedzieliśmy i wiele informacji uporządkowaliśmy. Naprawdę świetnie zorganizowany pobyt i transfery  rekomendujemy na 200%.\nJacek i Agnieszka Lipke",
+        "en": "Everything was planned perfectly for this demanding client, impeccably organized (drivers and guides were punctual and competent). All the culinary recommendations were brilliant. We felt like VIPs throughout our 15-day stay in Vietnam. Adam and Andrzej were available at all times, but without being pushy. We concluded our stay with two meetings, during which we learned a lot and organized a lot of information. We recommend this truly well-organized stay and transfers 200%.\n\nJacek and Agnieszka Lipke"
+      },
+      "photos": [
+        "../../assets/images/reviews/zbigniew-lipke-1.jpg"
+      ],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pGbmVuRnpjbFZMYWs5SFdHdEpRbUZNTkc5clkxRRAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOjFnenFzclVLak9HWGtJQmFMNG9rY1E%7C%7C?hl=en-US",
+      "ownerReply": "Thank you very much!!!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Agnieszka A.",
+      "date": "2026-04-28",
+      "stars": 5,
+      "lang": "en",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "en": "Thanks to Andrzej and Adam, we had an amazing adventure in Vietnam! The itinerary was perfectly tailored to us—combining sightseeing, delicious food, and a deep dive into the local culture. We are absolutely delighted and wholeheartedly recommend this experience.\nAgnieszka & Marcel”"
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21VMGF6RkNRWEUzUzI1SlRYUlhWMUpNU0U5V2JsRRAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOmU0azFCQXE3S25JTXRXV1JMSE9WblE%7C%7C?hl=en-US",
+      "ownerReply": "Thank you!!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Joanne H.",
+      "date": "2026-03-27",
+      "stars": 5,
+      "lang": "en",
+      "trip": {
+        "pl": "Wietnam i Kambodża",
+        "en": "Vietnam and Cambodia"
+      },
+      "text": {
+        "en": "Adi and Andy organised a fantastic trip for us through Cambodia and southern Vietnam. They are very professional and their communication and customer service were second to none. All the trips and accommodation they organised were excellent - we had an amazing time. They regularly check in with you after each tour to ensure everything was ok. Always happy to provide advice and recommendations for restaurants etc and very responsive to requests. They tailor the holiday to your requirements and have great suggestions for activities. Highly recommend!"
+      },
+      "photos": [
+        "../../assets/images/reviews/joanne-howarth-1.jpg",
+        "../../assets/images/reviews/joanne-howarth-2.jpg",
+        "../../assets/images/reviews/joanne-howarth-3.jpg"
+      ],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pkM04zQXplbFF3VHpGUlRrRkZaVUZDTmtwVlRtYxAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOjd3N3AzelQwTzFRTkFFZUFCNkpVTmc%7C%7C?hl=en-US",
+      "ownerReply": "Thank you so much!!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Małgorzata K.",
+      "date": "2026-03-22",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "pl": "Odkąd pamiętam, moje marzenia i oczekiwania przegrywały z rzeczywistością a ta podróż przerosła moje pragnienia z nią związane :) wszystko było BARDZIEJ -bardziej kolorowe, bardziej smaczne, bardziej ciekawe, bardziej luksusowe, bardziej soczyste, bardziej niesamowite, bardziej egzotyczne….. a  organizacja i opieka na najwyższym poziomie i pewnie z tego powodu Wietnam skradł nasze dusze. Niezapomniana podróż, musimy to powtórzyć, dziękujemy i polecamy z całego serca :)",
+        "en": "For as long as I can remember, my dreams and expectations have been dwarfed by reality, and this trip exceeded my desires. Everything was MORE—more colorful, more delicious, more interesting, more luxurious, more succulent, more incredible, more exotic… and the organization and care were top-notch, and that's probably why Vietnam stole our hearts. An unforgettable trip, we have to repeat it. Thank you, and we recommend it wholeheartedly."
+      },
+      "photos": [
+        "../../assets/images/reviews/magorzata-kruzynska-1.jpg",
+        "../../assets/images/reviews/magorzata-kruzynska-2.jpg",
+        "../../assets/images/reviews/magorzata-kruzynska-3.jpg",
+        "../../assets/images/reviews/magorzata-kruzynska-4.jpg",
+        "../../assets/images/reviews/magorzata-kruzynska-5.jpg",
+        "../../assets/images/reviews/magorzata-kruzynska-6.jpg",
+        "../../assets/images/reviews/magorzata-kruzynska-7.jpg",
+        "../../assets/images/reviews/magorzata-kruzynska-8.jpg",
+        "../../assets/images/reviews/magorzata-kruzynska-9.jpg",
+        "../../assets/images/reviews/magorzata-kruzynska-10.jpg"
+      ],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25WM05YSTJjM1ppUTJ0WFYzcFRjRlJyTFRVNFpFRRAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOnV3NXI2c3ZiQ2tXV3pTcFRrLTU4ZEE%7C%7C?hl=en-US",
+      "ownerReply": "Thank you!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Karina W.",
+      "date": "2026-03-22",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "pl": "Świetnie przygotowana wycieczka, Wietnam wspaniały, niezapomniane napewno będą rejs po zatoce Ha Long, train Street w Ha Noi, tur po street foodach  w Ho  Chi Minh i kraftowych piwach, wszystko dopięte na ostatni guzik 😊 Polecamy Andrzeja i Adama bardzo dobry kontakt, zawsze pomocni.",
+        "en": "A well-prepared trip, Vietnam is wonderful, unforgettable will certainly be the cruise on Ha Long Bay, the train street in Ha Noi, the street food tour in Ho Chi Minh and the craft beer tour, everything was planned down to the last detail 😊 We recommend Andrzej and Adam, very good contact, always helpful."
+      },
+      "photos": [
+        "../../assets/images/reviews/karina-witkowska-1.jpg"
+      ],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25Kc1ZXNDRRV2xsUlZadlZVb3hVRzlGUWpsTGFGRRAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOnJsVW44QWllRVZvVUoxUG9FQjlLaFE%7C%7C?hl=en-US",
+      "ownerReply": "Thank you!! // Thank you!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Tomasz S.",
+      "date": "2026-03-21",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "pl": "Doskonale przygotowany wyjazd, wszystko zgodnie z ustaleniami. Zaproponowane hotele bardzo czyste i ze smakiem urządzone.\nZaproponowane atracje dobrane do naszych zainteresowań i oczekiwań. Jak chcieliśmy coś zmienić podczas wycieczki zawsze służyli radą i pomocą. Dodatkowa rezerwacja przedstawienia, stolika w restauracji, transportu? Proszę bardzo, już się robi 🙂\nBardzo polecam tą firmę do organizacji wyjazdu szytego na miarę.\nRzadko korzystam z firm podczas moich podróży, bo lubię wszystko zorganizować sobie sama więc wiem ile to wymaga czasu, koordynacji i zwracania uwagi na szczegóły.\nDlatego ich polecam!!",
+        "en": "The trip was perfectly prepared, everything was as agreed. The hotels offered were very clean and tastefully decorated.\nThe attractions they suggested were tailored to our interests and expectations. If we wanted to change something during the trip, they were always available for advice and assistance. Additional reservations for a show, a restaurant table, or transportation? You're welcome, we're already working on it! 🙂\nI highly recommend this company for organizing a tailor-made trip.\nI rarely use companies when traveling because I like to organize everything myself, so I know how much time, coordination, and attention to detail it takes.\nThat's why I recommend them!"
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tGSGFWRndOV3Q0VkVReVprZElha05OTkVGS04yYxAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOkFHaVFwNWt4VEQyZkdIakNNNEFKN2c%7C%7C?hl=en-US",
+      "ownerReply": "Thank you!!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Elzbieta H.",
+      "date": "2026-02-16",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Delta Mekongu",
+        "en": "Mekong Delta"
+      },
+      "text": {
+        "pl": "Serdecznie polecam współpracę z tym biurem, a zwłaszcza z Adamem. Pomimo gigantycznej odległości zorganizował nam perfekcyjny tour po Delcie Mekonga. Od samego początku wszystko było bezbłędnie przygotowane: kierowca, przewodnik na miejscu. A sama wycieczka z każdym punktem programu przerosła nasze oczekiwania. Przewodnik bardzo dobrze mówiący po angielsku. Jesteśmy niezmiernie zadowoleni i napewno będziemy polecać Adama i Blue Starfish Travel Boutique.",
+        "en": "I highly recommend working with this agency, especially with Adam. Despite the enormous distance, he organized a perfect tour of the Mekong Delta for us. From the very beginning, everything was flawlessly prepared: the driver, the guide on site. And the tour itself, with every stop on the itinerary, exceeded our expectations. The guide spoke very good English. We are extremely satisfied and will definitely recommend Adam and Blue Starfish Travel Boutique."
+      },
+      "photos": [
+        "../../assets/images/reviews/elzbieta-hrycak-1.jpg",
+        "../../assets/images/reviews/elzbieta-hrycak-2.jpg",
+        "../../assets/images/reviews/elzbieta-hrycak-3.jpg",
+        "../../assets/images/reviews/elzbieta-hrycak-4.jpg",
+        "../../assets/images/reviews/elzbieta-hrycak-5.jpg",
+        "../../assets/images/reviews/elzbieta-hrycak-6.jpg",
+        "../../assets/images/reviews/elzbieta-hrycak-7.jpg"
+      ],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2taUmNtcDVNakZmVUU1eVVsRm1iazF1YkVKSlFYYxAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOkZRcmp5MjFfUE5yUlFmbk1ubEJJQXc%7C%7C?hl=en-US",
+      "ownerReply": "Thank you very much!!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Maciej P.",
+      "date": "2026-02-02",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "pl": "Dziękuję za zorganizowanie wyjazdu do Wietnamu. Wyjazd byl bardzo spersonalizowany, spelnil nasze wszystkie wymagania, jesli mielismy jakies spostrzezenia albo prosby albo zmiany programu to byly od razu adresowane i wprowadzane. Hotel były dokladnie takie jakie lubimy. Współpraca z Blue Starfish dala nam mentalny spokoj i reset z organizacją mimo, że czasu na organizację zostawilismy ekstremalnie mało czasu. Jeszcze raz dziękuję i polecam.",
+        "en": "Thank you for organizing our trip to Vietnam. The trip was very personalized and met all our expectations. Any observations, requests, or program changes were immediately addressed and implemented. The hotel was exactly what we liked. Working with Blue Starfish gave us peace of mind and a clearer understanding of the organization, even though we had extremely limited time. Thank you again, and I highly recommend it."
+      },
+      "photos": [
+        "../../assets/images/reviews/maciej-puciata-1.jpg",
+        "../../assets/images/reviews/maciej-puciata-2.jpg",
+        "../../assets/images/reviews/maciej-puciata-3.jpg",
+        "../../assets/images/reviews/maciej-puciata-4.jpg",
+        "../../assets/images/reviews/maciej-puciata-5.jpg",
+        "../../assets/images/reviews/maciej-puciata-6.jpg"
+      ],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xaZmJqZGhUbkpxU1hod05pMXdXVUl5Y1hsc1ZtYxAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOlZfbjdhTnJqSXhwNi1wWUIycXlsVmc%7C%7C?hl=en-US",
+      "ownerReply": "Thank you!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Staxu S.",
+      "date": "2026-01-26",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "pl": "profesjonalnie, miło i \"szyte na miarę\" oferty wg. indywidualnych preferencji. błyskawiczna reakcja na wszelkie prośby i zapytania. 5/5",
+        "en": "Professional, friendly, and tailor-made offers tailored to individual preferences. Immediate response to all requests and inquiries. 5/5"
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pONFREUXpWbFJ1YWtreFExTnlaVTh4UzFORFoyYxAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOjN4TDQzVlRuakkxQ1NyZU8xS1NDZ2c%7C%7C?hl=en-US",
+      "ownerReply": "Thank you!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Oskar D.",
+      "date": "2026-01-17",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "pl": "Z blue starfish czujesz się bardzo dobrze zaopiekowany. Indywidualne podejście do wycieczek i oczekiwań sprawiło że oferta była stworzona na miarę potrzeb. Wszystko na czas i bardzo profesjonalnie. Dodatkowo wycieczki bardzo kameralne unikające zatłoczonych miejsc. Jeżeli chcecie mieć dobrze przygotowane wycieczki i atrakcje to jak najbardziej polecam",
+        "en": "With Blue Starfish, you feel very well taken care of. Their personalized approach to tours and expectations meant the offer was tailored to your needs. Everything was on time and very professional. Furthermore, the tours are very intimate, avoiding crowds. If you want well-prepared tours and attractions, I highly recommend them."
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2taYWNsOUxUMWhxTjJScFlUTlhSMmt5Y0ZoeVVsRRAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOkZacl9LT1hqN2RpYTNXR2kycFhyUlE%7C%7C?hl=en-US",
+      "ownerReply": "Thank you!!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Piotr J.",
+      "date": "2026-01-11",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam, 2 do 3 tygodni",
+        "en": "Vietnam, 2 to 3 weeks"
+      },
+      "text": {
+        "pl": "Spędziliśmy 3 tygodnie z Wietnamie z Blue Starfish.Prywatna impreza dla 2 osób.Wysoki stopień profesjonalizmu,znakomity kontakt i poziom usług.Serdecznie polecam,jesteśmy bardzo zadowoleni.",
+        "en": "We spent three weeks in Vietnam with Blue Starfish. A private party for two. High level of professionalism, excellent communication, and excellent service. I highly recommend them; we are very satisfied."
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21ObmRVSlJaRlJsU20xc1NrNXlNMHc0WDFSTE9YYxAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOmNndUJRZFRlSm1sSk5yM0w4X1RLOXc%7C%7C?hl=en-US",
+      "ownerReply": "We are very pleased! Thank you!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Ewa J.",
+      "date": "2026-01-11",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam, 2 do 3 tygodni",
+        "en": "Vietnam, 2 to 3 weeks"
+      },
+      "text": {
+        "pl": "Zwiedzaliśmy z Blue Starfish Wietnam , w trzy tygodnie zobaczyliśmy praktycznie wszystko co trzeba , wycieczka zorganizowana perfekcyjnie , czuliśmy się zaopiekowani cały czas , reakcja chłopaków na nieoczekiwane problemy była natychmiastowa . Wietnam koniecznie trzeba zobaczyć , a w szczególności z Blue Starfish. Gorąco polecam",
+        "en": "We toured Vietnam with Blue Starfish. In three weeks, we saw practically everything we needed. The trip was perfectly organized, we felt taken care of the entire time, and the guys responded immediately to unexpected problems. Vietnam is a must-see, especially with Blue Starfish. I highly recommend it."
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tSU00xRm1PQzFSTVZZd2EyRTNSMlZWVkVGNFRWRRAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOkRSM1FmOC1RMVYwa2E3R2VVVEF4TVE%7C%7C?hl=en-US",
+      "ownerReply": "Thank you very much!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Gabriela L.",
+      "date": "2025-12-14",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "pl": "Wspaniale dobrane wycieczki punktualność dostępność ❤️Polecam z całego serca 🥰 Mega",
+        "en": "Wonderfully selected tours, punctuality, availability ❤️ I recommend it with all my heart 🥰 Mega"
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tGUVF6QjFUVlpHZG14RlFVVmxOMk5vVDBaSGFVRRAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOkFQQzB1TVZGdmxFQUVlN2NoT0ZHaUE%7C%7C?hl=en-US",
+      "ownerReply": "Thank you so much!!!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Kasia O.",
+      "date": "2025-09-06",
+      "stars": 5,
+      "lang": "en",
+      "trip": {
+        "pl": "Wyjazd rodzinny",
+        "en": "Family trip"
+      },
+      "text": {
+        "en": "Blue Starfish Team delivered an exceptional service for our family's Vietnam adventure. Customized itinerary, flawless transportation, and VIP customs service for quick airport exit. Friendly, attentive, and accommodating to real-time changes. Seamless planning enabled us to explore all must-see Vietnam highlights. Highly recommended for memorable, hassle-free travel! Thank you Blue Starfish! Okularczyk family."
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xKT2Ixb3RVRnBHYWtOTFVGVldkVXg2V25CSWNVRRAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOlJOb1otUFpGakNLUFVWdUx6WnBIcUE%7C%7C?hl=en-US",
+      "ownerReply": "Thank you! And see you again !"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Michal B.",
+      "date": "2025-07-21",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "pl": "Same pochwały: kompetencja i ciągłe wsparcie.\nElastyczność w ofercie i indywidualne podejście. Ciekawe propozycje i ten spokój ze w każdej chwili ‘Oni są w tle’ i mogą pomóc  czy zainterweniować chociaż jesteś bardzo daleko. Dla nas bezcenne i bardzo ważne. Dlatego warto👍😄",
+        "en": "Nothing but praise: competence and constant support. Flexibility in the offer and a personalized approach. Interesting suggestions and the peace of mind that \"They're there at any moment,\" able to help or intervene, even if you're far away. For us, this is invaluable and very important. That's why it's worth it 👍😄"
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s5WWQwUkVhVUZVVjB0SlJqTlNSVzlrWmsxRVZWRRAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOk9Yd0REaUFUV0tJRjNSRW9kZk1EVVE%7C%7C?hl=en-US",
+      "ownerReply": "Thank you!! // Thank you!!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Rogaty D.",
+      "date": "2025-07-03",
+      "stars": 5,
+      "lang": "en",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "en": "all the best, hotels, accomodations, tours.\neverything as we need and espected. great job, well be back ;-)"
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2t0eVVERmtTSHBqYlcxd05XTnBVVGRTZW01bUxYYxAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOktyUDFkSHpjbW1wNWNpUTdSem5mLXc%7C%7C?hl=en-US",
+      "ownerReply": "Thank you and see you again!!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Norbert S.",
+      "date": "2025-06-27",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wyjazd rodzinny",
+        "en": "Family trip"
+      },
+      "text": {
+        "pl": "Super wyjazd! Organizacja była doskonała, nie musieliśmy się martwić o logistykę i noclegi. Zawsze mieliśmy zaproponowane różne rodzaje restauracji w każdym miejscu, które odwiedzaliśmy. Plan wycieczki był dostosowany do potrzeb naszej rodziny. Adam i Andrzej byli zawsze dostępni i służyli pomocą podczas całego wyjazdu. Polecamy serdecznie. Mam nadzieje, że jeszcze wrócimy.",
+        "en": "A fantastic trip! The organization was excellent; we didn't have to worry about logistics or accommodations. We were always offered a variety of restaurants in every place we visited. The itinerary was tailored to our family's needs. Adam and Andrzej were always available and helpful throughout the trip. We highly recommend them. I hope we'll be back."
+      },
+      "photos": [
+        "../../assets/images/reviews/norbert-stablewski-1.jpg",
+        "../../assets/images/reviews/norbert-stablewski-2.jpg",
+        "../../assets/images/reviews/norbert-stablewski-3.jpg",
+        "../../assets/images/reviews/norbert-stablewski-4.jpg",
+        "../../assets/images/reviews/norbert-stablewski-5.jpg",
+        "../../assets/images/reviews/norbert-stablewski-6.jpg"
+      ],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25OelVHVm1aMmxUUjJoR05FdG9YME56WjBGTGFWRRAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOnNzUGVmZ2lTR2hGNEtoX0NzZ0FLaVE%7C%7C?hl=en-US",
+      "ownerReply": "Thank you very much!"
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENo",
+      "name": "Edziu E.",
+      "date": "2025-06-17",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "pl": "Niedawno wróciliśmy ze wspanialej podróży do Wietnamu. Program był dobrany specjalnie dla nas i był doskonały :). Wszystko zaplanowane z dbałością i najmniejsze detale, nie musieliśmy przejmować się niczym, chłopaki zadbali o wszystko. Hotele, wewnętrzne transfery i masa atrakcji , o jakich trudno dowiedzieć się nie będąc \"lokalsem\". Dodatkowo bardzo dobry kontakt przed i w trakcie wyjazdu, natychmiastowa reakcja na wszelkie pytania i wszystkie nagłe sytuacje.\nDzięki chłopaki, na pewno zgłosimy się ponownie!",
+        "en": "We recently returned from a wonderful trip to Vietnam. The itinerary was tailored specifically for us and was perfect. Everything was planned with meticulous attention to detail; we didn't have to worry about a thing; the guys took care of everything. Hotels, internal transfers, and a ton of attractions that are hard to find out about without being a \"local.\" In addition, excellent communication before and during the trip, with immediate response to any questions and emergencies. Thanks guys, we'll definitely be back!"
+      },
+      "photos": [
+        "../../assets/images/reviews/edziu-edziu-1.jpg",
+        "../../assets/images/reviews/edziu-edziu-2.jpg",
+        "../../assets/images/reviews/edziu-edziu-3.jpg"
+      ],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tGeWFFUkpOR2QyVmpkUlMzZG9ZbUZvVFdaWmNWRRAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CAIQACodChtycF9oOkFyaERJNGd2VjdRS3doYmFoTWZZcVE%7C%7C?hl=en-US",
+      "ownerReply": "Thank you very much!! // Thank you!!!"
+    },
+    {
+      "id": "ChZDSUhNMG9nS0VQ",
+      "name": "Maciej N.",
+      "date": "2025-06-05",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Północny Wietnam",
+        "en": "Northern Vietnam"
+      },
+      "text": {
+        "pl": "Super zorganizowana wycieczka na północ Wietnamu. Niestandardowa trasa została stworzona po rozmowach z nami i uwzględnieniu naszych zainteresowań. Ominęliśmy zatłoczone miejsca aby zobaczyć bardziej kameralną i nieturystyczną część północy. Po licznych doświadczeniach z podróżami w Azji byłem zaszokowany, że udało się zorganizować wszystko punktualnie i bez opóźnień. Zdecydowanie wrócimy!",
+        "en": "A superbly organized trip to northern Vietnam. A custom itinerary was created after discussions with us and taking into account our interests. We avoided crowded areas to see a more intimate and untouristy part of the north. After numerous travel experiences in Asia, I was amazed that everything was organized on time and without delays. We will definitely be back!"
+      },
+      "photos": [
+        "../../assets/images/reviews/maciej-nowakowski-1.jpg",
+        "../../assets/images/reviews/maciej-nowakowski-2.jpg",
+        "../../assets/images/reviews/maciej-nowakowski-3.jpg",
+        "../../assets/images/reviews/maciej-nowakowski-4.jpg",
+        "../../assets/images/reviews/maciej-nowakowski-5.jpg",
+        "../../assets/images/reviews/maciej-nowakowski-6.jpg"
+      ],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VQR2w2NWpKOW92WWRnEAE!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CIHM0ogKEPGl65jJ9ovYdg%7C%7C?hl=en-US",
+      "ownerReply": "Thank you!"
+    },
+    {
+      "id": "ChZDSUhNMG9nS0VL",
+      "name": "Zbigniew A.",
+      "date": "2025-05-18",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam i Kambodża",
+        "en": "Vietnam and Cambodia"
+      },
+      "text": {
+        "pl": "🌟🌟🌟🌟🌟\nwycieczka do Wietnamu i Kambodży\nProfesjonalna obsługa, świetne doradztwo i doskonała organizacja wyjazdu. Wszystko dopięte na ostatni guzik – od rezerwacji po powrót. Kontakt z właścicielami (Polakami mieszkającymi od lat w Wietnamie) bezproblemowy - natychmiastowe działanie w przypadku pojawienia się nowych pomysłów i „zachcianek „:). Zdecydowanie polecam!",
+        "en": "🌟🌟🌟🌟🌟\nTrip to Vietnam and Cambodia\nProfessional service, excellent advice, and excellent trip organization. Everything was taken care of down to the last detail – from booking to return. Contact with the owners (Poles who have lived in Vietnam for years) was seamless – they acted immediately if any new ideas or \"whims\" arose. I definitely recommend it!"
+      },
+      "photos": [
+        "../../assets/images/reviews/zbigniew-adamczewski-1.jpg"
+      ],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VLZnUzNy1ELTZXVlZREAE!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CIHM0ogKEKfu37-D-6WVVQ%7C%7C?hl=en-US",
+      "ownerReply": "Thank you! / Thank you and see you soon :)"
+    },
+    {
+      "id": "ChZDSUhNMG9nS0VK",
+      "name": "Katarzyna A.",
+      "date": "2025-05-18",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam i Kambodża",
+        "en": "Vietnam and Cambodia"
+      },
+      "text": {
+        "pl": "Byliśmy z tym biurem w Wietnamie i Kambodży i jesteśmy bardzo zadowoleni. Począwszy od pomocy w przygotowaniu indywidualnego programu, poprzez perfekcyjną organizację wyjazdu, do świetnego kontaktu i wsparcia w razie jakichkolwiek pytań, wszystko było na najwyższym poziomie! Zdecydowanie polecam i chętnie powrócę do tego biura w razie następnego wyjazdu!",
+        "en": "We visited Vietnam and Cambodia with this agency and were very satisfied. From their assistance in preparing a personalized program, through the perfect organization of the trip, to the excellent communication and support with any questions, everything was top-notch! I highly recommend them and will gladly return to this agency for my next trip!"
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VKV0J2NlM5MF9XMUtBEAE!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CIHM0ogKEJWBv6S90_W1KA%7C%7C?hl=en-US",
+      "ownerReply": "Thank you and see you again!\n\nThank you and see you again!!"
+    },
+    {
+      "id": "ChZDSUhNMG9nS0VJ",
+      "name": "Oleg Z.",
+      "date": "2025-05-05",
+      "stars": 5,
+      "lang": "en",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "en": "Great and caring service, wide knowledge of the country and network of resources, tailor-made programs. We were extremely happy with trip"
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnTUNZcVlHNE9BEAE!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CIHM0ogKEICAgMCYqYG4OA%7C%7C?hl=en-US",
+      "ownerReply": "Thank you!"
+    },
+    {
+      "id": "ChZDSUhNMG9nS0VJ",
+      "name": "Kasia W.",
+      "date": "2025-05-05",
+      "stars": 5,
+      "lang": "pl",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "pl": "Rewelacyjna organizacja i opieka. Polecam",
+        "en": "Fantastic organization and care. I recommend it."
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnTUNZNllhQVZREAE!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CIHM0ogKEICAgMCY6YaAVQ%7C%7C?hl=en-US",
+      "ownerReply": "Thank you!!"
+    },
+    {
+      "id": "ChZDSUhNMG9nS0VJ",
+      "name": "Daniel G.",
+      "date": "2025-04-23",
+      "stars": 5,
+      "lang": "en",
+      "trip": {
+        "pl": "Wyjazd rodzinny",
+        "en": "Family trip"
+      },
+      "text": {
+        "en": "I highly recommend Blue Starfish Travel! From beginning to end the experience was perfect. A tailored tour, adjusting for various tour member needs (from toddler to teens to adults) which covered things for everyone. From sight seeing to restaurant recommendations to transfers… all we had to do was show up at the agreed time and everything else was taken care off!"
+      },
+      "photos": [
+        "../../assets/images/reviews/daniel-grass-1.jpg",
+        "../../assets/images/reviews/daniel-grass-2.jpg",
+        "../../assets/images/reviews/daniel-grass-3.jpg",
+        "../../assets/images/reviews/daniel-grass-4.jpg",
+        "../../assets/images/reviews/daniel-grass-5.jpg",
+        "../../assets/images/reviews/daniel-grass-6.jpg"
+      ],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnTURvc3U2NE13EAE!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CIHM0ogKEICAgMDosu64Mw%7C%7C?hl=en-US",
+      "ownerReply": "Thank you!"
+    },
+    {
+      "id": "ChZDSUhNMG9nS0VJ",
+      "name": "Dominica D.",
+      "date": "2025-04-23",
+      "stars": 5,
+      "lang": "en",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "en": "Finding a trusted tour operator who upholds the highest standards of professionalism is a feat but Blue Starfish deserves this recognition!\n\nDetail oriented, client centric, and knowledgable about SE Asia, Blue Starfish puts together itineraries that suit each client's needs whilst being aware of and respecting SE Asian culture.\n\nThey are patient, kind, and engaged; fully cognisant that each traveler has different experiences, needs, and objectives for said trip. The agency works to create something for everyone, never forgetting that details and relationships are key.\n\nNot only did they curate a delightful trip but they also helped us manoeuvre a few logistical hiccups  (completely OUR fault) late at night (full crisis mode yet they remained calm, focused and determined to resolve the issue). We are grateful and strongly recommend them to everyone traveling to this beautiful part of the world!"
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnTURvb3FIMWVBEAE!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CIHM0ogKEICAgMDooqH1eA%7C%7C?hl=en-US",
+      "ownerReply": "Thank you!"
+    },
+    {
+      "id": "ChZDSUhNMG9nS0VJ",
+      "name": "Marek M.",
+      "date": "2025-04-15",
+      "stars": 5,
+      "lang": "en",
+      "trip": {
+        "pl": "Wyjazd rodzinny",
+        "en": "Family trip"
+      },
+      "text": {
+        "en": "Me and my family recently had an unforgettable trip to Vietnam, all thanks to the incredible organization and support of Blue Starfish Travel Boutique. Everything was handled with professionalism and attention to our needs what made the whole experience truly special.\nThe trip was tailored 100% according to our interests – all stays (with great value for money) and transfers were perfectly organized. We were in constant touch with the agency via Whatsapp, what helped us instantly get help or necessary information.\nI truly recommend this agency to anyone planning a trip to Vietnam! Agency owners exceeded all our expectations and I’m looking forward to book my next adventure with them!"
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnTUNvNHJTU1VREAE!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CIHM0ogKEICAgMCo4rSSUQ%7C%7C?hl=en-US",
+      "ownerReply": "Thank you!"
+    },
+    {
+      "id": "ChdDSUhNMG9nS0VJ",
+      "name": "Dominik N.",
+      "date": "2025-03-24",
+      "stars": 5,
+      "lang": "en",
+      "trip": {
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "text": {
+        "en": "Great service. My stay in Vietnam was organized perfectly.\nTeam was easy to contact with, and quick to respond."
+      },
+      "photos": [],
+      "reviewUrl": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnTUR3N04ySTFBRRAB!2m1!1s0x0:0x90bea4978a2cfe36!3m1!1s2@1:CIHM0ogKEICAgMDw7N2I1AE%7C%7C?hl=en-US",
+      "ownerReply": "Thank you!!"
+    }
+  ]
+}
