@@ -25,6 +25,25 @@ const quotes = reviewsData.reviews
 const reviewsPath = pagePath(lang, "reviews");
 
 const icons: Record<string, string> = {"pencil": "M16.86 3.49a2.1 2.1 0 0 1 2.97 2.97L8.5 17.79 4 19l1.21-4.5L16.86 3.49Z M14.5 5.85l2.97 2.97", "check": "M20 7 9.5 17.5 4 12 M12 3a9 9 0 1 0 9 9", "people": "M16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z M2 20a6 6 0 0 1 12 0 M12 20a6 6 0 0 1 10 0", "phone": "M8 3h8a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z M11 18h2", "compass": "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z M15.5 8.5 14 14l-5.5 1.5L10 10l5.5-1.5Z", "tag": "M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9-9-9Z M7.5 7.5h.01"};
+// Promise cards. Rating and the "every review" line come from the review
+// export, so they stay true as new reviews arrive; no count is shown.
+const allFive = reviewsData.reviews.length > 0 && reviewsData.reviews.every((r: any) => r.stars === 5);
+const ratingValue = Number(reviewsData.ratingValue).toFixed(1).replace(".", lang === "pl" ? "," : ".");
+const promises = [
+  {
+    value: `${ratingValue}`,
+    title: allFive ? t("about.promise.1.title") : t("about.promise.1.titleAvg"),
+    text: t("about.promise.1.text"),
+  },
+  { value: t("about.promise.2.value"), title: t("about.promise.2.title"), text: t("about.promise.2.text") },
+  { value: "1", title: t("about.promise.3.title"), text: t("about.promise.3.text") },
+  {
+    value: `${settings.info.reply_hours} h`,
+    title: t("about.promise.4.title").replace("{h}", settings.info.reply_hours),
+    text: t("about.promise.4.text"),
+  },
+];
+
 const values = ["phone","pencil","check","people","compass","tag"].map((icon, i) => ({
   icon: icons[icon],
   title: t(`about.values.${i + 1}.title`),
@@ -39,25 +58,31 @@ const gallery = [
 ---
 
 
-<section class="mt-16 lg:mt-24" aria-label="Facts">
-  <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-    <li class="bg-gray-100 rounded-xl p-5">
-      <p class="text-3xl font-semibold text-rose-600">{lang === "pl" ? "5,0" : "5.0"}</p>
-      <p class="text-sm text-gray-700 mt-1">{t("about.facts.rating").replace("{n}", String(reviewsData.reviewCount))}</p>
-    </li>
-    <li class="bg-gray-100 rounded-xl p-5">
-      <p class="text-3xl font-semibold text-rose-600">{settings.info.founded}</p>
-      <p class="text-sm text-gray-700 mt-1">{t("about.facts.since")}</p>
-    </li>
-    <li class="bg-gray-100 rounded-xl p-5">
-      <p class="text-3xl font-semibold text-rose-600">3</p>
-      <p class="text-sm text-gray-700 mt-1">{lang === "pl" ? "kraje: Wietnam, Kambodża, Laos" : "countries: Vietnam, Cambodia, Laos"}</p>
-    </li>
-    <li class="bg-gray-100 rounded-xl p-5">
-      <p class="text-3xl font-semibold text-rose-600">HCMC</p>
-      <p class="text-sm text-gray-700 mt-1">{t("about.facts.based")}</p>
-    </li>
-  </ul>
+<section class="mt-16 lg:mt-24 overflow-hidden rounded-3xl bg-gray-950 text-white" aria-labelledby="promise-heading">
+  <div class="grid lg:grid-cols-12">
+    <div class="lg:col-span-5 p-8 sm:p-12 lg:p-14 flex flex-col justify-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-rose-400">{t("about.promise.eyebrow")}</p>
+      <h2 id="promise-heading" class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">{t("about.promise.heading")}</h2>
+      <p class="mt-6 text-lg leading-relaxed text-gray-300">{t("about.promise.lead")}</p>
+      <div class="mt-8 flex items-center gap-4">
+        <span class="h-0.5 w-12 bg-rose-600" aria-hidden="true"></span>
+        <p class="text-sm text-gray-400">{t("about.promise.sign")}</p>
+      </div>
+    </div>
+    <ul class="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-white/10 border-t border-white/10 lg:border-t-0 lg:border-l">
+      {
+        promises.map((p) => (
+          <li class="bg-gray-950 p-6 sm:p-10 flex gap-5 sm:block">
+            <p class="w-20 shrink-0 sm:w-auto text-4xl sm:text-5xl font-semibold tracking-tight text-rose-500">{p.value}</p>
+            <div>
+              <h3 class="sm:mt-5 text-lg font-semibold leading-snug">{p.title}</h3>
+              <p class="mt-2 text-base leading-relaxed text-gray-300">{p.text}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </section>
 
 <section class="mt-24 lg:mt-32" aria-labelledby="values-heading">
