@@ -148,7 +148,7 @@ const jsonLd = graph.length
     {
       !isStaging && (
         <script is:inline>
-          // Google Tag Manager (GTM-5NMNPS27). The container loads after the
+          // Google Tag Manager. The containers load after the
           // first scroll, tap or key press, or 3.5 s after the page has
           // loaded, so it does not compete with the first render. Events
           // pushed before that wait in dataLayer and are delivered when it
@@ -172,10 +172,12 @@ const jsonLd = graph.length
                 removeEventListener(name, load);
               });
               dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-              var script = document.createElement("script");
-              script.async = true;
-              script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-5NMNPS27";
-              document.head.appendChild(script);
+              ["GTM-5NMNPS27", "GTM-P7LV3NF7"].forEach(function (id) {
+                var script = document.createElement("script");
+                script.async = true;
+                script.src = "https://www.googletagmanager.com/gtm.js?id=" + id;
+                document.head.appendChild(script);
+              });
             }
             triggers.forEach(function (name) {
               addEventListener(name, load, { once: true, passive: true });

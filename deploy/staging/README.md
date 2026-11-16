@@ -60,7 +60,7 @@ text per language, photos, reviewUrl), copy new guest photos to
 
 ## Analytics
 
-Production loads Google Tag Manager container `GTM-5NMNPS27` from `src/layouts/Layout.astro`. The container is injected after the first scroll, tap or key press, or 3.5 s after load, so it does not slow the first paint. Staging builds (`PUBLIC_SITE_ENV=staging`) ship no tag at all.
+Production loads Google Tag Manager containers `GTM-5NMNPS27` and `GTM-P7LV3NF7` (the list sits in one line of Layout.astro) from `src/layouts/Layout.astro`. The container is injected after the first scroll, tap or key press, or 3.5 s after load, so it does not slow the first paint. Staging builds (`PUBLIC_SITE_ENV=staging`) ship no tag at all.
 
 Events pushed to `dataLayer` by the site:
 
