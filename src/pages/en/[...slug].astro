@@ -12,6 +12,7 @@ import Skills from "../../components/Skills.astro";
 import Trips from "../../components/Trips.astro";
 import Reviews from "../../components/Reviews.astro";
 import ContactUsAbout from "../../components/ContactUsAbout.astro";
+import About from "../../components/About.astro";
 
 export async function getStaticPaths() {
   const allPages = await getCollection("pages", ({ id }) => {
@@ -50,6 +51,7 @@ const textEn =
   <main>
     <Hero
       image={page.data.hero.image}
+      focus={page.data.hero.focus}
       height={page.id === "en/index.md"
         ? "min-h-screen"
         : "h-[300px] md:h-[550px]"}
@@ -76,12 +78,19 @@ const textEn =
       {
         page.body && (
           <div class="mt-24 lg:mt-32">
-            <div class="text-center w-full md:w-2/3 max-w-2/3 mx-auto prose lg:prose-lg prose-headings:font-semibold">
+            <div
+              class={
+                page.id === "en/about-us.md"
+                  ? "mx-auto w-full md:max-w-2xl lg:max-w-3xl prose lg:prose-lg prose-headings:font-semibold prose-h2:text-3xl prose-h2:text-center prose-p:leading-relaxed"
+                  : "text-center w-full md:w-2/3 max-w-2/3 mx-auto prose lg:prose-lg prose-headings:font-semibold"
+              }
+            >
               <Content />
             </div>
           </div>
         )
       }
+      {page.id === "en/about-us.md" && <About />}
       {page.data.skillsWidget && <Skills />}
       {
         page.data.tripsWidget && (

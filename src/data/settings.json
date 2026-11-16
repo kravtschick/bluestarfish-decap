@@ -1,12 +1,16 @@
 {
   "site_title": "Blue Starfish Travel Boutique",
   "info": {
-    "name": "Blue Starfish TB, Ltd. ",
+    "name": "Công ty TNHH Blue Starfish Travel Boutique",
     "address": "94 Xuân Thủy, Phường Thảo Điền, Thành phố Thủ Đức",
     "city": "Thành phố Hồ Chí Minh, Việt Nam",
     "phone": "+84 368 318 072",
     "email": "booking@bluestarfish.travel",
-    "google_business": "https://www.google.com/maps/search/?api=1&query=Blue%20Starfish%20Travel%20Boutique&query_place_id=ChIJ09nz8nQndTERNv4sipekvpA"
+    "google_business": "https://www.google.com/maps/search/?api=1&query=Blue%20Starfish%20Travel%20Boutique&query_place_id=ChIJ09nz8nQndTERNv4sipekvpA",
+    "short_name": "Blue Starfish Travel Boutique",
+    "tax_id": "0318118010",
+    "founded": "2023",
+    "map_embed": "https://www.google.com/maps?q=place_id:ChIJ09nz8nQndTERNv4sipekvpA&output=embed"
   },
   "en": {
     "form.reply": "Thank you for contacting us! We will respond to your message soon.",
@@ -27,7 +31,19 @@
     "slug.contact": "contact",
     "form.error": "Error sending message.",
     "footer.google": "Reviews on Google",
-    "footer.newTab": "(opens in a new tab)"
+    "footer.newTab": "(opens in a new tab)",
+    "about.story": "Our story",
+    "about.values": "How we work",
+    "about.team": "The people behind your trip",
+    "about.reviews": "What guests say",
+    "about.visit": "Where to find us",
+    "about.social": "Follow us",
+    "about.cta": "Tell us about your trip",
+    "about.readMore": "Read reviews on Google",
+    "about.rating": "rating on Google",
+    "about.openMap": "Open in Google Maps",
+    "about.taxId": "Tax ID",
+    "about.founded": "Founded"
   },
   "pl": {
     "form.reply": "Dziękujemy za kontakt! Wkrótce odpowiemy na Twoją wiadomość.",
@@ -48,6 +64,26 @@
     "slug.contact": "kontakt",
     "form.error": "Błąd podczas wysyłania wiadomości.",
     "footer.google": "Opinie w Google",
-    "footer.newTab": "(otwiera się w nowej karcie)"
+    "footer.newTab": "(otwiera się w nowej karcie)",
+    "about.story": "Nasza historia",
+    "about.values": "Jak pracujemy",
+    "about.team": "Ludzie, którzy planują Twój wyjazd",
+    "about.reviews": "Co mówią goście",
+    "about.visit": "Gdzie nas znaleźć",
+    "about.social": "Obserwuj nas",
+    "about.cta": "Opowiedz nam o swoim wyjeździe",
+    "about.readMore": "Zobacz opinie w Google",
+    "about.rating": "ocena w Google",
+    "about.openMap": "Otwórz w Mapach Google",
+    "about.taxId": "NIP (mã số thuế)",
+    "about.founded": "Rok założenia"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/bluestarfishtb.en",
+    "facebook_pl": "https://www.facebook.com/profile.php?id=61583407628105",
+    "instagram": "https://www.instagram.com/blue.starfish.travel.boutique/",
+    "linkedin": "https://www.linkedin.com/company/blue-starfish-travel-boutique/",
+    "tripadvisor": "",
+    "youtube": ""
   }
 }

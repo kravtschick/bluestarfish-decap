@@ -72,9 +72,17 @@ const organization = {
   },
   areaServed: ["VN", "KH", "LA"],
   availableLanguage: ["en", "pl"],
-  ...(settings.info.google_business
-    ? { hasMap: settings.info.google_business, sameAs: [settings.info.google_business] }
-    : {}),
+  ...(settings.info.google_business ? { hasMap: settings.info.google_business } : {}),
+  sameAs: [
+    settings.info.google_business,
+    ...Object.values(settings.social as Record<string, string>),
+  ].filter(Boolean),
+  ...(settings.info.tax_id ? { taxID: settings.info.tax_id } : {}),
+  ...(settings.info.founded ? { foundingDate: settings.info.founded } : {}),
+  founder: [
+    { "@type": "Person", name: "Adam Krawczyk", url: abs(pagePath(lang, "about")) },
+    { "@type": "Person", name: "Andrzej Białasiewicz", url: abs(pagePath(lang, "about")) },
+  ],
 };
 
 const isHome = segmentsOf(pathname).length === 1;

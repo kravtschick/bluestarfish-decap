@@ -19,6 +19,7 @@ const pageCollection = defineCollection({
         image: image().refine((img) => img.width >= 1500, {
           message: "Cover image must be at least 1500 pixels wide!",
         }),
+        focus: z.string().optional(),
       }),
       intro: z.string().optional(),
       countriesWidget: z.boolean().default(false),
@@ -115,7 +116,31 @@ const widgetsCollection = defineCollection({
     }),
 });
 
+const teamCollection = defineCollection({
+  type: "content",
+  schema: ({ image }) => {
+    const localized = z.object({
+      role: z.string(),
+      bio: z.string(),
+      facts: z.array(z.string()).default([]),
+    });
+    return z.object({
+      sortOrder: z.number(),
+      name: z.string(),
+      photo: image().refine((img) => img.width >= 600, {
+        message: "Portrait must be at least 600 pixels wide!",
+      }),
+      en: localized,
+      pl: localized,
+      links: z
+        .array(z.object({ label: z.string(), url: z.string().url() }))
+        .default([]),
+    });
+  },
+});
+
 export const collections = {
+  team: teamCollection,
   pages: pageCollection,
   country: countryCollection,
   widgets: widgetsCollection,

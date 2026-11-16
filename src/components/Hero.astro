@@ -6,6 +6,8 @@ import chatImg from "../images/chat-white.svg";
 
 interface Props {
   image: ImageMetadata;
+  /** CSS object-position for the image, e.g. "70% center" to keep a person out of the text. */
+  focus?: string;
   height: string;
   title: string;
   desc?: string;
@@ -13,7 +15,7 @@ interface Props {
   chat?: boolean;
 }
 
-const { image, height, title, desc, bottom, chat = false } = Astro.props;
+const { image, height, title, desc, bottom, chat = false, focus = "center" } = Astro.props;
 
 // The hero is the largest element on every page, so it loads first and in a
 // size that fits the screen. Never upscale beyond the source file.
@@ -33,6 +35,7 @@ const heroWidths = [640, 828, 1080, 1600, 2000].filter((w) => w < heroWidth).con
     fetchpriority="high"
     decoding="async"
     class={`object-cover w-full brightness-90 ${height}`}
+    style={`object-position: ${focus}`}
   />
 
   <div class={`absolute inset-x-0 ${bottom}`}>
