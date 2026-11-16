@@ -14,7 +14,7 @@ contactButtonWidget: false
 
 ## Who controls your data
 
-Công ty TNHH Blue Starfish Travel Boutique, 94 Xuân Thủy, Phường Thảo Điền, Thành phố Thủ Đức, Ho Chi Minh City, Vietnam (tax ID 0318118010). Data questions: booking@bluestarfish.travel.
+Công ty TNHH Blue Starfish Travel Boutique, 94 Xuân Thủy, Phường Thảo Điền, Thành phố Thủ Đức, Ho Chi Minh City, Vietnam (tax ID 0318118010). Data questions: contact@bluestarfishtravel.com.
 
 ## What we collect and why
 
@@ -34,7 +34,7 @@ Enquiries that do not lead to a trip are deleted after 12 months. Records of gue
 
 ## Your rights
 
-You can ask for access to your data, a correction or deletion by writing to booking@bluestarfish.travel. You may also complain to a supervisory authority; in the EU, the authority of the country where you live.
+You can ask for access to your data, a correction or deletion by writing to contact@bluestarfishtravel.com. You may also complain to a supervisory authority; in the EU, the authority of the country where you live.
 
 ## Cookies
 
