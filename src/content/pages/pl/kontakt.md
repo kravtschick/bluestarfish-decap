@@ -1,21 +1,14 @@
 ---
 seo:
   seoTitle: "Kontakt: zaplanuj wyjazd do Azji"
-  seoDesc: "Masz pytania o wyjazd do Wietnamu, Kambodży lub Laosu? Napisz na WhatsApp albo przez formularz. Odpowiemy z propozycją programu."
+  seoDesc: "Odpowiedz na kilka pytań, a w ciągu 24 godzin dostaniesz pierwszą propozycję wyjazdu do Wietnamu, Kambodży lub Laosu. Bez zobowiązań. WhatsApp, e-mail, telefon."
 hero:
   title: Kontakt
+  subtitle: Kilka pytań, pięć minut. Pierwsza propozycja trasy w ciągu 24 godzin.
   image: ../../../assets/images/contact-hero.jpg
-intro: >
-  Masz pytania dotyczące podróży do Azji Południowo Wschodniej? 
-
-
-  Z chęcią podzielimy się naszą wiedzą.
-  Kliknij aby skontaktowac sie z nami przez WhatsApp
 countriesWidget: false
 skillsWidget: false
 tripsWidget: false
-chatWidget: true
+chatWidget: false
 contactButtonWidget: false
 ---
-
-Lub wypełnij poniższy formularz kontaktowy. Odezwiemy się niezwłocznie, uwzględniając 6-godzinną różnicę czasu względem Polski.

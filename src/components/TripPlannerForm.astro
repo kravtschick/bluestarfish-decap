@@ -1,0 +1,377 @@
+---
+// Trip planner: the enquiry form shown on the contact, home, country and
+// trip-type pages. Plain HTML with native checkboxes and radios styled as
+// chips, sent through EmailJS. Every field name is a template variable.
+import { Image } from "astro:assets";
+import settings from "../data/settings.json";
+import reviewsData from "../data/reviews.json";
+import adam from "../assets/images/team-adam.jpg";
+import andrzej from "../assets/images/team-andrzej.jpg";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { pagePath } from "../i18n/routes";
+
+interface Props {
+  /** Pre-selected destination: vietnam | cambodia | laos */
+  destination?: string;
+  /** Pre-selected party type: couple | family | friends | solo | company */
+  party?: string;
+  /** Hide the heading when the page already has one. */
+  compact?: boolean;
+}
+const { destination, party, compact = false } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang) as (k: string) => string;
+const hours = settings.info.reply_hours;
+const uid = Math.random().toString(36).slice(2, 7);
+
+// Months: the next 18, labelled in the page language.
+const now = new Date();
+const months = Array.from({ length: 18 }, (_, i) => {
+  const d = new Date(now.getFullYear(), now.getMonth() + 1 + i, 1);
+  const label = d.toLocaleDateString(lang === "pl" ? "pl-PL" : "en-GB", { month: "long", year: "numeric" });
+  return { value: `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`, label: label[0].toUpperCase() + label.slice(1) };
+});
+
+const chip =
+  "cursor-pointer select-none rounded-full border border-gray-300 bg-white px-4 py-2.5 text-base leading-5 min-h-[44px] inline-flex items-center transition-colors peer-checked:bg-gray-950 peer-checked:text-white peer-checked:border-gray-950 peer-focus-visible:ring-2 peer-focus-visible:ring-rose-600 peer-focus-visible:ring-offset-2 hover:border-gray-950";
+const input =
+  "w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-base focus:border-gray-950 focus:outline-none focus:ring-2 focus:ring-rose-600/30 aria-[invalid=true]:border-red-700";
+const legend = "block text-sm font-semibold mb-2";
+
+const destinations = [
+  ["vietnam", t("form.where.vietnam")],
+  ["cambodia", t("form.where.cambodia")],
+  ["laos", t("form.where.laos")],
+  ["unsure", t("form.where.unsure")],
+];
+const durations = [["7-10", t("form.duration.1")], ["14", t("form.duration.2")], ["21", t("form.duration.3")], ["21+", t("form.duration.4")]];
+const parties = [["couple", t("form.party.couple")], ["family", t("form.party.family")], ["friends", t("form.party.friends")], ["solo", t("form.party.solo")], ["company", t("form.party.company")]];
+const budgets = [["1", t("form.budget.1")], ["2", t("form.budget.2")], ["3", t("form.budget.3")], ["skip", t("form.budget.skip")]];
+const steps = [1, 2, 3].map((n) => ({
+  title: t(`steps.${n}.title`).replace("{h}", hours),
+  text: t(`steps.${n}.text`),
+}));
+const privacyPath = pagePath(lang, "privacy");
+const reviewsPath = pagePath(lang, "reviews");
+---
+
+<section
+  class="mt-24 lg:mt-32 mx-auto w-full max-w-2xl"
+  aria-labelledby={`planner-${uid}`}
+  data-trip-planner
+  data-text-sending={t("form.sending")}
+  data-text-button={t("form.button")}
+  data-text-success={t("form.success")}
+  data-text-tomorrow={t("day.tomorrow")}
+  data-text-monday={t("day.monday")}
+  data-text-error-required={t("form.error.required")}
+  data-text-error-email={t("form.error.email")}
+>
+  {
+    !compact && (
+      <div class="text-center mb-8">
+        <h2 id={`planner-${uid}`} class="text-3xl font-semibold">{t("form.heading")}</h2>
+        <p class="mt-3 text-base text-gray-700">{t("form.lead")}</p>
+      </div>
+    )
+  }
+  {compact && <h2 id={`planner-${uid}`} class="sr-only">{t("form.heading")}</h2>}
+
+  <p class="flex items-center justify-center gap-2 text-sm mb-4">
+    <span class="text-rose-600 tracking-widest" aria-hidden="true">★★★★★</span>
+    <a href={reviewsPath} class="underline underline-offset-4 hover:text-rose-600">
+      {t("form.rating")} · {t("form.ratingCount").replace("{n}", String(reviewsData.reviewCount))}
+    </a>
+  </p>
+
+  <form
+    method="post"
+    novalidate
+    class="bg-gray-100 rounded-2xl p-6 sm:p-8 flex flex-col gap-7"
+    data-netlify="true"
+    name="trip-planner"
+  >
+    <input type="hidden" name="form-name" value="trip-planner" />
+    <input type="hidden" name="lang" value={lang} />
+    <input type="hidden" name="source_page" value={Astro.url.pathname} />
+    <p class="hidden" aria-hidden="true">
+      <label>Phone number <input type="text" name="contact_number" tabindex="-1" autocomplete="off" /></label>
+    </p>
+
+    <fieldset>
+      <legend class={legend}>{t("form.where")}</legend>
+      <div class="flex flex-wrap gap-2">
+        {
+          destinations.map(([value, label]) => (
+            <span>
+              <input
+                type="checkbox"
+                id={`dest-${value}-${uid}`}
+                name="destinations"
+                value={label}
+                class="peer sr-only"
+                checked={destination === value}
+              />
+              <label for={`dest-${value}-${uid}`} class={chip}>{label}</label>
+            </span>
+          ))
+        }
+      </div>
+      <p class="hidden mt-2 text-sm text-red-700" data-error></p>
+    </fieldset>
+
+    <div class="grid gap-7 sm:grid-cols-2">
+      <div>
+        <label for={`month-${uid}`} class={legend}>{t("form.when")}</label>
+        <select id={`month-${uid}`} name="month" required class={input}>
+          <option value="">{t("form.when.choose")}</option>
+          <option value={t("form.when.flexible")}>{t("form.when.flexible")}</option>
+          {months.map((m) => <option value={m.label}>{m.label}</option>)}
+        </select>
+        <p class="hidden mt-2 text-sm text-red-700" data-error></p>
+      </div>
+      <fieldset>
+        <legend class={legend}>{t("form.duration")}</legend>
+        <div class="flex flex-wrap gap-2">
+          {
+            durations.map(([value, label]) => (
+              <span>
+                <input type="radio" id={`dur-${value}-${uid}`} name="duration" value={label} class="peer sr-only" required />
+                <label for={`dur-${value}-${uid}`} class={chip}>{label}</label>
+              </span>
+            ))
+          }
+        </div>
+        <p class="hidden mt-2 text-sm text-red-700" data-error></p>
+      </fieldset>
+    </div>
+
+    <fieldset>
+      <legend class={legend}>{t("form.party")}</legend>
+      <div class="flex flex-wrap gap-2">
+        {
+          parties.map(([value, label]) => (
+            <span>
+              <input type="radio" id={`party-${value}-${uid}`} name="party" value={label} class="peer sr-only" required checked={party === value} />
+              <label for={`party-${value}-${uid}`} class={chip}>{label}</label>
+            </span>
+          ))
+        }
+      </div>
+      <p class="hidden mt-2 text-sm text-red-700" data-error></p>
+    </fieldset>
+
+    <fieldset>
+      <legend class={legend}>{t("form.budget")}</legend>
+      <div class="flex flex-wrap gap-2">
+        {
+          budgets.map(([value, label]) => (
+            <span>
+              <input type="radio" id={`budget-${value}-${uid}`} name="budget" value={label} class="peer sr-only" />
+              <label for={`budget-${value}-${uid}`} class={chip}>{label}</label>
+            </span>
+          ))
+        }
+      </div>
+    </fieldset>
+
+    <div>
+      <label for={`notes-${uid}`} class={legend}>{t("form.notes")}</label>
+      <textarea id={`notes-${uid}`} name="notes" rows="3" placeholder={t("form.notes.placeholder")} class={input}></textarea>
+    </div>
+
+    <div class="grid gap-5 sm:grid-cols-2">
+      <div>
+        <label for={`name-${uid}`} class={legend}>{t("form.name")}</label>
+        <input id={`name-${uid}`} type="text" name="name" autocomplete="given-name" required class={input} />
+        <p class="hidden mt-2 text-sm text-red-700" data-error></p>
+      </div>
+      <div>
+        <label for={`email-${uid}`} class={legend}>{t("form.email")}</label>
+        <input id={`email-${uid}`} type="email" name="email" autocomplete="email" inputmode="email" required class={input} />
+        <p class="hidden mt-2 text-sm text-red-700" data-error></p>
+      </div>
+      <div class="sm:col-span-2">
+        <label for={`phone-${uid}`} class={legend}>
+          {t("form.phone")} <span class="font-normal text-gray-700">· {t("form.phone.help")}</span>
+        </label>
+        <input id={`phone-${uid}`} type="tel" name="phone" autocomplete="tel" inputmode="tel" class={input} />
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center gap-3 pt-2">
+      <button
+        type="submit"
+        class="w-full sm:w-auto bg-rose-600 hover:bg-emerald-700 transition-colors px-8 py-3.5 rounded-xl text-white text-lg font-semibold"
+      >
+        {t("form.button")}
+      </button>
+      <p class="text-sm text-gray-700 text-center">{t("form.helper").replace("{h}", hours)}</p>
+      <p class="text-xs text-gray-700 text-center">
+        {t("form.privacy")}
+        <a href={privacyPath} class="underline underline-offset-2">{t("form.privacyLink")}</a>.
+      </p>
+      <p class="hidden text-sm text-red-700 text-center" role="alert" data-form-error>{t("form.error")}</p>
+    </div>
+  </form>
+
+  <div
+    hidden
+    role="status"
+    tabindex="-1"
+    data-form-success
+    class="bg-emerald-50 border border-emerald-700 text-emerald-900 rounded-2xl p-8 text-center text-lg"
+  >
+  </div>
+
+  <div class="mt-10">
+    <h3 class="text-center text-sm font-semibold uppercase tracking-wide text-gray-700">{t("steps.heading")}</h3>
+    <ol class="mt-5 grid gap-6 sm:grid-cols-3">
+      {
+        steps.map((s, i) => (
+          <li class="flex sm:flex-col gap-3 sm:gap-2 sm:text-center sm:items-center">
+            <span
+              aria-hidden="true"
+              class="shrink-0 w-9 h-9 rounded-full bg-rose-600 text-white font-semibold inline-flex items-center justify-center"
+            >
+              {i + 1}
+            </span>
+            <p class="text-base leading-snug">
+              <strong class="font-semibold">{s.title}</strong> <span class="text-gray-700">{s.text}</span>
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="mt-6 flex items-center justify-center gap-3 text-sm text-gray-700">
+      <span class="flex -space-x-2">
+        <Image src={adam} alt="Adam Krawczyk" width={64} height={64} class="w-8 h-8 rounded-full object-cover ring-2 ring-white" />
+        <Image src={andrzej} alt="Andrzej Białasiewicz" width={64} height={64} class="w-8 h-8 rounded-full object-cover ring-2 ring-white" />
+      </span>
+      {t("steps.who")}
+    </p>
+  </div>
+</section>
+
+<script>
+  import emailjs from "@emailjs/browser";
+
+  const SERVICE_ID = "service_j0gcq1f";
+  const TEMPLATE_ID = "template_8sqboo9";
+  const PUBLIC_KEY = "1BeRlG3ZZaiaQRM0H";
+
+  function replyDay(root: HTMLElement) {
+    // Saturday -> Monday, otherwise tomorrow.
+    return new Date().getDay() === 6 ? root.dataset.textMonday! : root.dataset.textTomorrow!;
+  }
+
+  function showError(field: Element, message: string) {
+    const box = field.closest("fieldset, div")?.querySelector<HTMLElement>("[data-error]");
+    if (box) {
+      box.textContent = message;
+      box.classList.remove("hidden");
+    }
+    if (field instanceof HTMLInputElement || field instanceof HTMLSelectElement) field.setAttribute("aria-invalid", "true");
+  }
+
+  function clearErrors(form: HTMLFormElement) {
+    form.querySelectorAll<HTMLElement>("[data-error]").forEach((b) => b.classList.add("hidden"));
+    form.querySelectorAll("[aria-invalid]").forEach((f) => f.removeAttribute("aria-invalid"));
+  }
+
+  function validate(form: HTMLFormElement, root: HTMLElement): Element | null {
+    clearErrors(form);
+    let first: Element | null = null;
+    const need = (ok: boolean, el: Element, msg: string) => {
+      if (!ok) {
+        showError(el, msg);
+        first ??= el;
+      }
+    };
+    const req = root.dataset.textErrorRequired!;
+    need(!!form.querySelector('input[name="destinations"]:checked'), form.querySelector('input[name="destinations"]')!, req);
+    const month = form.querySelector<HTMLSelectElement>('select[name="month"]')!;
+    need(month.value !== "", month, req);
+    need(!!form.querySelector('input[name="duration"]:checked'), form.querySelector('input[name="duration"]')!, req);
+    need(!!form.querySelector('input[name="party"]:checked'), form.querySelector('input[name="party"]')!, req);
+    const name = form.querySelector<HTMLInputElement>('input[name="name"]')!;
+    need(name.value.trim().length > 0, name, req);
+    const email = form.querySelector<HTMLInputElement>('input[name="email"]')!;
+    need(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()), email, root.dataset.textErrorEmail!);
+    return first;
+  }
+
+  function init() {
+    document.querySelectorAll<HTMLElement>("[data-trip-planner]").forEach((root) => {
+      const form = root.querySelector("form");
+      if (!form || form.dataset.ready) return;
+      form.dataset.ready = "true";
+      const button = form.querySelector<HTMLButtonElement>("button[type=submit]")!;
+      const errorBox = form.querySelector<HTMLElement>("[data-form-error]")!;
+      const success = root.querySelector<HTMLElement>("[data-form-success]")!;
+      let started = false;
+
+      form.addEventListener(
+        "input",
+        () => {
+          if (started) return;
+          started = true;
+          (window as any).gtag?.("event", "form_start", { form: "trip-planner", page_path: location.pathname });
+        },
+        { once: true }
+      );
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const bad = validate(form, root);
+        if (bad) {
+          const target = bad.closest("fieldset") ?? bad;
+          (target as HTMLElement).scrollIntoView({ behavior: "smooth", block: "center" });
+          (bad as HTMLElement).focus?.();
+          return;
+        }
+        errorBox.classList.add("hidden");
+        button.disabled = true;
+        button.textContent = root.dataset.textSending ?? "";
+        const data = new FormData(form);
+        try {
+          await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, {
+            publicKey: PUBLIC_KEY,
+            blockHeadless: true,
+            blockList: { watchVariable: "contact_number", list: [] },
+            limitRate: { id: "trip-planner", throttle: 60000 },
+          });
+          const name = String(data.get("name") || "").trim();
+          success.textContent = (root.dataset.textSuccess ?? "").replace("{name}", name).replace("{day}", replyDay(root));
+          form.hidden = true;
+          success.hidden = false;
+          success.focus();
+          (window as any).gtag?.("event", "generate_lead", {
+            method: "form",
+            form: "trip-planner",
+            party: data.get("party"),
+            duration: data.get("duration"),
+            destinations: data.getAll("destinations").join(","),
+            page_path: location.pathname,
+          });
+        } catch (error: any) {
+          // A rate-limited or honeypot-flagged send still gets the success screen.
+          if (error?.status === 429 || error?.status === 403) {
+            form.hidden = true;
+            success.textContent = (root.dataset.textSuccess ?? "").replace("{name}", "").replace(", .", ".").replace("{day}", replyDay(root));
+            success.hidden = false;
+          } else {
+            errorBox.classList.remove("hidden");
+          }
+        } finally {
+          button.disabled = false;
+          button.textContent = root.dataset.textButton ?? "";
+        }
+      });
+    });
+  }
+
+  init();
+  document.addEventListener("astro:page-load", init);
+</script>

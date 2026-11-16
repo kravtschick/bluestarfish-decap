@@ -7,7 +7,8 @@ import ContactUs from "../../components/ContactUs.astro";
 import Chat from "../../components/Chat.astro";
 import chatImg from "../../images/chat-green.svg";
 import Destinations from "../../components/Destinations.astro";
-import ContactForm from "../../components/ContactForm.astro";
+import TripPlannerForm from "../../components/TripPlannerForm.astro";
+import ContactDetails from "../../components/ContactDetails.astro";
 import Skills from "../../components/Skills.astro";
 import Trips from "../../components/Trips.astro";
 import Reviews from "../../components/Reviews.astro";
@@ -81,7 +82,7 @@ const textEn =
           <div class="mt-24 lg:mt-32">
             <div
               class={
-                page.id === "en/about-us.md"
+                page.id === "en/about-us.md" || page.id === "en/privacy.md"
                   ? "mx-auto w-full md:max-w-2xl lg:max-w-3xl prose lg:prose-lg prose-headings:font-semibold prose-h2:text-3xl prose-h2:text-center prose-p:leading-relaxed"
                   : "text-center w-full md:w-2/3 max-w-2/3 mx-auto prose lg:prose-lg prose-headings:font-semibold"
               }
@@ -112,7 +113,13 @@ const textEn =
           <ContactUs textEn={textEn} />
         )
       }
-      {page.id === "en/contact.md" && <ContactForm />}
+      {page.id === "en/contact.md" && (
+        <>
+          <TripPlannerForm compact />
+          <ContactDetails />
+        </>
+      )}
+      {(page.id === "en/index.md" || page.id === "en/types-of-trips.md") && <TripPlannerForm />}
     </Wrapper>
   </main>
 </Layout>

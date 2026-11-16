@@ -50,3 +50,12 @@ structured data. It was built from a Google Maps review export (Apify
 regenerate the JSON with the same fields (name per language, date, stars, lang, trip,
 text per language, photos, reviewUrl), copy new guest photos to
 `src/assets/images/reviews/` at about 1200 px, and update `reviewCount`.
+
+## Enquiry form (EmailJS template)
+
+`TripPlannerForm.astro` posts these variables to the EmailJS template
+`template_8sqboo9` on service `service_j0gcq1f`: `destinations` (repeated),
+`month`, `duration`, `party`, `budget`, `notes`, `name`, `email`, `phone`,
+`lang`, `source_page`. Update the template to show them and set Reply-To
+to `{{email}}`. The honeypot field is `contact_number`; add it to the
+template's block list in the EmailJS dashboard if spam appears.

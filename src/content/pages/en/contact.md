@@ -1,21 +1,14 @@
 ---
 seo:
-  seoTitle: "Contact Us: Plan Your Southeast Asia Trip"
-  seoDesc: "Questions about a trip to Vietnam, Cambodia or Laos? Message us on WhatsApp or send the form. We reply with a tailor-made proposal."
+  seoTitle: "Contact: plan your trip to Southeast Asia"
+  seoDesc: "Answer a few questions and get a first trip proposal for Vietnam, Cambodia or Laos within 24 hours. No commitment. WhatsApp, email, phone."
 hero:
   title: Contact
+  subtitle: A few questions, five minutes. A first route within 24 hours.
   image: ../../../assets/images/contact-hero.jpg
-intro: >
-  Have questions about traveling to Southeast Asia? 
-
-
-  We will be happy to share our knowledge.
-  Click to contact us via WhatsApp
 countriesWidget: false
 skillsWidget: false
 tripsWidget: false
-chatWidget: true
+chatWidget: false
 contactButtonWidget: false
 ---
-
-Or fill out the contact form below. We will contact you immediately, taking into account the 6-hour time difference from Poland.

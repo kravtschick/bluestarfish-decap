@@ -426,6 +426,7 @@ collections:
               - { label: "Tax ID", name: tax_id, widget: string, required: false }
               - { label: "Founded (year)", name: founded, widget: string, required: false }
               - { label: "Google Maps embed URL", name: map_embed, widget: string, required: false }
+              - { label: "Reply time promise (hours)", name: reply_hours, widget: string, hint: "Shown under the form and in the three steps." }
               - {
                   label: "Google Business Profile link",
                   name: google_business,
@@ -439,7 +440,6 @@ collections:
             hint: "Leave a field empty to hide that icon."
             fields:
               - { label: "Facebook (EN page)", name: facebook, widget: string, required: false }
-              - { label: "Facebook (PL page)", name: facebook_pl, widget: string, required: false }
               - { label: "Instagram", name: instagram, widget: string, required: false }
               - { label: "LinkedIn", name: linkedin, widget: string, required: false }
               - { label: "Tripadvisor", name: tripadvisor, widget: string, required: false }
@@ -469,6 +469,7 @@ collections:
               - { label: "Slug Trips", name: slug.trips, widget: string }
               - { label: "Slug Contact", name: slug.contact, widget: string }
               - { label: "Slug Reviews", name: slug.reviews, widget: string }
+              - { label: "Slug Privacy", name: slug.privacy, widget: string }
               - { label: "Navigation Reviews", name: nav.reviews, widget: string }
               - { label: "Footer Google link", name: footer.google, widget: string, required: false }
               - { label: "Footer new tab note", name: footer.newTab, widget: string, required: false }
@@ -528,6 +529,7 @@ collections:
               - { label: "Slug Trips", name: slug.trips, widget: string }
               - { label: "Slug Contact", name: slug.contact, widget: string }
               - { label: "Slug Reviews", name: slug.reviews, widget: string }
+              - { label: "Slug Privacy", name: slug.privacy, widget: string }
               - { label: "Navigation Reviews", name: nav.reviews, widget: string }
               - { label: "Footer Google link", name: footer.google, widget: string, required: false }
               - { label: "Footer new tab note", name: footer.newTab, widget: string, required: false }

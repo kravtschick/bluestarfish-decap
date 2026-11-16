@@ -14,3 +14,12 @@
 .nav-mobile.expanded {
   transform: translateX(100%);
 }
+
+/* Reading measure for long text (country, about, privacy pages). */
+.prose, .prose-lg {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+.prose p, .prose-lg p {
+  max-width: 68ch;
+}
