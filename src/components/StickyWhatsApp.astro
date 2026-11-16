@@ -1,0 +1,64 @@
+---
+// Phone-only WhatsApp bar. Shows once the visitor has scrolled past the
+// first screen and hides while an enquiry form is on screen, so two
+// WhatsApp buttons never compete. Uses the form's prefilled link when the
+// page has one (country pages add the destination to the message).
+import settings from "../data/settings.json";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang) as (k: string) => string;
+const href = `https://wa.me/${settings.info.phone.replace(/\D/g, "")}?text=${encodeURIComponent(t("wa.text"))}`;
+---
+
+<div
+  data-sticky-wa
+  aria-hidden="true"
+  class="md:hidden fixed inset-x-0 bottom-0 z-40 translate-y-full transition-transform duration-300 bg-white/95 backdrop-blur border-t border-gray-200 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]"
+>
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener"
+    tabindex="-1"
+    class="flex items-center justify-center gap-2 w-full rounded-xl bg-[#25d366] hover:bg-[#1da851] text-gray-950 text-lg font-semibold py-3"
+  >
+    <svg aria-hidden="true" viewBox="0 0 24 24" class="w-6 h-6 fill-current shrink-0"><path d="M12.05 21.78h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.33.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.33 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></svg>
+    {t("wa.button")}<span class="sr-only"> {t("footer.newTab")}</span>
+  </a>
+</div>
+
+<script>
+  let controller: AbortController | null = null;
+
+  function init() {
+    controller?.abort();
+    controller = new AbortController();
+    const bar = document.querySelector<HTMLElement>("[data-sticky-wa]");
+    if (!bar) return;
+    const link = bar.querySelector<HTMLAnchorElement>("a")!;
+    const formLink = document.querySelector<HTMLAnchorElement>("[data-trip-planner] a[href*='wa.me']");
+    if (formLink) link.href = formLink.href;
+
+    let formVisible = false;
+    const forms = document.querySelectorAll("[data-trip-planner]");
+    const io = new IntersectionObserver((entries) => {
+      formVisible = entries.some((e) => e.isIntersecting);
+      update();
+    });
+    forms.forEach((f) => io.observe(f));
+    controller.signal.addEventListener("abort", () => io.disconnect());
+
+    function update() {
+      const show = window.scrollY > window.innerHeight * 0.6 && !formVisible;
+      bar!.classList.toggle("translate-y-full", !show);
+      bar!.setAttribute("aria-hidden", String(!show));
+      link.tabIndex = show ? 0 : -1;
+    }
+    window.addEventListener("scroll", update, { passive: true, signal: controller.signal });
+    update();
+  }
+
+  init();
+  document.addEventListener("astro:page-load", init);
+</script>

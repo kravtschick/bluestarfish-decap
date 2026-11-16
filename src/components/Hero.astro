@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import Wrapper from "./Wrapper.astro";
 import Chat from "./Chat.astro";
 import chatImg from "../images/chat-white.svg";
@@ -13,17 +13,27 @@ interface Props {
   desc?: string;
   bottom: string;
   chat?: boolean;
+  /** Portrait crop served to phones instead of the landscape image. */
+  mobileImage?: ImageMetadata;
 }
 
-const { image, height, title, desc, bottom, chat = false, focus = "center" } = Astro.props;
+const { image, height, title, desc, bottom, chat = false, focus = "center", mobileImage } = Astro.props;
 
 // The hero is the largest element on every page, so it loads first and in a
 // size that fits the screen. Never upscale beyond the source file.
 const heroWidth = Math.min(image.width, 2000);
 const heroWidths = [640, 828, 1080, 1600, 2000].filter((w) => w < heroWidth).concat(heroWidth);
+const mobile = mobileImage
+  ? await Promise.all(
+      [480, 640].map((w) => getImage({ src: mobileImage, width: w, format: "webp", quality: 45 }))
+    )
+  : null;
+const mobileSrcset = mobile?.map((m) => `${m.src} ${m.attributes.width}w`).join(", ");
 ---
 
 <div class={`relative mx-auto ${height}`}>
+  <picture>
+  {mobileSrcset && <source media="(max-width: 767px)" srcset={mobileSrcset} sizes="100vw" type="image/webp" />}
   <Image
     src={image}
     alt={title.trim()}
@@ -37,6 +47,7 @@ const heroWidths = [640, 828, 1080, 1600, 2000].filter((w) => w < heroWidth).con
     class={`object-cover w-full brightness-90 ${height}`}
     style={`object-position: ${focus}`}
   />
+  </picture>
 
   <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" aria-hidden="true"></div>
   <div class={`absolute inset-x-0 ${bottom}`}>
@@ -55,6 +66,7 @@ const heroWidths = [640, 828, 1080, 1600, 2000].filter((w) => w < heroWidth).con
           )
         }
         {chat && <Chat image={chatImg.src} classes="w-56" margin="mt-8" />}
+        <slot />
       </div>
     </Wrapper>
   </div>

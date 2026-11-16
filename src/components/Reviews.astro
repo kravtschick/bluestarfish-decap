@@ -17,7 +17,7 @@ const picks: Record<Lang, [string, string][]> = {
   pl: [["2026-05-19", "Marta"], ["2025-07-21", "Michal"], ["2025-06-05", "Maciej"]],
   en: [["2025-09-06", ""], ["2026-03-27", ""], ["2025-04-23", "Daniel"]],
 };
-const MAX_WORDS = 70;
+const MAX_WORDS = 40;
 
 const photoModules = import.meta.glob<{ default: ImageMetadata }>(
   "../assets/images/reviews/*.jpg",
@@ -50,7 +50,7 @@ const reviews = picks[lang]
   });
 ---
 
-<section class="mt-24 lg:mt-32" aria-labelledby="home-reviews">
+<section aria-labelledby="home-reviews">
   <div class="text-center">
     <p class="text-rose-600 text-2xl tracking-widest" aria-hidden="true">★★★★★</p>
     <h2 id="home-reviews" class="mt-2 text-3xl font-semibold">{t("home.reviews.heading")}</h2>

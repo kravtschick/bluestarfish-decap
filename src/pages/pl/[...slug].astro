@@ -15,6 +15,7 @@ import Reviews from "../../components/Reviews.astro";
 import ContactUsAbout from "../../components/ContactUsAbout.astro";
 import About from "../../components/About.astro";
 import ReviewsPage from "../../components/ReviewsPage.astro";
+import Home from "../../components/Home.astro";
 
 export async function getStaticPaths() {
   const allPages = await getCollection("pages", ({ id }) => {
@@ -53,6 +54,7 @@ const textPl =
   image={page.data.hero.image}
 >
   <main>
+    {page.id === "pl/index.md" ? <Home page={page} /> : <>
     <Hero
       image={page.data.hero.image}
       focus={page.data.hero.focus}
@@ -123,5 +125,6 @@ const textPl =
       )}
       {(page.id === "pl/index.md" || page.id === "pl/rodzaje-wycieczek.md") && <TripPlannerForm />}
     </Wrapper>
+    </>}
   </main>
 </Layout>

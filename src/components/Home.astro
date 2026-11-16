@@ -1,0 +1,167 @@
+---
+// Home page, built as one conversion path: hero with the two actions and
+// proof next to them, a short brand statement, four USPs, destinations,
+// three reviews, then the enquiry form. Copy comes from the page entry,
+// the skills widget and settings.json so the CMS can still edit it.
+import { getCollection, getEntry } from "astro:content";
+import { Image } from "astro:assets";
+import Hero from "./Hero.astro";
+import heroMobile from "../assets/images/home-hero-mobile.jpg";
+import teamPhoto from "../assets/images/about-team-hero.jpg";
+import { pagePath } from "../i18n/routes";
+import Wrapper from "./Wrapper.astro";
+import Reviews from "./Reviews.astro";
+import TripPlannerForm from "./TripPlannerForm.astro";
+import settings from "../data/settings.json";
+import reviewsData from "../data/reviews.json";
+import { getLangFromUrl, useTranslations, reviewsLabel } from "../i18n/utils";
+import { countryPath } from "../i18n/routes";
+
+const { page } = Astro.props;
+const lang = getLangFromUrl(Astro.url) as "pl" | "en";
+const t = useTranslations(lang) as (k: string) => string;
+
+const waText = t("wa.text");
+const waHref = `https://wa.me/${settings.info.phone.replace(/\D/g, "")}?text=${encodeURIComponent(waText)}`;
+const rating = t("home.rating").replace("{count}", reviewsLabel(lang, reviewsData.reviewCount));
+
+const skills: any = await getEntry("widgets", "skills");
+const icons = [
+  "M16.86 3.49a2.1 2.1 0 0 1 2.97 2.97L8.5 17.79 4 19l1.21-4.5L16.86 3.49Z",
+  "M8 3h8a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z M11 18h2",
+  "M20 7 9.5 17.5 4 12",
+  "M3 21h18 M5 21V10l7-5 7 5v11 M10 21v-5h4v5",
+];
+const usps = skills.data[lang].map((s: any, i: number) => ({ ...s, icon: icons[i % icons.length] }));
+
+const countries = (await getCollection("country", ({ id }) => id.startsWith(`${lang}/`))).sort(
+  (a, b) => a.data.sortOrder - b.data.sortOrder
+);
+---
+
+<Hero
+  image={page.data.hero.image}
+  mobileImage={heroMobile}
+  focus={page.data.hero.focus}
+  height="min-h-[88vh]"
+  bottom="bottom-1/2 translate-y-1/2"
+  title={page.data.hero.title}
+  desc={page.data.hero.subtitle}
+>
+  <div class="flex flex-col sm:flex-row gap-3 justify-center">
+    <a
+      href={waHref}
+      target="_blank"
+      rel="noopener"
+      data-lead="whatsapp"
+      class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25d366] hover:bg-white transition-colors px-6 py-3.5 text-gray-950 text-lg font-semibold shadow-lg"
+    >
+      <svg aria-hidden="true" viewBox="0 0 24 24" class="w-6 h-6 fill-current shrink-0"><path d="M12.05 21.78h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.33.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.33 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></svg>
+      {t("home.cta.wa")}<span class="sr-only"> {t("footer.newTab")}</span>
+    </a>
+    <a
+      href="#plan"
+      class="inline-flex items-center justify-center rounded-xl border-2 border-white hover:bg-white hover:text-gray-950 transition-colors px-6 py-3.5 text-lg font-semibold"
+      >{t("home.cta.plan")}</a
+    >
+  </div>
+  <p class="text-base drop-shadow">
+    <span class="text-amber-300 tracking-wider" aria-hidden="true">★★★★★</span>
+    <span class="ml-1">{rating}</span>
+  </p>
+</Hero>
+
+<section class="py-20 lg:py-28">
+  <Wrapper>
+    <p class="mx-auto max-w-3xl text-center text-lg md:text-2xl leading-relaxed text-gray-800">
+      {page.data.intro}
+    </p>
+  </Wrapper>
+</section>
+
+<section class="bg-stone-100 py-20 lg:py-28" aria-labelledby="home-usp">
+  <Wrapper>
+    <h2 id="home-usp" class="text-3xl md:text-4xl font-semibold text-center">{t("home.usp.heading")}</h2>
+    <ul class="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        usps.map((u: any) => (
+          <li class="text-center">
+            <span class="mx-auto w-14 h-14 rounded-full bg-white text-rose-600 inline-flex items-center justify-center shadow-sm" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="w-7 h-7 fill-none stroke-current stroke-[1.6]" stroke-linecap="round" stroke-linejoin="round"><path d={u.icon} /></svg>
+            </span>
+            <h3 class="mt-5 text-xl font-semibold">{u.title}</h3>
+            <p class="mt-2 text-base text-gray-700 leading-relaxed">{u.text}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </Wrapper>
+</section>
+
+<section class="py-20 lg:py-28" aria-labelledby="home-team">
+  <Wrapper>
+    <div class="grid gap-10 lg:gap-16 md:grid-cols-2 items-center">
+      <Image
+        src={teamPhoto}
+        alt={t("home.team.alt")}
+        width={800}
+        height={600}
+        widths={[480, 800]}
+        sizes="(min-width: 768px) 50vw, 100vw"
+        quality={60}
+        class="w-full rounded-2xl object-cover aspect-[4/3]"
+      />
+      <div>
+        <h2 id="home-team" class="text-3xl md:text-4xl font-semibold">{t("home.team.heading")}</h2>
+        <p class="mt-5 text-lg leading-relaxed text-gray-800">{t("home.team.text")}</p>
+        <a href={pagePath(lang, "about")} class="mt-6 inline-block text-base font-semibold text-rose-600 hover:underline">{t("home.team.link")} →</a>
+        <p class="mt-8 pt-6 border-t border-gray-200 text-sm text-gray-700 leading-relaxed">
+          {t("home.team.credentials").replace("{name}", settings.info.name).replace("{tax}", settings.info.tax_id)}
+        </p>
+      </div>
+    </div>
+  </Wrapper>
+</section>
+
+<section class="pb-20 lg:pb-28" aria-labelledby="home-dest">
+  <Wrapper>
+    <h2 id="home-dest" class="text-3xl md:text-4xl font-semibold text-center">{t("home.dest.heading")}</h2>
+    <ul class="mt-14 grid gap-6 md:grid-cols-3">
+      {
+        countries.map((c) => (
+          <li>
+            <a href={countryPath(lang, c.slug.split("/").slice(1).join("/"))} class="group block">
+              <div class="overflow-hidden rounded-xl">
+                <Image
+                  src={c.data.image}
+                  alt=""
+                  width={700}
+                  height={560}
+                  widths={[420, 700]}
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  quality={60}
+                  class="w-full aspect-[5/4] object-cover group-hover:scale-105 transition duration-500"
+                />
+              </div>
+              <h3 class="mt-4 text-2xl font-semibold">{c.data.title}</h3>
+              <p class="mt-1 text-base text-gray-700">{c.data.intro}</p>
+              <span class="mt-2 inline-block text-base font-semibold text-rose-600 group-hover:underline">{t("home.dest.more")} →</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </Wrapper>
+</section>
+
+<section class="bg-stone-100 py-20 lg:py-24">
+  <Wrapper>
+    <Reviews />
+  </Wrapper>
+</section>
+
+<div id="plan" class="scroll-mt-24 pb-24">
+  <Wrapper>
+    <TripPlannerForm />
+  </Wrapper>
+</div>
