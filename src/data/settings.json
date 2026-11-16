@@ -5,7 +5,8 @@
     "address": "94 Xuân Thủy, Phường Thảo Điền, Thành phố Thủ Đức",
     "city": "Thành phố Hồ Chí Minh, Việt Nam",
     "phone": "+84 368 318 072",
-    "email": "booking@bluestarfish.travel"
+    "email": "booking@bluestarfish.travel",
+    "google_business": "https://www.google.com/maps/search/?api=1&query=Blue%20Starfish%20Travel%20Boutique&query_place_id=ChIJ09nz8nQndTERNv4sipekvpA"
   },
   "en": {
     "form.reply": "Thank you for contacting us! We will respond to your message soon.",
@@ -24,7 +25,9 @@
     "form.button": "Send message",
     "form.message": "Message",
     "slug.contact": "contact",
-    "form.error": "Error sending message."
+    "form.error": "Error sending message.",
+    "footer.google": "Reviews on Google",
+    "footer.newTab": "(opens in a new tab)"
   },
   "pl": {
     "form.reply": "Dziękujemy za kontakt! Wkrótce odpowiemy na Twoją wiadomość.",
@@ -43,6 +46,8 @@
     "form.button": "Wyślij wiadomość",
     "form.message": "Wiadomość",
     "slug.contact": "kontakt",
-    "form.error": "Błąd podczas wysyłania wiadomości."
+    "form.error": "Błąd podczas wysyłania wiadomości.",
+    "footer.google": "Opinie w Google",
+    "footer.newTab": "(otwiera się w nowej karcie)"
   }
 }

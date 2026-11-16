@@ -24,17 +24,17 @@ const sortedCountries = allCountries.sort(
       >
         <Image
           src={country.data.image}
-          alt={country.data.title}
+          alt=""
           class="rounded-lg shadow-lg"
           width={700}
           height={700}
           widths={[420, 700]}
           sizes="(min-width: 1024px) 420px, (min-width: 640px) 50vw, 100vw"
-          quality={70}
+          quality={60}
         />
-        <h3 class="absolute bottom-4 left-4 text-white text-3xl font-semibold drop-shadow">
+        <h2 class="absolute bottom-4 left-4 text-white text-3xl font-semibold drop-shadow">
           {country.data.title}
-        </h3>
+        </h2>
       </a>
     ))
   }

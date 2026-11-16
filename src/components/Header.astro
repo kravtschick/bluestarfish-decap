@@ -1,0 +1,209 @@
+---
+// Site header: logo, desktop menu, mobile menu and language switcher.
+// Rendered as plain HTML; a small script handles the scroll colour change
+// and the mobile menu, so no framework is shipped to the browser.
+import Nav from "./Nav.astro";
+import settings from "../data/settings.json";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { languages } from "../i18n/ui";
+import { homePath, isActive, pagePath, type Lang, type PageKey } from "../i18n/routes";
+import menuIcon from "../images/menu-open.svg";
+import menuIconWhite from "../images/menu-open-white.svg";
+import menuIconClose from "../images/menu-close.svg";
+import logo from "../images/logo.svg";
+import logoWhite from "../images/logo-white.svg";
+
+interface Props {
+  /** The current page in each language. Null when it has no counterpart. */
+  alternates?: Record<string, string> | null;
+}
+const { alternates } = Astro.props;
+
+const pathname = Astro.url.pathname;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+// The blog has no pages yet. Add "blog" back here once it does.
+const items: PageKey[] = ["about", "countries", "trips", "contact"];
+---
+
+<header
+  data-site-header
+  class="group fixed top-0 inset-x-0 z-10 py-4 w-full transition-all duration-500 bg-gradient-to-b from-black/60 via-black/30 to-transparent"
+>
+  <div class="px-4 w-full sm:px-8 lg:px-12 max-w-[1400px] mx-auto">
+    <div data-header-inner class="flex items-center justify-between text-white">
+      <a href={homePath(lang)}>
+        <img
+          data-logo
+          data-src-light={logoWhite.src}
+          data-src-dark={logo.src}
+          src={logoWhite.src}
+          alt={settings.site_title}
+          width="300"
+          height="72"
+          class="w-48 md:w-64 h-auto"
+        />
+      </a>
+      <nav>
+        <button
+          type="button"
+          data-menu-open
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          class="xl:hidden cursor-pointer"
+        >
+          <img
+            data-menu-icon
+            data-src-light={menuIconWhite.src}
+            data-src-dark={menuIcon.src}
+            src={menuIconWhite.src}
+            alt={lang === "pl" ? "Otwórz menu" : "Open menu"}
+            width="40"
+            height="40"
+            class="w-10"
+          />
+        </button>
+
+        <div class="relative">
+          <div
+            id="mobile-menu"
+            data-menu-panel
+            class="fixed top-0 right-0 w-[350px] overflow-y-auto max-w-full bg-white text-gray-950 h-screen z-[999] transition-transform ease-in-out duration-500 translate-x-full"
+          >
+            <div class="p-4">
+              <div class="flex justify-end">
+                <button type="button" data-menu-close>
+                  <img
+                    src={menuIconClose.src}
+                    alt={lang === "pl" ? "Zamknij menu" : "Close menu"}
+                    width="40"
+                    height="40"
+                    class="w-10"
+                  />
+                </button>
+              </div>
+              <div class="mt-8 mb-16">
+                <ul class="flex flex-col gap-4">
+                  {
+                    items.map((key) => (
+                      <li>
+                        <a
+                          href={pagePath(lang, key)}
+                          aria-current={isActive(pathname, pagePath(lang, key)) ? "page" : undefined}
+                          class={`block py-2 text-xl font-semibold tracking-wide ${
+                            isActive(pathname, pagePath(lang, key)) ? "text-rose-600" : "hover:text-rose-600"
+                          }`}
+                        >
+                          {t(`nav.${key}`)}
+                        </a>
+                      </li>
+                    ))
+                  }
+                  {
+                    Object.entries(languages).map(([language, label]) => (
+                      <li class={language === lang ? "hidden" : "mt-8 font-semibold"}>
+                        <a
+                          class="block py-2 text-lg underline underline-offset-4"
+                          href={alternates?.[language] ?? homePath(language as Lang)}
+                          hreflang={language}
+                          lang={language}
+                        >
+                          {label}
+                        </a>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            data-menu-overlay
+            class="w-full h-full fixed bg-black z-10 top-0 transition-opacity duration-100 left-0 translate-x-full opacity-100"
+          >
+          </div>
+        </div>
+
+        <Nav alternates={alternates} />
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  // This module runs once per page bundle. `init` is safe to call repeatedly:
+  // it binds each header only once. It runs right away, after every
+  // view-transition swap and on page load, so the menu keeps working even
+  // when the browser aborts a transition animation.
+  const SCROLL_THRESHOLD = 70;
+
+  function setSolid(solid: boolean) {
+    const header = document.querySelector<HTMLElement>("[data-site-header]");
+    if (!header) return;
+    header.classList.toggle("is-solid", solid);
+    header.classList.toggle("bg-white", solid);
+    header.classList.toggle("shadow", solid);
+    // Over the hero image a dark gradient keeps the white menu readable.
+    header.classList.toggle("bg-gradient-to-b", !solid);
+    header.classList.toggle("from-black/60", !solid);
+    header.classList.toggle("via-black/30", !solid);
+    header.classList.toggle("to-transparent", !solid);
+    header.querySelector("[data-header-inner]")?.classList.toggle("text-white", !solid);
+    header.querySelectorAll<HTMLImageElement>("[data-src-dark]").forEach((img) => {
+      const src = solid ? img.dataset.srcDark : img.dataset.srcLight;
+      if (src && img.getAttribute("src") !== src) img.src = src;
+    });
+  }
+
+  function setMenu(open: boolean) {
+    const panel = document.querySelector("[data-menu-panel]");
+    const overlay = document.querySelector("[data-menu-overlay]");
+    panel?.classList.toggle("translate-x-0", open);
+    panel?.classList.toggle("translate-x-full", !open);
+    overlay?.classList.toggle("translate-x-0", open);
+    overlay?.classList.toggle("opacity-80", open);
+    overlay?.classList.toggle("translate-x-full", !open);
+    overlay?.classList.toggle("opacity-100", !open);
+    document.body.classList.toggle("overflow-hidden", open);
+    document.querySelector("[data-menu-open]")?.setAttribute("aria-expanded", String(open));
+  }
+
+  let ticking = false;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setSolid(window.scrollY > SCROLL_THRESHOLD);
+        ticking = false;
+      });
+    },
+    { passive: true }
+  );
+
+  function init() {
+    const header = document.querySelector<HTMLElement>("[data-site-header]");
+    if (!header || header.dataset.bound) return;
+    header.dataset.bound = "true";
+    setSolid(window.scrollY > SCROLL_THRESHOLD);
+    setMenu(false);
+    header.querySelector("[data-menu-open]")?.addEventListener("click", () => setMenu(true));
+    header.querySelector("[data-menu-close]")?.addEventListener("click", () => setMenu(false));
+    header.querySelector("[data-menu-overlay]")?.addEventListener("click", () => setMenu(false));
+    // Unlock the page before navigating away. A locked page changes the
+    // viewport size mid-transition, which makes the browser abort it.
+    header.querySelectorAll("#mobile-menu a").forEach((link) =>
+      link.addEventListener("click", () => setMenu(false))
+    );
+  }
+
+  init();
+  document.addEventListener("astro:after-swap", init);
+  document.addEventListener("astro:page-load", init);
+  document.addEventListener("astro:before-preparation", () => setMenu(false));
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setMenu(false);
+  });
+</script>

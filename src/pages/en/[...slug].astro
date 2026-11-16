@@ -7,7 +7,7 @@ import ContactUs from "../../components/ContactUs.astro";
 import Chat from "../../components/Chat.astro";
 import chatImg from "../../images/chat-green.svg";
 import Destinations from "../../components/Destinations.astro";
-import ContactForm from "../../components/ContactForm";
+import ContactForm from "../../components/ContactForm.astro";
 import Skills from "../../components/Skills.astro";
 import Trips from "../../components/Trips.astro";
 import Reviews from "../../components/Reviews.astro";
@@ -101,7 +101,7 @@ const textEn =
           <ContactUs textEn={textEn} />
         )
       }
-      {page.id === "en/contact.md" && <ContactForm client:only />}
+      {page.id === "en/contact.md" && <ContactForm />}
     </Wrapper>
   </main>
 </Layout>

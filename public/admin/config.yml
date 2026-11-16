@@ -380,6 +380,13 @@ collections:
               - { label: "City", name: city, widget: string }
               - { label: "Phone", name: phone, widget: string }
               - { label: "Email", name: email, widget: string }
+              - {
+                  label: "Google Business Profile link",
+                  name: google_business,
+                  widget: string,
+                  required: false,
+                  hint: "Google Maps link to the business profile. Shown in the footer and used in structured data.",
+                }
           - label: "English translations"
             name: "en"
             widget: "object"
@@ -404,6 +411,8 @@ collections:
                 }
               - { label: "Slug Trips", name: slug.trips, widget: string }
               - { label: "Slug Contact", name: slug.contact, widget: string }
+              - { label: "Footer Google link", name: footer.google, widget: string, required: false }
+              - { label: "Footer new tab note", name: footer.newTab, widget: string, required: false }
               - { label: "Contact Form Name", name: form.name, widget: string }
               - {
                   label: "Contact Form Email",
@@ -459,6 +468,8 @@ collections:
                 }
               - { label: "Slug Trips", name: slug.trips, widget: string }
               - { label: "Slug Contact", name: slug.contact, widget: string }
+              - { label: "Footer Google link", name: footer.google, widget: string, required: false }
+              - { label: "Footer new tab note", name: footer.newTab, widget: string, required: false }
               - { label: "Contact Form Name", name: form.name, widget: string }
               - {
                   label: "Contact Form Email",

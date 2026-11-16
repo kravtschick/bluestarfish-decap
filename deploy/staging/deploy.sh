@@ -38,7 +38,7 @@ main() {
     log "Fetching $branch from $(git -C "$src" remote get-url origin)"
     git -C "$src" fetch --depth 1 origin "$branch"
     git -C "$src" reset --hard FETCH_HEAD
-    git -C "$src" clean -fdx -e node_modules
+    git -C "$src" clean -fdx -e node_modules -e .astro-cache
   fi
   local commit
   commit="$(git -C "$src" rev-parse --short HEAD)"

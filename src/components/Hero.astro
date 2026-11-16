@@ -18,7 +18,7 @@ const { image, height, title, desc, bottom, chat = false } = Astro.props;
 // The hero is the largest element on every page, so it loads first and in a
 // size that fits the screen. Never upscale beyond the source file.
 const heroWidth = Math.min(image.width, 2000);
-const heroWidths = [640, 1024, 1600, 2000].filter((w) => w < heroWidth).concat(heroWidth);
+const heroWidths = [640, 828, 1080, 1600, 2000].filter((w) => w < heroWidth).concat(heroWidth);
 ---
 
 <div class={`relative mx-auto ${height}`}>
@@ -28,7 +28,7 @@ const heroWidths = [640, 1024, 1600, 2000].filter((w) => w < heroWidth).concat(h
     width={heroWidth}
     widths={heroWidths}
     sizes="100vw"
-    quality={60}
+    quality={50}
     loading="eager"
     fetchpriority="high"
     decoding="async"

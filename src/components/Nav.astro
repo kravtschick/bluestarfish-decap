@@ -16,14 +16,15 @@ const t = useTranslations(lang);
 const items: PageKey[] = ["about", "countries", "trips", "contact"];
 ---
 
-<ul class="xl:flex items-center gap-6 hidden">
+<ul class="xl:flex items-center gap-8 hidden">
   {
     items.map((key) => (
       <li>
         <a
           href={pagePath(lang, key)}
-          class={`font-medium tracking-wide drop-shadow-sm ${
-            isActive(pathname, pagePath(lang, key)) ? "text-rose-500" : ""
+          aria-current={isActive(pathname, pagePath(lang, key)) ? "page" : undefined}
+          class={`py-2 text-[17px] font-semibold tracking-wide [text-shadow:0_1px_2px_rgb(0_0_0/0.35)] group-[.is-solid]:[text-shadow:none] underline-offset-8 decoration-2 hover:underline ${
+            isActive(pathname, pagePath(lang, key)) ? "underline" : ""
           }`}
         >
           {t(`nav.${key}`)}
@@ -33,8 +34,9 @@ const items: PageKey[] = ["about", "countries", "trips", "contact"];
   }
   {
     Object.entries(languages).map(([language, label]) => (
-      <li class={language === lang ? "hidden" : "ml-16"}>
+      <li class={language === lang ? "hidden" : "ml-10"}>
         <a
+          class="py-1.5 px-3 rounded-full border border-current font-semibold text-[15px] hover:bg-white/15"
           href={alternates?.[language] ?? homePath(language as Lang)}
           hreflang={language}
           lang={language}

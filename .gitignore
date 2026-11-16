@@ -19,3 +19,6 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# Astro image cache (see cacheDir in astro.config.mjs)
+.astro-cache/

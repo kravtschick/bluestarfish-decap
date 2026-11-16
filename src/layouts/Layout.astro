@@ -3,14 +3,14 @@ import { ViewTransitions } from "astro:transitions";
 import { fade } from "astro:transitions";
 import { getImage } from "astro:assets";
 import Footer from "../components/Footer.astro";
-import Header from "../components/Header.jsx";
-import Nav from "../components/Nav.astro";
+import Header from "../components/Header.astro";
 import settings from "../data/settings.json";
 import defaultShareImage from "../assets/images/home-hero.jpg";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/600.css";
-import "@fontsource/poppins/700.css";
+import poppins400 from "@fontsource/poppins/files/poppins-latin-400-normal.woff2?url";
+import poppins600 from "@fontsource/poppins/files/poppins-latin-600-normal.woff2?url";
 import "../styles/app.css";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import { getAlternates } from "../i18n/alternates";
@@ -72,6 +72,9 @@ const organization = {
   },
   areaServed: ["VN", "KH", "LA"],
   availableLanguage: ["en", "pl"],
+  ...(settings.info.google_business
+    ? { hasMap: settings.info.google_business, sameAs: [settings.info.google_business] }
+    : {}),
 };
 
 const isHome = segmentsOf(pathname).length === 1;
@@ -108,46 +111,71 @@ const jsonLd = graph.length
 <!doctype html>
 <html lang={lang}>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href={poppins600} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={poppins400} as="font" type="font/woff2" crossorigin />
     {
       !isStaging && (
-    <Fragment>
-    <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-10NKTL5XZN"
-    ></script><script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+        <script is:inline>
+          // Google Analytics. The tag library (about 200 KB) loads after the
+          // first scroll, tap or key press, or 3.5 s after the page has
+          // loaded, so it does not compete with the first render. Events sent
+          // before that are queued in dataLayer and delivered when it loads.
+          // The guard keeps view-transition navigations from adding listeners twice.
+          (function () {
+            if (window.__bsAnalytics) return;
+            window.__bsAnalytics = true;
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function () {
+              dataLayer.push(arguments);
+            };
+            gtag("js", new Date());
+            gtag("config", "G-10NKTL5XZN");
 
-      gtag("config", "G-10NKTL5XZN");
+            var loaded = false;
+            var triggers = ["scroll", "pointerdown", "keydown", "touchstart"];
+            function load() {
+              if (loaded) return;
+              loaded = true;
+              triggers.forEach(function (name) {
+                removeEventListener(name, load);
+              });
+              var script = document.createElement("script");
+              script.async = true;
+              script.src = "https://www.googletagmanager.com/gtag/js?id=G-10NKTL5XZN";
+              document.head.appendChild(script);
+            }
+            triggers.forEach(function (name) {
+              addEventListener(name, load, { once: true, passive: true });
+            });
+            addEventListener("load", function () {
+              setTimeout(load, 3500);
+            });
 
-      // Count enquiries: clicks on WhatsApp, email and phone links.
-      // One delegated listener, so it keeps working across view transitions.
-      document.addEventListener("click", function (event) {
-        var link = event.target.closest && event.target.closest("a[href]");
-        if (!link) return;
-        var href = link.getAttribute("href") || "";
-        var method = href.indexOf("wa.me") > -1
-          ? "whatsapp"
-          : href.indexOf("mailto:") === 0
-            ? "email"
-            : href.indexOf("tel:") === 0
-              ? "phone"
-              : null;
-        if (method) {
-          gtag("event", "generate_lead", {
-            method: method,
-            page_path: location.pathname,
-          });
-        }
-      });
-    </script>
-    </Fragment>
+            // Count enquiries: clicks on WhatsApp, email and phone links.
+            document.addEventListener("click", function (event) {
+              var link = event.target.closest && event.target.closest("a[href]");
+              if (!link) return;
+              var href = link.getAttribute("href") || "";
+              var method = href.indexOf("wa.me") > -1
+                ? "whatsapp"
+                : href.indexOf("mailto:") === 0
+                  ? "email"
+                  : href.indexOf("tel:") === 0
+                    ? "phone"
+                    : null;
+              if (method) {
+                gtag("event", "generate_lead", {
+                  method: method,
+                  page_path: location.pathname,
+                });
+              }
+            });
+          })();
+        </script>
       )
     }
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     {(noindex || isStaging) && <meta name="robots" content="noindex, nofollow" />}
@@ -177,7 +205,25 @@ const jsonLd = graph.length
     <meta name="generator" content={Astro.generator} />
     {
       !isStaging && (
-        <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
+        <script is:inline>
+          // Netlify Identity is only needed when someone opens a CMS invite,
+          // password-reset or confirmation link. Load it only then.
+          (function () {
+            if (!/(invite|recovery|confirmation|email_change)_token=|access_token=/.test(location.hash)) return;
+            var script = document.createElement("script");
+            script.src = "https://identity.netlify.com/v1/netlify-identity-widget.js";
+            script.onload = function () {
+              window.netlifyIdentity.on("init", function (user) {
+                if (!user) {
+                  window.netlifyIdentity.on("login", function () {
+                    location.href = "/admin/";
+                  });
+                }
+              });
+            };
+            document.head.appendChild(script);
+          })();
+        </script>
       )
     }
     <ViewTransitions />
@@ -185,9 +231,7 @@ const jsonLd = graph.length
 
   <body class="subpixel-antialiased bg-white text-gray-950 font-normal text-lg">
     <div class="grid grid-flow-row auto-rows-[auto_1fr_auto] h-screen">
-      <Header client:load pathname={pathname} alternates={alternates}
-        ><Nav alternates={alternates} /></Header
-      >
+      <Header alternates={alternates} />
       <div transition:animate={fade({ duration: "0.5s" })}><slot /></div>
       <Footer />
     </div>
