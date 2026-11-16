@@ -47,6 +47,6 @@ Releases are kept in `/root/docker/volumes/bluestarfish-staging/www/releases/` (
 `/en/reviews/`, plus the two quotes on the About page and the rating in the
 structured data. It was built from a Google Maps review export (Apify
 "Google Maps Reviews Scraper") on 16 Nov 2026. To refresh: export again,
-regenerate the JSON with the same fields (name, date, stars, lang, trip,
+regenerate the JSON with the same fields (name per language, date, stars, lang, trip,
 text per language, photos, reviewUrl), copy new guest photos to
 `src/assets/images/reviews/` at about 1200 px, and update `reviewCount`.

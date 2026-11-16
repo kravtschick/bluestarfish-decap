@@ -18,7 +18,7 @@ const team = (await getCollection("team")).sort(
 const quotes = reviewsData.reviews
   .filter((r) => r.lang === lang && (r.text as Record<string, string>)[lang]?.length > 150)
   .slice(0, 2)
-  .map((r) => ({ text: (r.text as Record<string, string>)[lang], author: r.name }));
+  .map((r) => ({ text: (r.text as Record<string, string>)[lang], author: (r.name as Record<string, string>)[lang] }));
 const reviewsPath = pagePath(lang, "reviews");
 
 const info = settings.info;

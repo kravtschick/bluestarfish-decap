@@ -31,6 +31,7 @@ const reviews = data.reviews.map((r) => {
   const original = (r.text as Record<string, string>)[r.lang];
   return {
     ...r,
+    name: (r.name as Record<string, string>)[lang] ?? (r.name as Record<string, string>).pl,
     text,
     original: r.lang !== lang && original !== text ? original : null,
     photos: r.photos.map(photoByPath).filter(Boolean) as ImageMetadata[],

@@ -114,7 +114,7 @@ if (isReviews) {
     },
     review: reviewsData.reviews.slice(0, 10).map((r) => ({
       "@type": "Review",
-      author: { "@type": "Person", name: r.name },
+      author: { "@type": "Person", name: (r.name as Record<string, string>)[lang] },
       datePublished: r.date,
       reviewRating: { "@type": "Rating", ratingValue: r.stars, bestRating: 5 },
       reviewBody: (r.text as Record<string, string>)[r.lang],
