@@ -29,6 +29,10 @@ interface Props {
 
 const { title, description, name, image, noindex = false } = Astro.props;
 
+// Set PUBLIC_SITE_ENV=staging when building the staging copy: it is kept out
+// of search results, Google Analytics and the CMS login.
+const isStaging = import.meta.env.PUBLIC_SITE_ENV === "staging";
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const site = Astro.site!;
@@ -104,8 +108,11 @@ const jsonLd = graph.length
 <!doctype html>
 <html lang={lang}>
   <head>
+    {
+      !isStaging && (
+    <Fragment>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-10NKTL5XZN"
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-10NKTL5XZN"
     ></script><script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -136,11 +143,14 @@ const jsonLd = graph.length
         }
       });
     </script>
+    </Fragment>
+      )
+    }
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex" />}
+    {(noindex || isStaging) && <meta name="robots" content="noindex, nofollow" />}
     {!noindex && <link rel="canonical" href={canonical} />}
     {
       alternates &&
@@ -165,8 +175,11 @@ const jsonLd = graph.length
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-    ></script>
+    {
+      !isStaging && (
+        <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
+      )
+    }
     <ViewTransitions />
   </head>
 
