@@ -1,8 +1,7 @@
 ---
 seo:
-  seoTitle: Laos
-  seoDesc: Laos, located in an exposed area in the heart of Southeast Asia, is a
-    country that delights with its   extraordinary charm and spirit.
+  seoTitle: "Laos Private Tours & Tailor-Made Trips"
+  seoDesc: "Laos, in the heart of Southeast Asia, is a country of temples, mountains and quiet towns on the Mekong. Plan a tailor-made trip."
 title: Laos
 sortOrder: 3
 cover: ../../../assets/images/laos-hero.jpg
@@ -14,14 +13,24 @@ Laos remains one of the region's best-kept secrets, offering a tapestry of undis
 
 &nbsp;
 
-**Why Visit Laos?**
+## Why visit Laos?
 
-**Luang Prabang:** The enchanting former royal capital mesmerizes with its Buddhist temples, French colonial architecture, and nearby natural wonders like cascading waterfalls.
+### Luang Prabang
 
-**Mekong River**: The lifeline of Laos, this majestic river winds past quaint villages and breathtaking scenery, inviting exploration and tranquility.
+The enchanting former royal capital mesmerizes with its Buddhist temples, French colonial architecture, and nearby natural wonders like cascading waterfalls.
 
-**Vang Vieng Caves**: For the adventurous at heart, Vang Vieng offers a network of impressive caves and subterranean rivers, promising thrilling explorations beneath the earth's surface.
+### Mekong River
 
-**Si Phan Don (Four Thousand Islands):** In this languid archipelago, time slows down, life revolves around the rhythm of the river, and the simplicity of island living can be savored.
+The lifeline of Laos, this majestic river winds past quaint villages and breathtaking scenery, inviting exploration and tranquility.
 
-**Laotian Cuisine:** A culinary adventure in its own right, Laotian food delivers a unique blend of regional flavors with dishes like larb, sticky rice, and mak hoong, providing a taste of Laos's distinctive gastronomic heritage.
+### Vang Vieng Caves
+
+For the adventurous at heart, Vang Vieng offers a network of impressive caves and subterranean rivers, promising thrilling explorations beneath the earth's surface.
+
+### Si Phan Don (Four Thousand Islands)
+
+In this languid archipelago, time slows down, life revolves around the rhythm of the river, and the simplicity of island living can be savored.
+
+### Laotian Cuisine
+
+A culinary adventure in its own right, Laotian food delivers a unique blend of regional flavors with dishes like larb, sticky rice, and mak hoong, providing a taste of Laos's distinctive gastronomic heritage.

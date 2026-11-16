@@ -23,7 +23,7 @@ skills:
       wielkich korporacji turystycznych. Wybierając nas, inwestujesz w
       autentyczne doświadczenia i pomagasz lokalnym społecznościom prosperować.
 seo:
-  seoTitle: Tworzymy Twoje Niezapomniane Podróże
+  seoTitle: "Wietnam, Kambodża, Laos: wycieczki na miarę"
   seoDesc: Zorganizujemy dla Ciebie wakacje w Wietnamie, Kambodży i Laosie. Tak
     jak lubisz. Na Twoich warunkach.
 hero:

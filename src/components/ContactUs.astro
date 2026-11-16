@@ -4,9 +4,9 @@ interface Props {
   textPl?: string;
 }
 
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getLangFromUrl } from "../i18n/utils";
+import { pagePath } from "../i18n/routes";
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 
 const { textPl, textEn } = Astro.props;
 ---
@@ -15,7 +15,7 @@ const { textPl, textEn } = Astro.props;
   class="flex flex-col gap-8 items-center mt-24 lg:mt-32 border-t-[1px] border-gray-200 pt-16"
 >
   <div class="text-xl text-center">{lang === "en" ? textEn : textPl}</div><a
-    href={`/${lang}/${t("slug.contact")}`}
+    href={pagePath(lang, "contact")}
     class="bg-rose-500 hover:bg-emerald-500 transition-colors px-4 py-2 rounded-lg text-white"
     >{lang === "en" ? "Write to Us" : "Napisz do nas"}</a
   >

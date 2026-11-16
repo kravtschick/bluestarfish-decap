@@ -5,29 +5,30 @@ import Layout from "../../layouts/Layout.astro";
 import image from "../../assets/images/404.jpg";
 import question from "../../../public/question.svg";
 import { Image } from "astro:assets";
+import { homePath } from "../../i18n/routes";
 ---
 
-<Layout title="404! Nie ma takiej strony - " description="">
+<Layout title="Page not found (404)" description="We could not find a page at this address." noindex>
   <main class="mb-16">
     <Hero
       image={image}
       height="h-[300px] md:h-[550px]"
       bottom="bottom-6"
-      title="404!"
+      title="404"
     />
     <Wrapper>
       <div class="mt-24 lg:mt-32 text-center items-center flex flex-col gap-8">
-        <h2 class="text-3xl font-semibold">Nie ma takiej strony</h2>
-        <div><Image src={question} alt="Brak strony" class="w-24" /></div>
+        <h2 class="text-3xl font-semibold">Page not found</h2>
+        <div><Image src={question} alt="" class="w-24" /></div>
         <p>
-          Nie znaleźliśmy strony o podanym adresie. Sprawdź czy poprawnie
-          wpisałeś adres lub wróć na stronę główną:
+          We could not find a page at this address. Check that the address is
+          typed correctly, or go back to the home page:
         </p>
         <a
-          href="/"
+          href={homePath("en")}
           class="py-2 px-4 rounded bg-rose-500 hover:bg-emerald-500 text-white"
-          >Strona główna
-        </a>
+          >Home page</a
+        >
       </div>
     </Wrapper>
   </main>

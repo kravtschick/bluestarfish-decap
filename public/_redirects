@@ -1,3 +1,9 @@
-# Redirects from what the browser requests to what we serve
+# Redirects from what the browser requests to what we serve.
+# Netlify adds the trailing slash itself (Pretty URLs), so the target must
+# already carry it or the visitor gets a second redirect.
 
-/ /en
+/        /en/                 301
+
+# Language-specific 404 pages. These rules only apply when no file matches.
+/pl/*    /pl/404/index.html   404
+/*       /en/404/index.html   404

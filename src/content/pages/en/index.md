@@ -1,10 +1,10 @@
 ---
 seo:
-  seoTitle: Unforgettable Trips, Your Way
+  seoTitle: "Vietnam, Cambodia & Laos Tailor-Made Tours"
   seoDesc: Vietnam, Cambodia, Laos – Personalized Holidays, Tailored for You.
 hero:
-  title: " South East Asia Custom Travel Experiences"
-  subtitle: " Enjoy Tailor-Made Holidays in Vietnam, Cambodia, and Laos. On Your Terms."
+  title: "South East Asia Custom Travel Experiences"
+  subtitle: "Enjoy Tailor-Made Holidays in Vietnam, Cambodia, and Laos. On Your Terms."
   image: ../../../assets/images/home-hero.jpg
 intro: >+
   Passionate about travel, we're dedicated to sharing the beauty of Vietnam,

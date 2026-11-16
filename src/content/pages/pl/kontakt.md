@@ -1,7 +1,7 @@
 ---
 seo:
-  seoTitle: Kontakt
-  seoDesc: Zorganizujemy dla Ciebie wakacje w Wietnamie, Kambodży i Laosie.
+  seoTitle: "Kontakt: zaplanuj wyjazd do Azji"
+  seoDesc: "Masz pytania o wyjazd do Wietnamu, Kambodży lub Laosu? Napisz na WhatsApp albo przez formularz. Odpowiemy z propozycją programu."
 hero:
   title: Kontakt
   image: ../../../assets/images/contact-hero.jpg

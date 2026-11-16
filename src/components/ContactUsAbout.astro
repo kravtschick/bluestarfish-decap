@@ -1,9 +1,9 @@
 ---
 import chatImg from "../../src/images/chat-green.svg";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getLangFromUrl } from "../i18n/utils";
+import { pagePath } from "../i18n/routes";
 import Chat from "./Chat.astro";
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 
 interface Props {
   textEn?: string;
@@ -19,7 +19,7 @@ const { textPl, textEn } = Astro.props;
     class="flex gap-8"
   >
     <a
-      href={`/${lang}/${t("slug.contact")}`}
+      href={pagePath(lang, "contact")}
       class="bg-rose-500 hover:bg-emerald-500 transition-colors px-4 py-3 rounded-2xl text-white"
       >{lang === "en" ? "Write to Us" : "Napisz do nas"}</a
     >

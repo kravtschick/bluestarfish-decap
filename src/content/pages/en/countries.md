@@ -1,7 +1,7 @@
 ---
 seo:
-  seoTitle: Countries
-  seoDesc: We will organize a holiday for you in Vietnam, Cambodia and Laos.
+  seoTitle: "Destinations: Vietnam, Cambodia and Laos"
+  seoDesc: "Where we travel: Vietnam, Cambodia and Laos. See what each country offers and ask us for a tailor-made itinerary."
 hero:
   title: Countries
   image: ../../../assets/images/countries-hero.jpg

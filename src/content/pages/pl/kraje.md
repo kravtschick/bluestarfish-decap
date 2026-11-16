@@ -1,7 +1,7 @@
 ---
 seo:
-  seoTitle: Kraje
-  seoDesc: Zorganizujemy dla Ciebie wakacje w Wietnamie, Kambodży i Laosie.
+  seoTitle: "Kraje: Wietnam, Kambodża i Laos"
+  seoDesc: "Dokąd jeździmy: Wietnam, Kambodża i Laos. Zobacz, co oferuje każdy kraj, i zapytaj nas o program szyty na miarę."
 hero:
   title: Kraje
   image: ../../../assets/images/countries-hero.jpg

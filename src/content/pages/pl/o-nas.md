@@ -1,7 +1,7 @@
 ---
 seo:
-  seoTitle: O nas
-  seoDesc: Zorganizujemy dla Ciebie wakacje w Wietnamie, Kambodży i Laosie.
+  seoTitle: "O nas: butikowa agencja podróży w Wietnamie"
+  seoDesc: "Blue Starfish Travel Boutique to butikowa agencja podróży z Ho Chi Minh. Planujemy indywidualne wyjazdy do Wietnamu, Kambodży i Laosu."
 hero:
   title: O nas
   image: ../../../assets/images/about-hero.jpg

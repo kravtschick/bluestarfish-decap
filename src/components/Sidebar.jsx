@@ -2,11 +2,13 @@ import { useEffect } from "react";
 import menuIconClose from "../images/menu-close.svg";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import { languages } from "../i18n/ui";
+import { homePath, isActive, pagePath } from "../i18n/routes";
 
-const Sidebar = ({ open = false, setOpen }) => {
-  const url = { pathname: window.location.pathname };
-  const currentPath = "/" + url.pathname.slice(1);
-  const lang = getLangFromUrl(url);
+// The blog has no pages yet. Add "blog" back here once it does.
+const items = ["about", "countries", "trips", "contact"];
+
+const Sidebar = ({ open = false, setOpen, pathname, alternates }) => {
+  const lang = getLangFromUrl({ pathname });
   const t = useTranslations(lang);
   useEffect(() => {
     open
@@ -27,77 +29,43 @@ const Sidebar = ({ open = false, setOpen }) => {
                 setOpen(false);
               }}
             >
-              <img src={menuIconClose.src} alt="Zamknij" className="w-10" />
+              <img
+                src={menuIconClose.src}
+                alt={lang === "pl" ? "Zamknij menu" : "Close menu"}
+                width="40"
+                height="40"
+                className="w-10"
+              />
             </button>
           </div>
           <div className="mt-8 mb-16">
             <ul className="flex flex-col gap-4">
-              <li>
-                <a
-                  href={`/${lang}/${t("slug.about")}`}
-                  className={`font-medium tracking-wide drop-shadow-sm ${
-                    currentPath.indexOf(`/${lang}/${t("slug.about")}`) > -1
-                      ? "text-rose-500"
-                      : ""
-                  }`}
-                >
-                  {t("nav.about")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`/${lang}/${t("slug.countries")}`}
-                  className={`font-medium tracking-wide drop-shadow-sm ${
-                    currentPath.indexOf(`/${lang}/${t("slug.countries")}`) > -1
-                      ? "text-rose-500"
-                      : ""
-                  }`}
-                >
-                  {t("nav.countries")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`/${lang}/${t("slug.trips")}`}
-                  className={`font-medium tracking-wide drop-shadow-sm ${
-                    currentPath.indexOf(`/${lang}/${t("slug.trips")}`) > -1
-                      ? "text-rose-500"
-                      : ""
-                  }`}
-                >
-                  {t("nav.trips")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`/${lang}/${t("slug.blog")}`}
-                  className={`font-medium tracking-wide drop-shadow-sm ${
-                    currentPath.indexOf(`/${lang}/${t("slug.blog")}`) > -1
-                      ? "text-rose-500"
-                      : ""
-                  }`}
-                >
-                  {t("nav.blog")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`/${lang}/${t("slug.contact")}`}
-                  className={`font-medium tracking-wide drop-shadow-sm ${
-                    currentPath.indexOf(`/${lang}/${t("slug.contact")}`) > -1
-                      ? "text-rose-500"
-                      : ""
-                  }`}
-                >
-                  {t("nav.contact")}
-                </a>
-              </li>
+              {items.map((key) => (
+                <li key={key}>
+                  <a
+                    href={pagePath(lang, key)}
+                    className={`font-medium tracking-wide drop-shadow-sm ${
+                      isActive(pathname, pagePath(lang, key))
+                        ? "text-rose-500"
+                        : ""
+                    }`}
+                  >
+                    {t(`nav.${key}`)}
+                  </a>
+                </li>
+              ))}
               {Object.entries(languages).map(([language, label]) => (
                 <li
                   key={language}
                   className={language === lang ? "hidden" : "mt-8 font-medium"}
                 >
-                  <a href={`/${language}`}>{label}</a>
+                  <a
+                    href={alternates?.[language] ?? homePath(language)}
+                    hrefLang={language}
+                    lang={language}
+                  >
+                    {label}
+                  </a>
                 </li>
               ))}
             </ul>

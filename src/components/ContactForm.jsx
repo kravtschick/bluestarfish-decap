@@ -28,6 +28,10 @@ const ContactForm = () => {
         setEmail('');
         setMessage('');
         setStatusMessage(1);
+        window.gtag?.('event', 'generate_lead', {
+          method: 'form',
+          page_path: window.location.pathname,
+        });
         setBtnText(t('form.button'));
       },
       (error) => {

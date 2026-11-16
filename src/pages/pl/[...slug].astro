@@ -43,7 +43,12 @@ const textPl =
     : "Skontaktuj się z nami";
 ---
 
-<Layout title={page.data.seo.seoTitle} description={page.data.seo.seoDesc}>
+<Layout
+  title={page.data.seo.seoTitle}
+  description={page.data.seo.seoDesc}
+  name={page.data.hero.title.trim()}
+  image={page.data.hero.image}
+>
   <main>
     <Hero
       image={page.data.hero.image}

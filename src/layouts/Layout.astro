@@ -1,30 +1,110 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import { fade } from "astro:transitions";
+import { getImage } from "astro:assets";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.jsx";
 import Nav from "../components/Nav.astro";
 import settings from "../data/settings.json";
+import defaultShareImage from "../assets/images/home-hero.jpg";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
 import "../styles/app.css";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getAlternates } from "../i18n/alternates";
+import { homePath, pageKeyOf, pagePath, segmentsOf } from "../i18n/routes";
+
 interface Props {
   title: string;
   description: string;
+  /** Short name of the page for breadcrumbs. Falls back to `title`. */
+  name?: string;
+  /** Image used when the page is shared. Falls back to the home hero. */
+  image?: ImageMetadata;
+  /** Keeps the page out of search results (404 pages). */
+  noindex?: boolean;
 }
 
-const { title, description } = Astro.props;
-
-import { getLangFromUrl } from "../i18n/utils";
+const { title, description, name, image, noindex = false } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const site = Astro.site!;
+const pathname = Astro.url.pathname;
+const abs = (path: string) => new URL(path, site).href;
+
+// Full <title>: keep the long brand name only when the result still fits.
+const longTitle = `${title} | ${settings.site_title}`;
+const fullTitle = longTitle.length <= 60 ? longTitle : `${title} | Blue Starfish`;
+
+const canonical = abs(pathname);
+const alternates = noindex ? null : await getAlternates(pathname);
+
+const shareImage = await getImage({
+  src: image ?? defaultShareImage,
+  width: 1200,
+  format: "jpg",
+  quality: 75,
+});
+
+// Structured data
+const organization = {
+  "@type": "TravelAgency",
+  "@id": abs("/#organization"),
+  name: settings.site_title,
+  legalName: settings.info.name.trim(),
+  url: abs("/"),
+  logo: abs("/logo.svg"),
+  image: abs(shareImage.src),
+  telephone: settings.info.phone.replace(/\s+/g, ""),
+  email: settings.info.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: settings.info.address,
+    addressLocality: "Ho Chi Minh City",
+    addressCountry: "VN",
+  },
+  areaServed: ["VN", "KH", "LA"],
+  availableLanguage: ["en", "pl"],
+};
+
+const isHome = segmentsOf(pathname).length === 1;
+const pageKey = pageKeyOf(pathname);
+const isCountry = pageKey === "countries" && segmentsOf(pathname).length === 3;
+
+const crumbs: { name: string; url: string }[] = [];
+if (!isHome && !noindex && pageKey) {
+  crumbs.push({ name: lang === "pl" ? "Strona główna" : "Home", url: abs(homePath(lang)) });
+  if (isCountry) {
+    crumbs.push({ name: t("nav.countries"), url: abs(pagePath(lang, "countries")) });
+  }
+  crumbs.push({ name: name ?? title, url: canonical });
+}
+
+const graph: Record<string, unknown>[] = [];
+if (isHome) graph.push(organization);
+if (crumbs.length) {
+  graph.push({
+    "@type": "BreadcrumbList",
+    itemListElement: crumbs.map((crumb, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: crumb.name,
+      item: crumb.url,
+    })),
+  });
+}
+const jsonLd = graph.length
+  ? JSON.stringify({ "@context": "https://schema.org", "@graph": graph })
+  : null;
 ---
 
 <!doctype html>
 <html lang={lang}>
   <head>
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-10NKTL5XZN"
     ></script><script is:inline>
       window.dataLayer = window.dataLayer || [];
@@ -34,24 +114,67 @@ const lang = getLangFromUrl(Astro.url);
       gtag("js", new Date());
 
       gtag("config", "G-10NKTL5XZN");
+
+      // Count enquiries: clicks on WhatsApp, email and phone links.
+      // One delegated listener, so it keeps working across view transitions.
+      document.addEventListener("click", function (event) {
+        var link = event.target.closest && event.target.closest("a[href]");
+        if (!link) return;
+        var href = link.getAttribute("href") || "";
+        var method = href.indexOf("wa.me") > -1
+          ? "whatsapp"
+          : href.indexOf("mailto:") === 0
+            ? "email"
+            : href.indexOf("tel:") === 0
+              ? "phone"
+              : null;
+        if (method) {
+          gtag("event", "generate_lead", {
+            method: method,
+            page_path: location.pathname,
+          });
+        }
+      });
     </script>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {!noindex && <link rel="canonical" href={canonical} />}
+    {
+      alternates &&
+        Object.entries(alternates).map(([code, path]) => (
+          <link rel="alternate" hreflang={code} href={abs(path)} />
+        ))
+    }
+    {
+      alternates && (
+        <link rel="alternate" hreflang="x-default" href={abs(alternates.en)} />
+      )
+    }
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={settings.site_title} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={abs(shareImage.src)} />
+    <meta property="og:locale" content={lang === "pl" ? "pl_PL" : "en_US"} />
+    <meta name="twitter:card" content="summary_large_image" />
+    {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} - {settings.site_title}</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
     ></script>
     <ViewTransitions />
   </head>
 
-  <!-- Google tag (gtag.js) -->
-
   <body class="subpixel-antialiased bg-white text-gray-950 font-normal text-lg">
     <div class="grid grid-flow-row auto-rows-[auto_1fr_auto] h-screen">
-      <Header client:only><Nav /></Header>
+      <Header client:load pathname={pathname} alternates={alternates}
+        ><Nav alternates={alternates} /></Header
+      >
       <div transition:animate={fade({ duration: "0.5s" })}><slot /></div>
       <Footer />
     </div>

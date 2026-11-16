@@ -15,7 +15,15 @@ const allTrips: any = await getEntry("widgets", "trips");
             (index === 1 && "md:order-2") || (index === 3 && "md:order-2")
           }`}
         >
-          <Image src={trip.image} alt={trip.title} class="rounded-lg" />
+          <Image
+            src={trip.image}
+            alt={trip.title}
+            class="rounded-lg"
+            width={900}
+            widths={[480, 900]}
+            sizes="(min-width: 768px) 50vw, 100vw"
+            quality={70}
+          />
         </div>
         <div
           class={`flex-1 ${

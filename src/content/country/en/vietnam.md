@@ -1,8 +1,7 @@
 ---
 seo:
-  seoTitle: Vietnam
-  seoDesc: Vietnam, located on the eastern shores of the Asian continent, it is a
-    country full of contrasts, rich history and amazing landscapes.
+  seoTitle: "Vietnam Private Tours & Tailor-Made Trips"
+  seoDesc: "Vietnam, on the eastern shore of mainland Southeast Asia, is a country of contrasts, rich history and striking landscapes. Plan a tailor-made trip."
 title: Vietnam
 sortOrder: 1
 cover: ../../../assets/images/vietnam-hero.jpg
@@ -14,18 +13,28 @@ For years, Vietnam has developed in the shadow of its larger neighbor - China, b
 
 &nbsp;
 
-Why is visit Vietnam?
+## Why visit Vietnam?
 
-**Ha Long Bay:** This stunning natural wonder is known for its crystal-clear waters, dramatic limestone cliffs, and serene fishing villages.
+### Ha Long Bay
 
-![Zatoka Ha-Long](../../../assets/images/vietnam-ha-long.jpg)
+This stunning natural wonder is known for its crystal-clear waters, dramatic limestone cliffs, and serene fishing villages.
 
-**Vietnamese Cuisine**: A delight for food lovers, offering everything from street food favorites like pho to unique specialties such as egg coffee.
+![Ha Long Bay, Vietnam](../../../assets/images/vietnam-ha-long.jpg)
 
-**Historic Hoi An and Hue**: Wander through these cities where time seems to slow down, amidst colorful streets, traditional lanterns, and heritage-rich architecture.
+### Vietnamese Cuisine
 
-Vibrant **Ho Chi Minh City** and **Hanoi**: Dive into the energetic atmosphere of these cities, where historic charm seamlessly blends with modern vibrancy.
+A delight for food lovers, offering everything from street food favorites like pho to unique specialties such as egg coffee.
 
-**Sapa’s Natural Beauty**: The perfect retreat for nature lovers, Sapa offers lush green terraces and a glimpse into the life of local ethnic communities.
+### Historic Hoi An and Hue
 
-![Rice fields](../../../assets/images/vietnam-rice-fields.jpg)
+Wander through these cities where time seems to slow down, amidst colorful streets, traditional lanterns, and heritage-rich architecture.
+
+### Vibrant Ho Chi Minh City and Hanoi
+
+Dive into the energetic atmosphere of these cities, where historic charm seamlessly blends with modern vibrancy.
+
+### Sapa’s Natural Beauty
+
+The perfect retreat for nature lovers, Sapa offers lush green terraces and a glimpse into the life of local ethnic communities.
+
+![Rice fields in Vietnam](../../../assets/images/vietnam-rice-fields.jpg)

@@ -1,7 +1,7 @@
 ---
 seo:
-  seoTitle: About Us
-  seoDesc: We will organize a holiday for you in Vietnam, Cambodia and Laos.
+  seoTitle: "About Us: Boutique Travel Agency in Vietnam"
+  seoDesc: "Blue Starfish Travel Boutique is a small agency based in Ho Chi Minh City. We plan private, tailor-made trips to Vietnam, Cambodia and Laos."
 hero:
   title: About Us
   image: ../../../assets/images/about-hero.jpg

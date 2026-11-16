@@ -1,7 +1,7 @@
 ---
 seo:
-  seoTitle: Contact
-  seoDesc: We will organize a holiday for you in Vietnam, Cambodia and Laos.
+  seoTitle: "Contact Us: Plan Your Southeast Asia Trip"
+  seoDesc: "Questions about a trip to Vietnam, Cambodia or Laos? Message us on WhatsApp or send the form. We reply with a tailor-made proposal."
 hero:
   title: Contact
   image: ../../../assets/images/contact-hero.jpg

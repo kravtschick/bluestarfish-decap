@@ -3,30 +3,38 @@ import { Image } from "astro:assets";
 import Wrapper from "./Wrapper.astro";
 import logo from "../../public/logo-white.svg";
 import Chat from "./Chat.astro";
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = "/" + pathname.slice(1);
+const pathname = Astro.url.pathname;
 const currentYear = new Date().getFullYear();
 import chatImg from "../images/chat-white.svg";
 import settings from "../data/settings.json";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { isActive, pagePath, type PageKey } from "../i18n/routes";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+// The blog has no pages yet. Add "blog" back here once it does.
+const items: PageKey[] = ["about", "countries", "trips", "contact"];
+const phoneHref = `tel:${settings.info.phone.replace(/\s+/g, "")}`;
 ---
 
 <footer class="py-12 bg-black text-white mt-16">
   <Wrapper>
     <div class="flex flex-col gap-8">
       <div class="flex justify-between items-center text-sm flex-wrap gap-4">
-        <Image src={logo} alt="Logo" class="w-24" />
+        <Image src={logo} alt={settings.site_title} class="w-24" />
         <Chat image={chatImg.src} classes="w-48" />
         <div class="flex gap-8 md:gap-16 flex-wrap">
           <div class="flex flex-col">
-            <h4>{settings.info.name}</h4>
+            <p class="font-semibold">{settings.info.name}</p>
             <p>{settings.info.address}</p>
             <p>{settings.info.city}</p>
           </div>
           <div class="flex flex-col">
-            <p>T. {settings.info.phone}</p><p>{settings.info.email}</p>
+            <p>T. <a href={phoneHref} class="hover:underline">{settings.info.phone}</a></p>
+            <p>
+              <a href={`mailto:${settings.info.email}`} class="hover:underline"
+                >{settings.info.email}</a
+              >
+            </p>
           </div>
         </div>
       </div>
@@ -37,56 +45,20 @@ const t = useTranslations(lang);
           &copy; {currentYear} Blue Starfish TB, Ltd.
         </div>
         <ul class="flex flex-wrap items-center gap-4">
-          <li>
-            <a
-              href={`/${lang}/${t("slug.about")}`}
-              class={`font-medium tracking-wide drop-shadow-sm ${
-                currentPath.indexOf(`/${lang}/${t("slug.about")}`) > -1
-                  ? "text-rose-500"
-                  : ""
-              }`}>{t("nav.about")}</a
-            >
-          </li>
-          <li>
-            <a
-              href={`/${lang}/${t("slug.countries")}`}
-              class={`font-medium tracking-wide drop-shadow-sm ${
-                currentPath.indexOf(`/${lang}/${t("slug.countries")}`) > -1
-                  ? "text-rose-500"
-                  : ""
-              }`}>{t("nav.countries")}</a
-            >
-          </li>
-          <li>
-            <a
-              href={`/${lang}/${t("slug.trips")}`}
-              class={`font-medium tracking-wide drop-shadow-sm ${
-                currentPath.indexOf(`/${lang}/${t("slug.trips")}`) > -1
-                  ? "text-rose-500"
-                  : ""
-              }`}>{t("nav.trips")}</a
-            >
-          </li>
-          <li>
-            <a
-              href={`/${lang}/${t("slug.blog")}`}
-              class={`font-medium tracking-wide drop-shadow-sm ${
-                currentPath.indexOf(`/${lang}/${t("slug.blog")}`) > -1
-                  ? "text-rose-500"
-                  : ""
-              }`}>{t("nav.blog")}</a
-            >
-          </li>
-          <li>
-            <a
-              href={`/${lang}/${t("slug.contact")}`}
-              class={`font-medium tracking-wide drop-shadow-sm ${
-                currentPath.indexOf(`/${lang}/${t("slug.contact")}`) > -1
-                  ? "text-rose-500"
-                  : ""
-              }`}>{t("nav.contact")}</a
-            >
-          </li>
+          {
+            items.map((key) => (
+              <li>
+                <a
+                  href={pagePath(lang, key)}
+                  class={`font-medium tracking-wide drop-shadow-sm ${
+                    isActive(pathname, pagePath(lang, key)) ? "text-rose-500" : ""
+                  }`}
+                >
+                  {t(`nav.${key}`)}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>

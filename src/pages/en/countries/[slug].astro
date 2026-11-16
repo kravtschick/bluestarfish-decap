@@ -27,6 +27,8 @@ const { Content } = await country.render();
 <Layout
   title={country.data.seo.seoTitle}
   description={country.data.seo.seoDesc}
+  name={country.data.title}
+  image={country.data.cover}
 >
   <main>
     <Hero

@@ -1,6 +1,6 @@
 ---
 seo:
-  seoTitle: Wietnam
+  seoTitle: "Wietnam: wycieczki objazdowe i na miarę"
   seoDesc: Wietnam, leżący na wschodnich wybrzeżach kontynentu azjatyckiego, to kraj pełen kontrastów, bogatej historii i niesamowitych krajobrazów.
 sortOrder: 1
 title: Wietnam
@@ -13,28 +13,28 @@ Przez lata Wietnam rozwijał się w cieniu swoich większych sąsiadów, ale dzi
 
 &nbsp;
 
-Dlaczego warto odwiedzić Wietnam?
+## Dlaczego warto odwiedzić Wietnam?
 
-## Zatoka Ha Long
+### Zatoka Ha Long
 
 Kryształowo czyste wody, wapienne skały i spokojne wioski rybackie sprawiają, że jest to jedno z najpiękniejszych miejsc na świecie.
 
-![Zatoka Ha-Long](../../../assets/images/vietnam-ha-long.jpg)
+![Zatoka Ha Long, Wietnam](../../../assets/images/vietnam-ha-long.jpg)
 
-## Kuchnia wietnamska
+### Kuchnia wietnamska
 
 Od smażonych pierożków, przez pho, po kawę z jajkiem – kulinarni entuzjaści będą w siódmym niebie.
 
-## Historyczne miasta Hoi An i Hue
+### Historyczne miasta Hoi An i Hue
 
 Barwne uliczki, tradycyjne latarnie i historyczne pałace sprawiają, że czas zdaje się tu płynąć wolniej.
 
-## Dynamiczne Ho Chi Minh i Hanoi
+### Dynamiczne Ho Chi Minh i Hanoi
 
 Nowoczesność splata się tu z tradycją, a życie miejskie pulsuje z energią.
 
-## Tereny wiejskie i górzyste regiony Sapa
+### Tereny wiejskie i górzyste regiony Sapa
 
 Bujne zielone tarasy ryżowe i tradycyjne społeczności etniczne oferują odskocznię od miejskiego zgiełku.
 
-![Pola ryżowe](../../../assets/images/vietnam-rice-fields.jpg)
+![Pola ryżowe w Wietnamie](../../../assets/images/vietnam-rice-fields.jpg)

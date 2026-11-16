@@ -8,7 +8,7 @@ description: Cambodia, magical and mysterious, is a country with a fascinating
 seo:
   seoDesc: Cambodia, magical and mysterious, is a country with a fascinating
     history, mystical charm and beautiful landscapes.
-  seoTitle: Cambodia
+  seoTitle: "Cambodia Private Tours & Tailor-Made Trips"
 intro: Cambodia, magical and mysterious, is a country with a fascinating
   history, mystical charm and beautiful landscapes.
 ---
@@ -16,16 +16,26 @@ Cambodia is a land where history and modernity converge amidst stunning landscap
 
 &nbsp;
 
-Why visit Cambodia?
+## Why visit Cambodia?
 
-**Temples of Angkor:** Explore the breathtaking Angkor temple complex, a symbol of the Khmer Empire's glorious past.
+### Temples of Angkor
 
-![Angkor Wat](../../../assets/images/cambodia-angkor-wat.jpg)
+Explore the breathtaking Angkor temple complex, a symbol of the Khmer Empire's glorious past.
 
-**Phnom Penh**: The capital city, a vibrant blend of historical significance and contemporary Cambodian life.
+![Angkor Wat, Cambodia](../../../assets/images/cambodia-angkor-wat.jpg)
 
-**Koh Rong and Koh Rong Samloem Islands**: These islands are your escape to paradise with their pristine beaches, crystal-clear waters, and vibrant coral reefs.
+### Phnom Penh
 
-**Tonle Sap and Floating Villages:** Witness the unique lifestyle of the Tonle Sap's floating communities and understand their harmonious existence with Southeast Asia's largest freshwater lake.
+The capital city, a vibrant blend of historical significance and contemporary Cambodian life.
 
-**Cambodian Cuisine**: Delight in the country's culinary richness, from the creamy and spicy amok to the savory kuy teav, each dish offering a taste of Cambodia's rich gastronomic heritage.
+### Koh Rong and Koh Rong Samloem Islands
+
+These islands are your escape to paradise with their pristine beaches, crystal-clear waters, and vibrant coral reefs.
+
+### Tonle Sap and Floating Villages
+
+Witness the unique lifestyle of the Tonle Sap's floating communities and understand their harmonious existence with Southeast Asia's largest freshwater lake.
+
+### Cambodian Cuisine
+
+Delight in the country's culinary richness, from the creamy and spicy amok to the savory kuy teav, each dish offering a taste of Cambodia's rich gastronomic heritage.

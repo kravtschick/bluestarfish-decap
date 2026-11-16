@@ -1,6 +1,6 @@
 ---
 seo:
-  seoTitle: Kambodża
+  seoTitle: "Kambodża: wycieczki i wakacje szyte na miarę"
   seoDesc: Kambodża, magiczna i tajemnicza, to kraj o fascynującej historii,
     mistycznym uroku i przepięknych krajobrazach.
 sortOrder: 2
@@ -15,26 +15,26 @@ Kambodża to kraj pełen kontrastów, od świątyń majestatycznych Angkor Wat, 
 
 &nbsp;
 
-Dlaczego warto odwiedzić Kambodżę?
+## Dlaczego warto odwiedzić Kambodżę?
 
-## Świątynie Angkoru
+### Świątynie Angkoru
 
 Legendarny kompleks świątynny, który jest świadectwem potęgi i wspaniałości imperium Khmerów.
 
-![Angkor Wat](../../../assets/images/cambodia-angkor-wat.jpg)
+![Angkor Wat, Kambodża](../../../assets/images/cambodia-angkor-wat.jpg)
 
-## Stolica Phnom Penh
+### Stolica Phnom Penh
 
 Miejsce, gdzie historia spotyka się z nowoczesnością, oferując podróżnikom fascynujący wgląd w kambodżańskie życie miejskie.
 
-## Rajskie wyspy Koh Rong i Koh Rong Samloem
+### Rajskie wyspy Koh Rong i Koh Rong Samloem
 
 Nieskazitelne białe plaże, turkusowe wody i koralowe rafy czekają na miłośników słonecznych kąpieli.
 
-## Tonle Sap i pływające wsie
+### Tonle Sap i pływające wsie
 
 Odkryj życie lokalnych rybaków i zobacz, jak przystosowali się do zmieniającego się poziomu wody w największym jeziorze w południowo-wschodniej Azji.
 
-## Kambodżańska kuchnia
+### Kambodżańska kuchnia
 
 Smaki takie jak amok czy kuy teav pokazują bogactwo kulinarnych tradycji tego kraju

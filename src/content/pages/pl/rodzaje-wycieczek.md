@@ -1,8 +1,7 @@
 ---
 seo:
-  seoTitle: Rodzaje wycieczek
-  seoDesc: Zorganizujemy dla Ciebie wakacje w Wietnamie, Kambodży i Laosie. Tak
-    jak lubisz. Na Twoich warunkach.
+  seoTitle: "Rodzaje wycieczek: rodzinne, poślubne, solo"
+  seoDesc: "Wyjazdy z przyjaciółmi, rodzinne, solo, podróże poślubne i incentive w Wietnamie, Kambodży i Laosie. Program dopasujemy do Ciebie."
 hero:
   title: Rodzaje wycieczek
   image: ../../../assets/images/trips-hero.jpg

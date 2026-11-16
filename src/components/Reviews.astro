@@ -21,7 +21,7 @@ const allReviews: any = await getEntry("widgets", "reviews");
           >
             <Image
               src={review.image}
-              alt={review.title}
+              alt={review.author ?? ""}
               class="rounded-full aspect-square object-cover"
               width={250}
             />

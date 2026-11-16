@@ -5,26 +5,27 @@ import Layout from "../../layouts/Layout.astro";
 import image from "../../assets/images/404.jpg";
 import question from "../../../public/question.svg";
 import { Image } from "astro:assets";
+import { homePath } from "../../i18n/routes";
 ---
 
-<Layout title="404! Nie ma takiej strony - " description="">
+<Layout title="Nie ma takiej strony (404)" description="Nie znaleźliśmy strony o podanym adresie." noindex>
   <main class="mb-16">
     <Hero
       image={image}
       height="h-[300px] md:h-[550px]"
       bottom="bottom-6"
-      title="404!"
+      title="404"
     />
     <Wrapper>
       <div class="mt-24 lg:mt-32 text-center items-center flex flex-col gap-8">
         <h2 class="text-3xl font-semibold">Nie ma takiej strony</h2>
-        <div><Image src={question} alt="Brak strony" class="w-24" /></div>
+        <div><Image src={question} alt="" class="w-24" /></div>
         <p>
-          Nie znaleźliśmy strony o podanym adresie. Sprawdź czy poprawnie
-          wpisałeś adres lub wróć na stronę główną:
+          Nie znaleźliśmy strony o podanym adresie. Sprawdź, czy adres jest wpisany
+          poprawnie, lub wróć na stronę główną:
         </p>
         <a
-          href="/"
+          href={homePath("pl")}
           class="py-2 px-4 rounded bg-rose-500 hover:bg-emerald-500 text-white"
           >Strona główna</a
         >
