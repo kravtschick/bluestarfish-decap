@@ -211,11 +211,7 @@ const input =
         button.textContent = root.dataset.textSending ?? "";
         const name = (form.querySelector<HTMLInputElement>('input[name="name"]')?.value ?? "").trim();
         try {
-          await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, {
-            publicKey: PUBLIC_KEY,
-            blockHeadless: true,
-            limitRate: { id: "enquiry", throttle: 60000 },
-          });
+          await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY);
           success.textContent = (root.dataset.textSuccess ?? "")
             .replace("{name}", name ? `, ${name}` : "")
             .replace("{day}", replyDay(root));
